@@ -1,0 +1,94 @@
+.footer {
+    padding: 1rem 0rem;
+    background-color: var(--light-blue-background);
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about-section {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.about-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.about-menu {
+    list-style: none;
+}
+
+.about-menu-link {
+    text-decoration: none;
+    color: black;
+}
+
+.concat {
+    width: 50%;
+}
+
+.concat-title {
+    margin-bottom: 0.5rem;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.input,
+.textarea {
+    font-family: sans-serif;
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.input::placeholder {
+    visibility: hidden;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
+    top: 1px;
+    color: var(--dark-grey-color);
+}
+
+.textarea {
+    resize: none;
+    padding: 1rem;
+}
+
+.label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transition: all 1s;
+    pointer-events: none;
+}
+
+.button-send {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    padding: 1rem;
+    border: none;
+}
+
+.copyright {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    background-color: var(--white-color);
+}

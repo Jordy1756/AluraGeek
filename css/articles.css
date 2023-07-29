@@ -1,0 +1,44 @@
+.articles-section {
+}
+
+.articles-container-title-and-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.article-link {
+    display: flex;
+    place-items: center;
+    text-decoration: none;
+    gap: 0.2rem;
+    color: var(--blue-color);
+}
+
+.articles-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.article-container-image {
+    display: flex;
+}
+
+.article-image {
+    width: 11rem;
+    height: 10.875rem;
+    flex-grow: 1;
+    border-radius: 0.3rem;
+}
+
+.article-price {
+    font-weight: bold;
+}
