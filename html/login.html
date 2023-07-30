@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="stylesheet" href="../css/login.css" />
+        <link rel="stylesheet" href="../css/footer.css" />
+    </head>
+    <body>
+        <header class="header">
+            <section class="logo">
+                <a href="../index.html" class="logo-image-container">
+                    <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                </a>
+                <form class="form-search">
+                    <input class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
+                    <button type="submit" class="search-button">
+                        <svg width="24" height="24" fill="#A2A2A2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m21.75 20.692-5.664-5.664a8.264 8.264 0 1 0-1.06 1.061l5.664 5.664 1.06-1.06ZM3 9.753a6.75 6.75 0 1 1 6.75 6.75A6.758 6.758 0 0 1 3 9.753Z"
+                            ></path>
+                        </svg>
+                    </button>
+                </form>
+            </section>
+            <section class="login">
+                <a class="login-button" href="#">Login</a>
+            </section>
+        </header>
+        <main class="login-main">
+            <h1 class="login-title">Iniciar sesión</h1>
+            <form class="login-form" action="">
+                <div class="login-input-box">
+                    <input class="login-input" type="email" name="name" placeholder="Nombre" required />
+                    <label class="login-label" for="name">Correo</label>
+                </div>
+                <div class="login-input-box">
+                    <input class="login-input" type="password" name="name" placeholder="Nombre" required />
+                    <label class="login-label" for="name">Contraseña</label>
+                </div>
+                <button type="submit" class="login-button-send">Entrar</button>
+            </form>
+        </main>
+        <footer class="footer">
+            <section class="about-section">
+                <picture class="logo-image-container">
+                    <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                </picture>
+                <ul class="about-menu">
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
+                    <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
+                </ul>
+            </section>
+            <section class="concat">
+                <h3 class="concat-title">Hable con nosotros</h3>
+                <form class="concat-form" action="">
+                    <div class="concat-input-box">
+                        <input class="concat-input" type="text" name="name" placeholder="Nombre" required />
+                        <label class="concat-label" for="name">Nombre</label>
+                    </div>
+                    <div class="concat-input-box">
+                        <textarea class="concat-textarea" name="message" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="concat-button-send">Enviar mensaje</button>
+                </form>
+            </section>
+            <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
+        </footer>
+    </body>
+</html>

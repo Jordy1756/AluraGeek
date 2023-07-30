@@ -1,7 +1,6 @@
 .footer {
-    padding: 1rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
     background-color: var(--light-blue-background);
-    margin-top: 4rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -20,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
+    text-align: center;
 }
 
 .about-menu {
@@ -39,13 +39,13 @@
     margin-bottom: 0.5rem;
 }
 
-.input-box {
+.concat-input-box {
     margin-bottom: 1rem;
     position: relative;
 }
 
-.input,
-.textarea {
+.concat-input,
+.concat-textarea {
     font-family: sans-serif;
     width: 100%;
     padding: 1.5rem 1rem 1rem 1rem;
@@ -56,39 +56,44 @@
     border-radius: 0.3rem;
 }
 
-.input::placeholder {
+.concat-input::placeholder {
     visibility: hidden;
 }
 
-.input:focus ~ .label,
-.input:not(:placeholder-shown) ~ .label {
+.concat-input:focus ~ .concat-label,
+.concat-input:not(:placeholder-shown) ~ .concat-label {
     top: 1px;
     color: var(--dark-grey-color);
 }
 
-.textarea {
+.concat-textarea {
     resize: none;
     padding: 1rem;
 }
 
-.label {
+.concat-label {
     position: absolute;
-    top: 16px;
+    top: 1.2rem;
     left: 16px;
     transition: all 1s;
     pointer-events: none;
 }
 
-.button-send {
+.concat-button-send {
+    cursor: pointer;
     background-color: var(--blue-color);
     color: var(--white-color);
     padding: 1rem;
     border: none;
 }
 
+.concat-button-send:hover {
+    opacity: 0.9;
+}
+
 .copyright {
     padding: 1rem;
     text-align: center;
     width: 100%;
-    background-color: var(--white-color);
+    background-color: white;
 }
