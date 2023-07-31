@@ -6,7 +6,7 @@
         <title>AluraGeek</title>
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/login.css" />
+        <link rel="stylesheet" href="../css/addArticle.css">
         <link rel="stylesheet" href="../css/footer.css" />
     </head>
     <body>
@@ -27,21 +27,33 @@
                 </form>
             </section>
             <section class="login">
-                <a class="login-button" href="#">Login</a>
+                <a class="login-button" href="../html/login.html">Login</a>
             </section>
         </header>
-        <main class="login-main">
-            <h1 class="login-title">Iniciar sesión</h1>
-            <form class="login-form" action="">
-                <div class="login-input-box">
-                    <input class="login-input" type="email" name="name" placeholder="Nombre" required />
-                    <label class="login-label" for="name">Correo</label>
+        <main class="main-add-article">
+            <h1>Agregar nuevo producto</h1>
+            <form class="add-article-form" action="" enctype="multipart/form-data">
+                <div class="add-article-input-box">
+                    <input class="add-article-input" type="file" name="image" placeholder="Nombre" required />
+                    <label class="add-article-label" for="image">URL de la imagen</label>
                 </div>
-                <div class="login-input-box">
-                    <input class="login-input" type="password" name="name" placeholder="Nombre" required />
-                    <label class="login-label" for="name">Contraseña</label>
+                <div class="add-article-input-box">
+                    <input class="add-article-input" type="text" name="category" placeholder="Categoría" required />
+                    <label class="add-article-label" for="category">Categoría</label>
                 </div>
-                <button type="submit" class="login-button-send">Entrar</button>
+                <div class="add-article-input-box">
+                    <input class="add-article-input" type="text" name="name" placeholder="Nombre del producto" required />
+                    <label class="add-article-label" for="name">Nombre del producto</label>
+                </div>
+                <div class="add-article-input-box">
+                    <input class="add-article-input" type="text" name="price" placeholder="Precio del producto" required />
+                    <label class="add-article-label" for="price">Precio del producto</label>
+                </div>
+                <div class="add-article-input-box">
+                    <input class="add-article-input" type="text" name="description" placeholder="Descripción" required />
+                    <label class="add-article-label" for="description">Descripción</label>
+                </div>
+                <button type="submit" class="add-article-button">Agregar producto</button>
             </form>
         </main>
         <footer class="footer">

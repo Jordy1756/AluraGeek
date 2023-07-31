@@ -1,0 +1,39 @@
+.main-show-article {
+    padding: 5%;
+}
+
+.product {
+    display: flex;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.product-container-image {
+    width: 560px;
+    height: 403px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    border-radius: 0.3rem;
+    object-fit: contain;
+}
+
+.product-section {
+    width: 60%;
+}
+
+.product-name {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-weight: bold;
+}
+
+.product-description {
+    margin-top: 1rem;
+    text-align: justify;
+}

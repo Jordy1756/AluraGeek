@@ -4,11 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/header.css" />
-        <link rel="stylesheet" href="./css/banner.css" />
-        <link rel="stylesheet" href="./css/articles.css" />
-        <link rel="stylesheet" href="./css/footer.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="stylesheet" href="../css/product.css" />
+        <link rel="stylesheet" href="../css/articles.css" />
+        <link rel="stylesheet" href="../css/footer.css" />
     </head>
     <body>
         <header class="header">
@@ -28,45 +28,34 @@
                 </form>
             </section>
             <section class="login">
-                <a class="login-button" href="./html/login.html">Login</a>
+                <a class="login-button" href="../html/login.html">Login</a>
             </section>
         </header>
-        <main>
-            <section class="banner">
-                <h1 class="banner-title">Febrero Promocional</h1>
-                <span class="banner-description">Productos seleccionados con 33% de descuento</span>
-                <a class="button">Ver consolas</a>
-            </section>
+        <main class="main-show-article">
+            <article class="product">
+                <picture class="product-container-image">
+                    <img class="product-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                </picture>
+                <section class="product-section">
+                    <h1 class="product-name">Nombre producto</h1>
+                    <span class="product-price">Precio</span>
+                    <p class="product-description">Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam</p>
+                </section>
+            </article>
             <section class="articles-section">
-                <div class="articles-container-title-and-link">
-                    <h2 class="article-section-title">Star Wars</h2>
-                    <a class="article-link" href="./html/showAllArticles.html">
-                        Ver todo
-                        <svg width="24" height="24" fill="#2A7AE4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="m13.5 4.5-1.072 1.045 5.684 5.705H3v1.5h15.113l-5.685 5.68L13.5 19.5 21 12l-7.5-7.5Z"></path>
-                        </svg>
-                    </a>
-                </div>
+                <h2 class="article-section-title">Productos similares</h2>
                 <section class="articles-container">
                     <article class="article">
                         <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                            <img class="article-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
                         </picture>
                         <span class="article-name">Nombre producto</span>
                         <span class="article-price">Precio</span>
-                        <a class="article-link" href="./html/showArticle.html">Ver producto</a>
+                        <a class="article-link" href="../html/showArticle.html">Ver producto</a>
                     </article>
                     <article class="article">
                         <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                            <img class="article-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
                         </picture>
                         <span class="article-name">Nombre producto</span>
                         <span class="article-price">Precio</span>
@@ -74,7 +63,7 @@
                     </article>
                     <article class="article">
                         <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                            <img class="article-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
                         </picture>
                         <span class="article-name">Nombre producto</span>
                         <span class="article-price">Precio</span>
@@ -82,7 +71,7 @@
                     </article>
                     <article class="article">
                         <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                            <img class="article-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
                         </picture>
                         <span class="article-name">Nombre producto</span>
                         <span class="article-price">Precio</span>
@@ -90,7 +79,15 @@
                     </article>
                     <article class="article">
                         <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/Lucy.jpg" alt="Imagen del producto" />
+                            <img class="article-image" src="../assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
+                        </picture>
+                        <span class="article-name">Nombre producto</span>
+                        <span class="article-price">Precio</span>
+                        <a class="article-link" href="#">Ver producto</a>
+                    </article>
+                    <article class="article">
+                        <picture class="article-container-image">
+                            <img class="article-image" src="../assets/images/Lucy.jpg" alt="Imagen del producto" />
                         </picture>
                         <span class="article-name">Nombre producto</span>
                         <span class="article-price">Precio</span>
