@@ -1,7 +1,8 @@
 .footer {
-    padding: 1rem 0rem 0rem 0rem;
+    padding: 1rem 1rem 0rem 1rem;
     background-color: var(--light-blue-background);
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
@@ -46,8 +47,8 @@
 
 .concat-input,
 .concat-textarea {
-    font-family: sans-serif;
     width: 100%;
+    font-family: sans-serif;
     padding: 1.5rem 1rem 1rem 1rem;
     box-sizing: border-box;
     font-size: 1rem;
@@ -92,8 +93,23 @@
 }
 
 .copyright {
-    padding: 1rem;
+    padding: 1rem 0rem;
     text-align: center;
     width: 100%;
     background-color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .about-section {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .concat {
+        width: 100%;
+    }
 }
