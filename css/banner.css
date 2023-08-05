@@ -1,6 +1,7 @@
 .banner {
     background: url("../assets/images/App/Hero.png") no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     padding: 1rem 0rem 1rem calc(5%);
     display: flex;
     align-items: start;
@@ -19,14 +20,16 @@
 @media screen and (max-width: 768px) {
     .banner {
         background: url("../assets/images/App/Hero768.png") no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
     }
 }
 
 @media screen and (max-width: 480px) {
     .banner {
         background: url("../assets/images/App/Hero480.png") no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
     }
 
     .banner-title {

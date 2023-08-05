@@ -1,11 +1,13 @@
 .articles-section {
-    margin-bottom: 4rem;
+    background-color: var(--light-grey-color);
+    padding: 4rem 1rem;
 }
 
 .articles-container-title-and-link {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .article-link {
@@ -17,10 +19,11 @@
 }
 
 .articles-container {
+    padding: 0.5rem 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .article {
@@ -38,6 +41,10 @@
     height: 10.875rem;
     flex-grow: 1;
     border-radius: 0.3rem;
+}
+
+.article-price::before {
+    content: "$ ";
 }
 
 .article-price {

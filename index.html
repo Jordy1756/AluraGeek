@@ -13,7 +13,7 @@
     <body>
         <header class="header">
             <a href="../index.html" class="logo-image-container">
-                <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" loading="lazy" />
             </a>
             <section class="search-and-login">
                 <form class="form-search">
@@ -33,74 +33,49 @@
             <section class="banner">
                 <h1 class="banner-title">Febrero Promocional</h1>
                 <span class="banner-description">Productos seleccionados con 33% de descuento</span>
-                <a class="button">Ver consolas</a>
+                <a class="button" href="./html/showAllArticles.html?category=consoles">Ver consolas</a>
             </section>
             <section class="articles-section">
                 <div class="articles-container-title-and-link">
                     <h2 class="article-section-title">Star Wars</h2>
-                    <a class="article-link" href="./html/showAllArticles.html">
+                    <a class="article-link" href="./html/showAllArticles.html?category=starWars">
                         Ver todo
                         <svg width="24" height="24" fill="#2A7AE4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="m13.5 4.5-1.072 1.045 5.684 5.705H3v1.5h15.113l-5.685 5.68L13.5 19.5 21 12l-7.5-7.5Z"></path>
                         </svg>
                     </a>
                 </div>
-                <section class="articles-container">
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="./html/showArticle.html">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/unsplash_1VV1MRafd7A.png" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                    <article class="article">
-                        <picture class="article-container-image">
-                            <img class="article-image" src="./assets/images/Lucy.jpg" alt="Imagen del producto" />
-                        </picture>
-                        <span class="article-name">Nombre producto</span>
-                        <span class="article-price">Precio</span>
-                        <a class="article-link" href="#">Ver producto</a>
-                    </article>
-                </section>
+                <section id="star-wars-articles" class="articles-container"></section>
+            </section>
+            <section class="articles-section">
+                <div class="articles-container-title-and-link">
+                    <h2 class="article-section-title">Consolas</h2>
+                    <a class="article-link" href="./html/showAllArticles.html?category=consoles">
+                        Ver todo
+                        <svg width="24" height="24" fill="#2A7AE4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m13.5 4.5-1.072 1.045 5.684 5.705H3v1.5h15.113l-5.685 5.68L13.5 19.5 21 12l-7.5-7.5Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <section id="console-articles" class="articles-container"></section>
+            </section>
+            <section class="articles-section">
+                <div class="articles-container-title-and-link">
+                    <h2 class="article-section-title">Diversos</h2>
+                    <a class="article-link" href="./html/showAllArticles.html?category=various">
+                        Ver todo
+                        <svg width="24" height="24" fill="#2A7AE4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m13.5 4.5-1.072 1.045 5.684 5.705H3v1.5h15.113l-5.685 5.68L13.5 19.5 21 12l-7.5-7.5Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <section id="various-articles" class="articles-container"></section>
             </section>
         </main>
         <footer class="footer">
             <section class="about-section">
                 <picture class="logo-image-container">
-                    <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                    <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" loading="lazy" />
                 </picture>
                 <ul class="about-menu">
                     <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
@@ -127,4 +102,7 @@
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
     </body>
+    <script type="module" src="./controllers/starWarsController.js"></script>
+    <script type="module" src="./controllers/consoleController.js"></script>
+    <script type="module" src="./controllers/variousController.js"></script>
 </html>
