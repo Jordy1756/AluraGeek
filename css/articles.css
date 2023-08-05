@@ -1,6 +1,5 @@
 .articles-section {
-    background-color: var(--light-grey-color);
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .articles-container-title-and-link {
@@ -18,10 +17,15 @@
     color: var(--blue-color);
 }
 
+.articles-container:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
 .articles-container {
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 1rem;
 }

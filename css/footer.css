@@ -1,6 +1,6 @@
 .footer {
     align-self: flex-end;
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem 0rem 0rem 0rem;
     background-color: var(--light-blue-background);
     display: flex;
     align-items: center;
@@ -98,7 +98,6 @@
     text-align: center;
     width: 100%;
     background-color: white;
-    background-color: red;
 }
 
 @media screen and (max-width: 480px) {
@@ -106,12 +105,12 @@
         flex-direction: column;
     }
 
-    .about-section {
-        width: 100%;
-        flex-direction: column;
+    .about-section,
+    .concat {
+        width: 95%;
     }
 
-    .concat {
-        width: 100%;
+    .about-section {
+        flex-direction: column;
     }
 }

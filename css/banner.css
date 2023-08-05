@@ -9,7 +9,6 @@
     flex-direction: column;
     gap: 1rem;
     color: var(--white-color);
-    margin-bottom: 4rem;
 }
 
 .banner-title {

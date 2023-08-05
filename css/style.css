@@ -16,6 +16,10 @@ body {
     font-size: 1rem;
 }
 
+main {
+    background-color: var(--light-grey-color);
+}
+
 .button {
     padding: 1rem;
     background-color: var(--blue-color);
