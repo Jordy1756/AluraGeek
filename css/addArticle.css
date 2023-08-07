@@ -1,9 +1,8 @@
 .main-add-article {
-    width: 100%;
     display: grid;
     place-items: center;
     row-gap: 1rem;
-    padding: 4rem;
+    padding: 4rem 1rem;
     background-color: var(--light-grey-color);
 }
 
