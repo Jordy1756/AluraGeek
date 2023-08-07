@@ -31,9 +31,31 @@
 }
 
 .article {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+}
+
+.actions {
+    position: absolute;
+    top: 1%;
+    left: 64%;
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.article-button {
+    padding: .1rem;
+    border: none;
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+}
+
+.article-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .article-container-image {

@@ -25,18 +25,18 @@ const getProduct = async (category, id) => {
 
 const showSimilarProducts = products => {
     const container = document.querySelector(".articles-container");
-    for (let i = products.length - 1; i > products.length - 7; i--) {
-        const article =
-            "<article class='article'>" +
-            "<picture class='article-container-image'>" +
-            `<img class='article-image' src='.${products[i].image}' alt='Imagen del producto' loading='lazy'/>` +
-            "</picture>" +
-            `<span class='article-name'>${products[i].name}</span>` +
-            `<span class='article-price'>${products[i].price}</span>` +
-            `<a class='article-link' href='../html/showArticle.html?category=${category}&id=${products[i].id}'>Ver producto</a>` +
-            "</article>";
+    products.forEach(({ id, image, name, price }) => {
+        const article = `
+            <article class='article'>
+                <picture class='article-container-image'>
+                    <img class='article-image' src='.${image}' alt='Imagen del producto' loading='lazy'/>
+                </picture>
+                <span class='article-name'>${name}</span>
+                <span class='article-price'>${price}</span>
+                <a class='article-link' href='../html/showArticle.html?category=${category}&id=${id}'>Ver producto</a>
+            </article>`;
         container.insertAdjacentHTML("afterbegin", article);
-    }
+    });
 };
 
 const main = async () => {
