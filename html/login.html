@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/header.css" />
         <link rel="stylesheet" href="../css/login.css" />
         <link rel="stylesheet" href="../css/footer.css" />
+        <link rel="stylesheet" href="../css/toast.css">
     </head>
     <body>
         <header class="header">
@@ -31,14 +32,16 @@
             <h1 class="login-title">Iniciar sesión</h1>
             <form class="login-form" action="">
                 <div class="login-input-box">
-                    <input class="login-input" type="email" name="name" placeholder="Nombre" required />
+                    <input id="email" class="login-input" type="email" name="name" placeholder="Correo" required />
                     <label class="login-label" for="name">Correo</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="login-input-box">
-                    <input class="login-input" type="password" name="name" placeholder="Nombre" required />
+                    <input id="password" class="login-input" type="password" name="name" placeholder="Contraseña" required />
                     <label class="login-label" for="name">Contraseña</label>
+                    <span class="input-error"></span>
                 </div>
-                <button type="submit" class="login-button-send">Entrar</button>
+                <button id="btn-login" type="submit" class="login-button-send">Entrar</button>
             </form>
         </main>
         <footer class="footer">
@@ -59,16 +62,23 @@
                 <h3 class="concat-title">Hable con nosotros</h3>
                 <form class="concat-form" action="">
                     <div class="concat-input-box">
-                        <input class="concat-input" type="text" name="name" placeholder="Nombre" required />
+                        <input id="name" class="concat-input" type="text" name="name" placeholder="Nombre" required />
                         <label class="concat-label" for="name">Nombre</label>
+                        <span class="input-error"></span>
                     </div>
                     <div class="concat-input-box">
-                        <textarea class="concat-textarea" name="message" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea class="concat-textarea" id="message" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                        <span class="input-error"></span>
                     </div>
                     <button type="submit" class="concat-button-send">Enviar mensaje</button>
                 </form>
             </section>
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
+        <div class="toast">
+            <span>Correo y contraseña incorrectos</span>
+        </div>
     </body>
+    <script src="../js/validations.js"></script>
+    <script type="module" src="../controllers/userController.js"></script>
 </html>

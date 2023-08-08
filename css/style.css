@@ -15,7 +15,6 @@ body {
     font-family: sans-serif;
     font-size: 1rem;
     position: relative;
-
 }
 
 main {
@@ -31,4 +30,9 @@ main {
 .button:hover {
     opacity: 0.9;
     cursor: pointer;
+}
+
+.input-error {
+    margin: 0.5rem 0rem 0rem 0.5rem;
+    color: #f80000;
 }

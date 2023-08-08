@@ -1,9 +1,14 @@
 {
   "users": [
     {
-      "id": 99999,
-      "username": "Jordy",
+      "id": 99998,
+      "email": "jordy@gmail.com",
       "password": "1234"
+    },
+    {
+        "id": 99999,
+        "email": "juan@gmail.com",
+        "password": "1234"
     }
   ],
   "starWars": [

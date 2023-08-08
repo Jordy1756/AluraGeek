@@ -1,0 +1,22 @@
+.toast {
+    padding: 1.5rem;
+    position: fixed;
+    bottom: -20%;
+    right: 2%;
+    background-color: red;
+    border-radius: .5rem;
+    text-align: center;
+    color: var(--white-color);
+    box-shadow: 0rem 0rem .4rem .1rem red;
+    transition: all 1s ease-in-out;
+}
+
+.toast-active {
+    bottom: 3%;
+}
+
+@media screen and (max-width:480px) {
+    .toast {
+        padding: 1rem .2rem;
+    }
+}
