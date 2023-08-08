@@ -32,6 +32,49 @@ main {
     cursor: pointer;
 }
 
+.input-box {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    font-family: sans-serif;
+    padding: 1.5rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    visibility: hidden;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label,
+.textarea:focus ~ .label,
+.textarea:not(:placeholder-shown) ~ .label {
+    top: 1px;
+    color: var(--dark-grey-color);
+}
+
+.textarea {
+    resize: none;
+}
+
+.label {
+    position: absolute;
+    top: 1.2rem;
+    left: 16px;
+    transition: all 1s;
+    pointer-events: none;
+}
+
 .input-error {
     margin: 0.5rem 0rem 0rem 0.5rem;
     color: #f80000;

@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./css/banner.css" />
         <link rel="stylesheet" href="./css/articles.css" />
         <link rel="stylesheet" href="./css/footer.css" />
+        <link rel="stylesheet" href="./css/toast.css">
     </head>
     <body>
         <header class="header">
@@ -84,21 +85,30 @@
             </section>
             <section class="concat">
                 <h3 class="concat-title">Hable con nosotros</h3>
-                <form class="concat-form" action="">
-                    <div class="concat-input-box">
-                        <input class="concat-input" type="text" name="name" placeholder="Nombre" required />
-                        <label class="concat-label" for="name">Nombre</label>
+                <form class="concat-form">
+                    <div class="input-box">
+                        <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40"/>
+                        <label class="label">Nombre</label>
+                        <span class="input-error"></span>
                     </div>
-                    <div class="concat-input-box">
-                        <textarea class="concat-textarea" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                    <div class="input-box">
+                        <textarea id="message" class="textarea" cols="30" rows="5" placeholder="Escribe tu mensaje" required maxlength="120"></textarea>
+                        <label class="label">Mensaje</label>
+                        <span class="input-error"></span>
                     </div>
-                    <button type="submit" class="concat-button-send">Enviar mensaje</button>
+                    <button id="concat-button" type="button" class="concat-button-send">Enviar mensaje</button>
                 </form>
             </section>
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
+        <div class="toast">
+            <span class="toast-message"></span>
+        </div>
     </body>
+    <script src="./js/uuid.min.js"></script>
     <script type="module" src="./controllers/starWarsController.js"></script>
     <script type="module" src="./controllers/consoleController.js"></script>
     <script type="module" src="./controllers/variousController.js"></script>
+    <script type="module" src="./controllers/concatController.js"></script>
+    <script src="./js/validations.js"></script>
 </html>

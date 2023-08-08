@@ -1,9 +1,8 @@
 .login-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5rem 0rem;
+    padding: 5rem 1rem;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
 }
 
 .login-form {
@@ -15,52 +14,13 @@
     gap: 1rem;
 }
 
-.login-title {
-    margin-bottom: 1.5rem;
-}
-
-.login-input-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
-
-.login-input {
-    width: 100%;
-    padding: 1.5rem 1rem 1rem 1rem;
-    outline: none;
-    border: none;
-    border-radius: 0.3rem;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.login-input:focus ~ .login-label,
-.login-input:not(:placeholder-shown) ~ .login-label {
-    top: 2px;
-}
-
-.login-input::placeholder {
-    visibility: hidden;
-}
-
-.login-label {
-    position: absolute;
-    top: 1.2rem;
-    left: 1rem;
-    pointer-events: none;
-    transition: all 1s ease-in-out;
-    color: var(--dark-grey-color);
-}
-
 .login-button-send {
     cursor: pointer;
     background-color: var(--blue-color);
     color: var(--white-color);
     padding: 1rem 2rem;
     border: none;
-}
+} 
 
 @media screen and (max-width: 768px) {
     .login-form {

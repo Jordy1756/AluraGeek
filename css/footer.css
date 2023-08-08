@@ -41,46 +41,6 @@
     margin-bottom: 0.5rem;
 }
 
-.concat-input-box {
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.concat-input,
-.concat-textarea {
-    width: 100%;
-    font-family: sans-serif;
-    padding: 1.5rem 1rem 1rem 1rem;
-    box-sizing: border-box;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-    border-radius: 0.3rem;
-}
-
-.concat-input::placeholder {
-    visibility: hidden;
-}
-
-.concat-input:focus ~ .concat-label,
-.concat-input:not(:placeholder-shown) ~ .concat-label {
-    top: 1px;
-    color: var(--dark-grey-color);
-}
-
-.concat-textarea {
-    resize: none;
-    padding: 1rem;
-}
-
-.concat-label {
-    position: absolute;
-    top: 1.2rem;
-    left: 16px;
-    transition: all 1s;
-    pointer-events: none;
-}
-
 .concat-button-send {
     cursor: pointer;
     background-color: var(--blue-color);

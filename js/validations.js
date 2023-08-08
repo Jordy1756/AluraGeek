@@ -16,7 +16,7 @@ const errorMessages = {
     },
 };
 
-const inputs = document.querySelectorAll(".login-input");
+const inputs = document.querySelectorAll(".input, .textarea");
 
 inputs.forEach(input => {
     input.addEventListener("blur", input => validate(input.target));

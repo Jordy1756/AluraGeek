@@ -54,13 +54,16 @@
             </section>
             <section class="concat">
                 <h3 class="concat-title">Hable con nosotros</h3>
-                <form class="concat-form" action="">
-                    <div class="concat-input-box">
-                        <input class="concat-input" type="text" name="name" placeholder="Nombre" required />
-                        <label class="concat-label" for="name">Nombre</label>
+                <form class="concat-form">
+                    <div class="input-box">
+                        <input id="name" class="input" type="text" placeholder="Nombre" required />
+                        <label class="label">Nombre</label>
+                        <span class="input-error"></span>
                     </div>
-                    <div class="concat-input-box">
-                        <textarea class="concat-textarea" name="message" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                    <div class="input-box">
+                        <textarea id="message" class="textarea" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                        <label class="label">Mensaje</label>
+                        <span class="input-error"></span>
                     </div>
                     <button type="submit" class="concat-button-send">Enviar mensaje</button>
                 </form>
