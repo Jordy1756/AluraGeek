@@ -14,14 +14,6 @@
     gap: 1rem;
 }
 
-.login-button-send {
-    cursor: pointer;
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    padding: 1rem 2rem;
-    border: none;
-} 
-
 @media screen and (max-width: 768px) {
     .login-form {
         width: 70%;

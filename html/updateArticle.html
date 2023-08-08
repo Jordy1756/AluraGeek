@@ -6,7 +6,7 @@
         <title>AluraGeek</title>
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/addArticle.css" />
+        <link rel="stylesheet" href="../css/manageArticle.css" />
         <link rel="stylesheet" href="../css/footer.css" />
     </head>
     <body>
@@ -29,27 +29,27 @@
             </section>
         </header>
         <main class="main-add-article">
-            <h1>Actualizar producto</h1>
+            <h1>Actualizar nuevo producto</h1>
             <form class="add-article-form" action="" enctype="multipart/form-data">
-                <div class="add-article-input-box">
-                    <input class="add-article-input" type="file" name="image" placeholder="Nombre" required accept="image/*" />
-                    <label class="add-article-label" for="image">URL de la imagen</label>
+                <div class="input-box">
+                    <input class="input" type="file" name="image" placeholder="Nombre" required accept="image/*" />
+                    <label class="label" for="image">URL de la imagen</label>
                 </div>
-                <div class="add-article-input-box">
-                    <input class="add-article-input" type="text" name="category" placeholder="Categoría" required />
-                    <label class="add-article-label" for="category">Categoría</label>
+                <div class="input-box">
+                    <input class="input" type="text" name="category" placeholder="Categoría" required />
+                    <label class="label" for="category">Categoría</label>
                 </div>
-                <div class="add-article-input-box">
-                    <input class="add-article-input" type="text" name="name" placeholder="Nombre del producto" required />
-                    <label class="add-article-label" for="name">Nombre del producto</label>
+                <div class="input-box">
+                    <input class="input" type="text" name="name" placeholder="Nombre del producto" required />
+                    <label class="label" for="name">Nombre del producto</label>
                 </div>
-                <div class="add-article-input-box">
-                    <input class="add-article-input" type="text" name="price" placeholder="Precio del producto" required />
-                    <label class="add-article-label" for="price">Precio del producto</label>
+                <div class="input-box">
+                    <input class="input" type="text" name="price" placeholder="Precio del producto" required />
+                    <label class="label" for="price">Precio del producto</label>
                 </div>
-                <div class="add-article-input-box">
-                    <input class="add-article-input" type="text" name="description" placeholder="Descripción" required />
-                    <label class="add-article-label" for="description">Descripción</label>
+                <div class="input-box">
+                    <input class="input" type="text" name="description" placeholder="Descripción" required />
+                    <label class="label" for="description">Descripción</label>
                 </div>
                 <button type="submit" class="add-article-button">Actualizar producto</button>
             </form>
@@ -87,4 +87,5 @@
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
     </body>
+    <script src="../js/validations.js"></script>
 </html>

@@ -21,17 +21,6 @@ main {
     background-color: var(--light-grey-color);
 }
 
-.button {
-    padding: 1rem;
-    background-color: var(--blue-color);
-    transition: all 500ms ease-in-out;
-}
-
-.button:hover {
-    opacity: 0.9;
-    cursor: pointer;
-}
-
 .input-box {
     width: 100%;
     margin-bottom: 1rem;
@@ -78,4 +67,16 @@ main {
 .input-error {
     margin: 0.5rem 0rem 0rem 0.5rem;
     color: #f80000;
+}
+
+.button {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    border: none;
+}
+
+.button:hover {
+    opacity: 0.9;
+    cursor: pointer;
 }

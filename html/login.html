@@ -41,7 +41,7 @@
                     <label class="label">Contraseña</label>
                     <span class="input-error"></span>
                 </div>
-                <button id="btn-login" type="submit" class="login-button-send">Entrar</button>
+                <button id="btn-login" type="submit" class="button">Entrar</button>
             </form>
         </main>
         <footer class="footer">
@@ -62,16 +62,16 @@
                 <h3 class="concat-title">Hable con nosotros</h3>
                 <form class="concat-form">
                     <div class="input-box">
-                        <input id="name" class="input" type="text" placeholder="Nombre" required />
+                        <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40"/>
                         <label class="label">Nombre</label>
                         <span class="input-error"></span>
                     </div>
                     <div class="input-box">
-                        <textarea id="message" class="textarea" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea id="message" class="textarea" cols="30" rows="5" placeholder="Escribe tu mensaje" required maxlength="120"></textarea>
                         <label class="label">Mensaje</label>
                         <span class="input-error"></span>
                     </div>
-                    <button type="submit" class="concat-button-send">Enviar mensaje</button>
+                    <button id="concat-button" type="button" class="button">Enviar mensaje</button>
                 </form>
             </section>
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>

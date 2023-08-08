@@ -9,16 +9,15 @@
     margin-bottom: 1rem;
 }
 
-.article-link {
-    display: flex;
-    place-items: center;
-    text-decoration: none;
-    gap: 0.2rem;
-    color: var(--blue-color);
-}
-
 .articles-container:not(:last-child) {
     margin-bottom: 2rem;
+}
+
+.article-link {
+    display: flex;
+    align-items: center;
+    color: var(--blue-color);
+    column-gap: 1rem;
 }
 
 .articles-container {
@@ -46,7 +45,7 @@
 }
 
 .article-button {
-    padding: .1rem;
+    padding: 0.1rem;
     border: none;
     background-color: transparent;
     display: grid;

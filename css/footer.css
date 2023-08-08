@@ -41,18 +41,6 @@
     margin-bottom: 0.5rem;
 }
 
-.concat-button-send {
-    cursor: pointer;
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    padding: 1rem;
-    border: none;
-}
-
-.concat-button-send:hover {
-    opacity: 0.9;
-}
-
 .copyright {
     padding: 1rem 0rem;
     text-align: center;
