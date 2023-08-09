@@ -1,0 +1,39 @@
+:root {
+    --light-blue-background: #eaf2fd;
+    --blue-color: #2a7ae4;
+    --light-grey-color: #f5f5f5;
+    --dark-grey-color: #a2a2a2;
+    --white-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    position: relative;
+}
+
+main {
+    background-color: var(--light-grey-color);
+}

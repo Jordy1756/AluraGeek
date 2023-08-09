@@ -7,9 +7,10 @@
         <link rel="stylesheet" href="../css/bases/style.css" />
         <link rel="stylesheet" href="../css/bases/components.css" />
         <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/login.css" />
+        <link rel="stylesheet" href="../css/articles.css" />
         <link rel="stylesheet" href="../css/footer.css" />
-        <link rel="stylesheet" href="../css/toast.css" />
+        <link rel="stylesheet" href="../css/modal.css" />
+        <link rel="stylesheet" href="../css/toast.css">
     </head>
     <body>
         <header class="header">
@@ -27,23 +28,17 @@
                         </svg>
                     </button>
                 </form>
+                <a class="login-button" href="../html/login.html">Login</a>
             </section>
         </header>
-        <main class="login-main">
-            <h1 class="login-title">Iniciar sesión</h1>
-            <form class="login-form" action="">
-                <div class="input-box">
-                    <input id="email" class="input" type="email" placeholder="Correo" required />
-                    <label class="label">Correo</label>
-                    <span class="input-error"></span>
+        <main>
+            <section class="articles-section">
+                <div class="articles-container-title-and-link">
+                    <h2 class="article-section-title">Articulos encontrados</h2>
+                    <a class="button" href="../html/addNewArticle.html">Agregar nuevo</a>
                 </div>
-                <div class="input-box">
-                    <input id="password" class="input" type="password" placeholder="Contraseña" required />
-                    <label class="label">Contraseña</label>
-                    <span class="input-error"></span>
-                </div>
-                <button id="btn-login" type="submit" class="button">Entrar</button>
-            </form>
+                <section class="articles-container"></section>
+            </section>
         </main>
         <footer class="footer">
             <section class="about-section">
@@ -85,11 +80,23 @@
             </section>
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
+        <!-- MODAL -->
+        <div class="modal">
+            <div class="modal-content">
+                <span class="modal-span">¿Estas seguro que deseas eliminar este articulo?</span>
+                <input type="hidden" id="article-id" value="" />
+                <div>
+                    <button class="button-modal" onclick="hideModal()">Cancelar</button>
+                    <button id="button-delete-article" class="button-modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <!-- TOATS -->
         <div class="toast">
-            <span class="toast-message">Correo y contraseña incorrectos</span>
+            <span class="toast-message"></span>
         </div>
     </body>
-    <script src="../js/validations.js"></script>
-    <script type="module" src="../controllers/userController.js"></script>
+    <script src="../js/index.js"></script>
     <script type="module" src="../controllers/articleController/search.js"></script>
+    <script type="module" src="../js/showSearchedItems.js"></script>
 </html>

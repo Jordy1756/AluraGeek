@@ -11,6 +11,7 @@ const add = (image, name, price, description) =>
         body: JSON.stringify({ id: uuid.v4(), name, price, description, image }),
     });
 
+const search = search => fetch(`http://localhost:3000/consoles?name_like=${search}`).then(response => response.json());
 const update = (id, image, name, price, description) =>
     fetch(`http://localhost:3000/consoles/${id}`, {
         method: "PUT",
@@ -27,6 +28,7 @@ const getAll = () => fetch(`http://localhost:3000/consoles?_limit=${limit}`).the
 export const services = {
     add,
     update,
+    search,
     remove,
     get,
     getAll,

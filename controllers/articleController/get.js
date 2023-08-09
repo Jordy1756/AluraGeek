@@ -1,6 +1,6 @@
-import { services as consoleServices } from "../model/consoleModel.js";
-import { services as starWarsServices } from "../model/starWarsModel.js";
-import { services as variousServices } from "../model/variousModel.js";
+import { services as consoleServices } from "../../model/consoleModel.js";
+import { services as starWarsServices } from "../../model/starWarsModel.js";
+import { services as variousServices } from "../../model/variousModel.js";
 
 const service = {
     consoles: consoleServices,

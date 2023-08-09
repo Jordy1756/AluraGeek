@@ -1,19 +1,14 @@
 const typeErrors = ["valueMissing", "typeMismatch"];
-
+const valueMissingMessage = "Debe llenar este campo";
 const errorMessages = {
-    name: {
-        valueMissing: "Debe llenar este campo",
-    },
-    message: {
-        valueMissing: "Debe llenar este campo",
-    },
-    email: {
-        valueMissing: "Debe llenar este campo",
-        typeMismatch: "Formato de correo no válido",
-    },
-    password: {
-        valueMissing: "Debe llenar este campo",
-    },
+    name: { valueMissing: valueMissingMessage },
+    message: { valueMissing: valueMissingMessage },
+    email: { valueMissing: valueMissingMessage, typeMismatch: "Formato de correo no válido" },
+    password: { valueMissing: valueMissingMessage },
+    image: { valueMissing: "Debe seleccionar una imagen" },
+    "product-name": { valueMissing: valueMissingMessage },
+    price: { valueMissing: valueMissingMessage },
+    description: { valueMissing: valueMissingMessage },
 };
 
 const inputs = document.querySelectorAll(".input, .textarea");

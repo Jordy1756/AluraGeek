@@ -4,10 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
-        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/bases/style.css" />
+        <link rel="stylesheet" href="../css/bases/components.css" />
         <link rel="stylesheet" href="../css/header.css" />
         <link rel="stylesheet" href="../css/manageArticle.css" />
         <link rel="stylesheet" href="../css/footer.css" />
+        <link rel="stylesheet" href="../css/toast.css" />
     </head>
     <body>
         <header class="header">
@@ -16,8 +18,8 @@
             </a>
             <section class="search-and-login">
                 <form class="form-search">
-                    <input class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                    <button type="submit" class="search-button">
+                    <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
+                    <button id="search-button" type="submit" class="search-button">
                         <svg width="24" height="24" fill="#A2A2A2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="m21.75 20.692-5.664-5.664a8.264 8.264 0 1 0-1.06 1.061l5.664 5.664 1.06-1.06ZM3 9.753a6.75 6.75 0 1 1 6.75 6.75A6.758 6.758 0 0 1 3 9.753Z"
@@ -25,31 +27,49 @@
                         </svg>
                     </button>
                 </form>
-                <a class="login-button" href="../html/login.html">Login</a>
+                <a class="login-button" href="../index.html">Menú Administrador</a>
             </section>
         </header>
         <main class="main-add-article">
             <h1>Agregar nuevo producto</h1>
             <form class="add-article-form" action="" enctype="multipart/form-data">
                 <div class="input-box">
-                    <input class="input" type="file" name="image" placeholder="Nombre" required accept="image/*" />
-                    <label class="label" for="image">URL de la imagen</label>
+                    <input id="image" class="input" type="file" required accept="image/*" />
+                    <label class="label">URL de la imagen</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="category" placeholder="Categoría" required />
-                    <label class="label" for="category">Categoría</label>
+                    <select id="category" class="input">
+                        <option value="consoles">Consolas</option>
+                        <option value="starWars">Star Wars</option>
+                        <option value="various">Diversos</option>
+                    </select>
+                    <label class="label">Categoría</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="name" placeholder="Nombre del producto" required />
-                    <label class="label" for="name">Nombre del producto</label>
+                    <input id="product-name" class="input" type="text" placeholder="Nombre del producto" required maxlength="20" />
+                    <label class="label">Nombre del producto</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="price" placeholder="Precio del producto" required />
-                    <label class="label" for="price">Precio del producto</label>
+                    <input id="price" class="input" type="text" placeholder="Precio del producto" required />
+                    <label class="label">Precio del producto</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="description" placeholder="Descripción" required />
-                    <label class="label" for="description">Descripción</label>
+                    <textarea
+                        id="description"
+                        class="textarea"
+                        type="text"
+                        placeholder="Descripción"
+                        cols="30"
+                        rows="5"
+                        required
+                        maxlength="150"
+                    ></textarea>
+                    <label class="label">Descripción</label>
+                    <span class="input-error"></span>
                 </div>
                 <button type="submit" class="add-article-button">Agregar producto</button>
             </form>
@@ -72,20 +92,32 @@
                 <h3 class="concat-title">Hable con nosotros</h3>
                 <form class="concat-form">
                     <div class="input-box">
-                        <input id="name" class="input" type="text" placeholder="Nombre" required />
+                        <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
                         <label class="label">Nombre</label>
                         <span class="input-error"></span>
                     </div>
                     <div class="input-box">
-                        <textarea id="message" class="textarea" cols="30" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea
+                            id="message"
+                            class="textarea"
+                            cols="30"
+                            rows="5"
+                            placeholder="Escribe tu mensaje"
+                            required
+                            maxlength="120"
+                        ></textarea>
                         <label class="label">Mensaje</label>
                         <span class="input-error"></span>
                     </div>
-                    <button type="submit" class="concat-button-send">Enviar mensaje</button>
+                    <button id="concat-button" type="button" class="button">Enviar mensaje</button>
                 </form>
             </section>
             <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
         </footer>
+        <div class="toast">
+            <span class="toast-message"></span>
+        </div>
     </body>
     <script src="../js/validations.js"></script>
+    <script type="module" src="../controllers/articleController/search.js"></script>
 </html>

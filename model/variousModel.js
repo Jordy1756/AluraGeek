@@ -18,6 +18,8 @@ const update = (id, image, name, price, description) =>
         body: JSON.stringify({ name, price, description, image }),
     });
 
+const search = search => fetch(`http://localhost:3000/various?name_like=${search}`).then(response => response.json());
+
 const remove = id => fetch(`http://localhost:3000/various/${id}`, { method: "DELETE" });
 
 const get = id => fetch(`http://localhost:3000/various/${id}`).then(response => response.json());
@@ -27,6 +29,7 @@ const getAll = () => fetch(`http://localhost:3000/various?_limit=${limit}`).then
 export const services = {
     add,
     update,
+    search,
     remove,
     get,
     getAll,
