@@ -1,11 +1,14 @@
 import { services } from "../model/variousModel.js";
 
+const width = window.innerWidth;
+const limit = width >= 1250 ? 6 : width >= 1010 ? 5 : 4;
+
 const getAll = async () => {
     try {
-        const various = await services.getAll();
+        const various = await services.getSome(limit);
         const container = document.getElementById("various-articles");
         if (various.length === 0) throw new Error();
-        various.forEach(({id, image, name, price}) => {
+        various.forEach(({ id, image, name, price }) => {
             const article = `
                 <article class="article">
                     <picture class="article-container-image">

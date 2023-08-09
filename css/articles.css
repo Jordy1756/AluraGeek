@@ -18,6 +18,7 @@
     align-items: center;
     color: var(--blue-color);
     column-gap: 1rem;
+    text-decoration: none;
 }
 
 .articles-container {

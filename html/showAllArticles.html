@@ -35,7 +35,7 @@
             <section class="articles-section">
                 <div class="articles-container-title-and-link">
                     <h2 class="article-section-title"></h2>
-                    <a class="button" href="../html/addNewArticle.html">Agregar nuevo</a>
+                    <a id="add-new-article-button" class="button" href="../html/addNewArticle.html">Agregar nuevo</a>
                 </div>
                 <section class="articles-container"></section>
             </section>
@@ -96,7 +96,8 @@
             <span class="toast-message"></span>
         </div>
     </body>
-    <script src="../js/index.js"></script>
     <script type="module" src="../controllers/articleController/getAll.js"></script>
     <script type="module" src="../controllers/articleController/search.js"></script>
+    <script type="module" src="../controllers/concatController.js"></script>
+    <script src="../js/index.js"></script>
 </html>

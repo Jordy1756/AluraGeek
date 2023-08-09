@@ -21,6 +21,7 @@ const verify = async (email, password) => {
     try {
         const user = await services.verify(email, password);
         if (user.length === 0) throw new Error();
+        localStorage.setItem("email", user[0].email);
         window.location.href = "../index.html";
     } catch (error) {
         showToast();

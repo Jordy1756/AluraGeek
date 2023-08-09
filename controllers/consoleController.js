@@ -1,8 +1,11 @@
 import { services } from "../model/consoleModel.js";
 
+const width = window.innerWidth;
+const limit = width >= 1250 ? 6 : width >= 1010 ? 5 : 4;
+
 const getAll = async () => {
     try {
-        const consoles = await services.getAll();
+        const consoles = await services.getSome(limit);
         const container = document.getElementById("console-articles");
         if (consoles.length === 0) throw new Error();
 

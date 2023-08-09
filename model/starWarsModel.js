@@ -24,7 +24,9 @@ const remove = id => fetch(`http://localhost:3000/starWars/${id}`, { method: "DE
 
 const get = id => fetch(`http://localhost:3000/starWars/${id}`).then(response => response.json());
 
-const getAll = () => fetch(`http://localhost:3000/starWars?_limit=${limit}`).then(response => response.json());
+const getSome = limit => fetch(`http://localhost:3000/starWars?_limit=${limit}`).then(response => response.json());
+
+const getAll = () => fetch("http://localhost:3000/starWars").then(response => response.json());
 
 export const services = {
     add,
@@ -32,5 +34,6 @@ export const services = {
     search,
     remove,
     get,
+    getSome,
     getAll,
 };

@@ -1,7 +1,10 @@
 import { services } from "../model/starWarsModel.js";
 
+const width = window.innerWidth;
+const limit = width >= 1250 ? 6 : width >= 1010 ? 5 : 4;
+
 const getAll = async () => {
-    const starWars = await services.getAll();
+    const starWars = await services.getSome(limit);
     const container = document.getElementById("star-wars-articles");
 
     starWars.forEach(({ id, name, price, image }) => {
