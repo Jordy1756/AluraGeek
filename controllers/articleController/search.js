@@ -16,13 +16,16 @@ const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", async event => {
     event.preventDefault();
     const inputSearch = document.querySelector("#search").value;
-    const consoles = await consoleServices.search(inputSearch);
-    const starWars = await starWarsServices.search(inputSearch);
-    const various = await variousServices.search(inputSearch);
-    console.log(consoles, starWars, various);
-    if (consoles.length === 0 && starWars.length === 0 && various.length === 0) showToast("No se encontraron articulos");
-    else {
+    try {
+        if (inputSearch === "") throw new Error("El campo no debe estas vacío");
+        const consoles = await consoleServices.search(inputSearch);
+        const starWars = await starWarsServices.search(inputSearch);
+        const various = await variousServices.search(inputSearch);
+
+        if (consoles.length === 0 && starWars.length === 0 && various.length === 0) throw new Error("No se encontraron artículos");
         localStorage.setItem("articles", JSON.stringify({ consoles, starWars, various }));
         window.location.href = "../../html/searchArticle.html";
+    } catch (error) {
+        showToast(error.message);
     }
 });

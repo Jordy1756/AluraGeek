@@ -40,6 +40,10 @@
     border-radius: 0rem 5rem 5rem 0rem;
 }
 
+.search-button:hover {
+    cursor: pointer;
+}
+
 .login-button {
     text-align: center;
     border: 1px solid var(--blue-color);
@@ -73,4 +77,4 @@
     .search-button {
         background-color: transparent;
     }
-} 
+}

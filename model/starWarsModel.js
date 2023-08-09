@@ -1,9 +1,3 @@
-let limit;
-const width = window.innerWidth;
-if (width >= 1250) limit = 6;
-else if (width >= 1010 && width < 1250) limit = 5;
-else limit = 4;
-
 const add = (image, name, price, description) =>
     fetch("http://localhost:3000/starWars", {
         method: "POST",
