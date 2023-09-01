@@ -13,9 +13,7 @@ const errorMessages = {
 
 const inputs = document.querySelectorAll(".input, .textarea");
 
-inputs.forEach(input => {
-    input.addEventListener("blur", input => validate(input.target));
-});
+inputs.forEach(input => input.addEventListener("blur", input => validate(input.target)));
 
 const validate = input => {
     const span = input.parentElement.querySelector(".input-error");

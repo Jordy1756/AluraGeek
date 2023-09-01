@@ -4,6 +4,7 @@ const add = (image, name, price, description) =>
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: uuid.v4(), name, price, description, image }),
     });
+
 const update = (id, image, name, price, description) =>
     fetch(`http://localhost:3000/consoles/${id}`, {
         method: "PUT",

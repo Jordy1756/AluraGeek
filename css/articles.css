@@ -39,9 +39,10 @@
 .actions {
     position: absolute;
     top: 1%;
-    left: 64%;
+    right: 1%;
     display: flex;
     column-gap: 0.5rem;
+    z-index: 1;
 }
 
 .article-button {
@@ -57,13 +58,26 @@
     transform: scale(1.1);
 }
 
+.article-container-image::before {
+    content: "";
+    background-color: rgb(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+}
+
 .article-container-image {
+    position: relative;
     display: flex;
+    z-index: 0;
 }
 
 .article-image {
-    width: 11rem;
-    height: 10.875rem;
+    width: 13rem;
+    height: 11rem;
     flex-grow: 1;
     border-radius: 0.3rem;
 }

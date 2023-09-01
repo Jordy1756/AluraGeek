@@ -37,13 +37,13 @@
     position: absolute;
     top: 1.2rem;
     left: 16px;
-    transition: all 1s;
+    transition: all 200ms;
     pointer-events: none;
 }
 
 .input-error {
     margin: 0.5rem 0rem 0rem 0.5rem;
-    color: #f80000;
+    color: var(--error-color);
 }
 
 .button {
@@ -53,9 +53,11 @@
     padding: 1rem 2rem;
     border: none;
     text-decoration: none;
+    z-index: 1
 }
 
 .button:hover {
     opacity: 0.9;
     cursor: pointer;
+    transform: scale(1.01);
 }

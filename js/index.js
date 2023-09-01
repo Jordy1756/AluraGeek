@@ -5,7 +5,7 @@ const hideElementIfExist = selector => {
     element && (element.style.display = "none");
 };
 
-email ? hideElementIfExist(".login-button") : hideElementIfExist("#add-new-article-button");
+email ? hideElementIfExist("#login-button") : hideElementIfExist("#add-new-article-button");
 
 function showModal(id) {
     const modal = document.querySelector(".modal");

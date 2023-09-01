@@ -14,7 +14,7 @@
     <body>
         <header class="header">
             <a href="../index.html" class="logo-image-container">
-                <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                <img class="logo-image" src="../assets/images/Logo.png" alt="Logo" />
             </a>
             <section class="search-and-login">
                 <form class="form-search">
@@ -31,35 +31,44 @@
             </section>
         </header>
         <main class="main-add-article">
-            <h1>Actualizar nuevo producto</h1>
+            <h1>Actualizar producto</h1>
             <form class="add-article-form" action="" enctype="multipart/form-data">
                 <div class="input-box">
-                    <input class="input" type="file" name="image" placeholder="Nombre" required accept="image/*" />
-                    <label class="label" for="image">URL de la imagen</label>
+                    <input id="image" class="input" type="text" placeholder="URL de la imagen" />
+                    <label class="label">URL de la imagen</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="category" placeholder="Categoría" required />
-                    <label class="label" for="category">Categoría</label>
+                    <select id="category" class="input">
+                        <option value="consoles">Consolas</option>
+                        <option value="starWars">Star Wars</option>
+                        <option value="various">Diversos</option>
+                    </select>
+                    <label class="label">Categoría</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="name" placeholder="Nombre del producto" required />
-                    <label class="label" for="name">Nombre del producto</label>
+                    <input id="product-name" class="input" type="text" placeholder="Nombre del producto" maxlength="20" />
+                    <label class="label">Nombre del producto</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="price" placeholder="Precio del producto" required />
-                    <label class="label" for="price">Precio del producto</label>
+                    <input id="price" class="input" type="text" placeholder="Precio del producto" />
+                    <label class="label">Precio del producto</label>
+                    <span class="input-error"></span>
                 </div>
                 <div class="input-box">
-                    <input class="input" type="text" name="description" placeholder="Descripción" required />
-                    <label class="label" for="description">Descripción</label>
+                    <textarea id="description" class="textarea" type="text" placeholder="Descripción" cols="30" rows="5" maxlength="150"></textarea>
+                    <label class="label">Descripción</label>
+                    <span class="input-error"></span>
                 </div>
-                <button type="submit" class="add-article-button">Actualizar producto</button>
+                <button id="button-update-article" type="button" class="add-article-button">Actualizar producto</button>
             </form>
         </main>
         <footer class="footer">
             <section class="about-section">
                 <picture class="logo-image-container">
-                    <img class="logo-image" src="../assets/images/App/Logo.png" alt="Logo" />
+                    <img class="logo-image" src="../assets/images/Logo.png" alt="Logo" />
                 </picture>
                 <ul class="about-menu">
                     <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
@@ -100,7 +109,9 @@
             <span class="toast-message"></span>
         </div>
     </body>
+    <script src="../js/uuid.min.js"></script>
     <script src="../js/validations.js"></script>
+    <script type="module" src="../controllers/articleController/update.js"></script>
     <script type="module" src="../controllers/articleController/search.js"></script>
     <script type="module" src="../controllers/concatController.js"></script>
 </html>
