@@ -9,10 +9,6 @@
     margin-bottom: 1rem;
 }
 
-.articles-container:not(:last-child) {
-    margin-bottom: 2rem;
-}
-
 .article-link {
     display: flex;
     align-items: center;
@@ -27,6 +23,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.articles-container:not(:last-child) {
+    margin-bottom: 2rem;
 }
 
 .article {

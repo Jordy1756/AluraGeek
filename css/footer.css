@@ -1,9 +1,8 @@
 .footer {
-    align-self: flex-end;
-    padding: 1rem 0rem 0rem 0rem;
+    padding: 3rem 0rem 0rem;
     background-color: var(--light-blue-background);
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
@@ -59,6 +58,7 @@
     }
 
     .about-section {
+        align-items: center;
         flex-direction: column;
     }
 }
