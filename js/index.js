@@ -1,11 +1,21 @@
 const email = localStorage.getItem("email");
+const logoutButton = document.getElementById("logout-button");
 
 const hideElementIfExist = selector => {
     const element = document.querySelector(selector);
     element && (element.style.display = "none");
 };
 
-email ? hideElementIfExist("#login-button") : hideElementIfExist("#add-new-article-button");
+if (email) {
+    hideElementIfExist("#login-button");
+    logoutButton.style.display = "block";
+} else hideElementIfExist("#add-new-article-button");
+
+logoutButton.addEventListener("click", () => {
+    localStorage.removeItem("email");
+    logoutButton.style.display = "none";
+    document.getElementById("login-button").style.display = "block";
+});
 
 function showModal(id) {
     const modal = document.querySelector(".modal");
