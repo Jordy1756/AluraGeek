@@ -1,4 +1,4 @@
-const handleWidth = width => (width >= 1250 ? 6 : width >= 1010 ? 5 : 4);
+const handleWidth = () => (window.innerWidth >= 1250 ? 6 : window.innerWidth >= 1010 ? 5 : 4);
 
 const showToast = (message, type) => {
     const toast = document.querySelector(".toast");

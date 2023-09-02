@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="../css/bases/style.css" />
         <link rel="stylesheet" href="../css/bases/components.css" />
         <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/product.css" />
         <link rel="stylesheet" href="../css/articles.css" />
+        <link rel="stylesheet" href="../css/product.css" />
         <link rel="stylesheet" href="../css/footer.css" />
         <link rel="stylesheet" href="../css/toast.css" />
     </head>
@@ -32,27 +32,24 @@
                 <a id="logout-button" class="button authentication-button" href="#">Log out</a>
             </section>
         </header>
-        <main class="main-show-article">
-            <article class="product">
-                <picture class="product-container-image">
-                    <img class="product-image" src="" alt="Imagen del producto" loading="lazy" />
+        <main>
+            <article class="article-selected">
+                <picture class="article-container-image-selected">
+                    <img class="article-image-selected" src="" alt="Imagen del producto" loading="lazy" />
                 </picture>
-                <section class="product-section">
-                    <h1 class="product-name"></h1>
-                    <span class="product-price"></span>
-                    <p class="product-description"></p>
+                <section class="article-section-selected">
+                    <h1 class="article-name-selected"></h1>
+                    <span class="article-price-selected"></span>
+                    <p class="article-description-selected"></p>
                 </section>
             </article>
-            <section class="articles-section">
-                <h2 class="article-section-title">Productos similares</h2>
-                <section class="articles-container"></section>
-            </section>
+            <section class="articles-section"></section>
         </main>
         <footer class="footer">
             <section class="about-section">
-                <picture class="logo-image-container">
+                <a href="../index.html" class="logo-image-container">
                     <img class="logo-image" src="../assets/images/Logo.png" alt="Logo" loading="lazy" />
-                </picture>
+                </a>
                 <ul class="about-menu">
                     <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
                     <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>

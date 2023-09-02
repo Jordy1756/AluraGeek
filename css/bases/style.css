@@ -8,6 +8,13 @@
     --error-color: #f80000;
 }
 
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets/fonts/Inter.ttf") format("truetype");
+}
+
 ::-webkit-scrollbar {
     width: 0.2rem;
 }
@@ -31,7 +38,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Inter";
     font-size: 1rem;
     position: relative;
     box-sizing: border-box;

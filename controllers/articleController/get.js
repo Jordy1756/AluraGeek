@@ -1,6 +1,7 @@
 import { services as consoleServices } from "../../model/consoleModel.js";
 import { services as starWarsServices } from "../../model/starWarsModel.js";
 import { services as variousServices } from "../../model/variousModel.js";
+import { utils } from "../../js/utils.js";
 
 const service = {
     consoles: consoleServices,
@@ -12,55 +13,31 @@ const url = new URL(window.location);
 const id = url.searchParams.get("id");
 const category = url.searchParams.get("category");
 
-const width = window.innerWidth;
-const limit = width >= 1250 ? 6 : width >= 1010 ? 5 : 4;
-
-const showToast = message => {
-    const toast = document.querySelector(".toast");
-    toast.classList.add("toast-active");
-    toast.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-        toast.classList.remove("toast-active");
-    }, 3000);
-};
-
-function setProduct(name, price, description, image) {
-    document.querySelector(".product-image").src = image;
-    document.querySelector(".product-name").textContent = name;
-    document.querySelector(".product-price").textContent = price;
-    document.querySelector(".product-description").textContent = description;
+function setArticle(name, price, description, image) {
+    document.querySelector(".article-image-selected").src = image;
+    document.querySelector(".article-name-selected").textContent = name;
+    document.querySelector(".article-price-selected").textContent = price;
+    document.querySelector(".article-description-selected").textContent = description;
 }
 
-const getProduct = async (category, id) => {
-    return await service[category].get(id);
-};
+const getArticle = async (category, id) => await service[category].get(id);
 
-const showSimilarProducts = products => {
-    const container = document.querySelector(".articles-container");
-    products.forEach(({ id, image, name, price }) => {
-        const article = `
-            <article class="article">
-                <picture class="article-container-image">
-                    <img class="article-image" src="${image}" alt="Imagen del producto" loading="lazy"/>
-                </picture>
-                <span class="article-name">${name}</span>
-                <span class="article-price">${price}</span>
-                <a class="article-link" href="../html/showArticle.html?category=${category}&id=${id}">Ver producto</a>
-            </article>`;
-        container.insertAdjacentHTML("afterbegin", article);
-    });
+const showSimilarArticles = articles => {
+    const articlesSection = document.querySelector(".articles-section");
+    articlesSection.insertAdjacentHTML("beforeend", utils.showHeaders("Artículos similares", category));
+    articlesSection.appendChild(utils.showArticles(articles, category));
 };
 
 const main = async () => {
     try {
-        const { name, price, description, image } = await getProduct(category, id);
+        const { name, price, description, image } = await getArticle(category, id);
         if (name === "") throw new Error("Debes llenar todos los campos");
-        const products = await service[category].getSome(limit);
-        if (products.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
-        setProduct(name, price, description, image);
-        showSimilarProducts(products);
+        const articles = await service[category].getSome(utils.handleWidth());
+        if (articles.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
+        setArticle(name, price, description, image);
+        showSimilarArticles(articles);
     } catch (error) {
-        showToast(error.message);
+        utils.showToast(error.message, "error");
     }
 };
 
