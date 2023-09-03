@@ -3,6 +3,8 @@ import { services as starWarsServices } from "../../model/starWarsModel.js";
 import { services as variousServices } from "../../model/variousModel.js";
 import { utils } from "../../js/utils.js";
 
+const { handleWidth, showHeaders, showArticles, showToast } = utils;
+
 const service = {
     consoles: consoleServices,
     starWars: starWarsServices,
@@ -24,20 +26,20 @@ const getArticle = async (category, id) => await service[category].get(id);
 
 const showSimilarArticles = articles => {
     const articlesSection = document.querySelector(".articles-section");
-    articlesSection.insertAdjacentHTML("beforeend", utils.showHeaders("Artículos similares", category));
-    articlesSection.appendChild(utils.showArticles(articles, category));
+    articlesSection.insertAdjacentHTML("beforeend", showHeaders("Artículos similares", category, "."));
+    articlesSection.appendChild(showArticles(articles, category, "."));
 };
 
 const main = async () => {
     try {
         const { name, price, description, image } = await getArticle(category, id);
         if (name === "") throw new Error("Debes llenar todos los campos");
-        const articles = await service[category].getSome(utils.handleWidth());
-        if (articles.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
         setArticle(name, price, description, image);
+        const articles = await service[category].getSome(handleWidth());
+        if (articles.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
         showSimilarArticles(articles);
     } catch (error) {
-        utils.showToast(error.message, "error");
+        showToast(error.message, "error");
     }
 };
 

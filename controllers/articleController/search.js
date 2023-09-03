@@ -1,31 +1,26 @@
 import { services as consoleServices } from "../../model/consoleModel.js";
 import { services as starWarsServices } from "../../model/starWarsModel.js";
 import { services as variousServices } from "../../model/variousModel.js";
+import { utils } from "../../js/utils.js";
 
-const showToast = message => {
-    const toast = document.querySelector(".toast");
-    toast.classList.add("toast-active");
-    toast.parentElement.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-        toast.classList.remove("toast-active");
-    }, 3000);
-};
+const categories = ["consoles", "starWars", "various"];
 
 const searchButton = document.getElementById("search-button");
-
-searchButton.addEventListener("click", async event => {
-    event.preventDefault();
+searchButton.addEventListener("click", async e => {
+    e.preventDefault();
     const inputSearch = document.querySelector("#search").value;
     try {
         if (inputSearch === "") throw new Error("El campo no debe estas vacío");
-        const consoles = await consoleServices.search(inputSearch);
-        const starWars = await starWarsServices.search(inputSearch);
-        const various = await variousServices.search(inputSearch);
+        const articles = await Promise.all([
+            consoleServices.search(inputSearch),
+            starWarsServices.search(inputSearch),
+            variousServices.search(inputSearch),
+        ]).then(data => data.map((element, index) => element.map(item => ({ ...item, category: categories[index] }))).flat());
 
-        if (consoles.length === 0 && starWars.length === 0 && various.length === 0) throw new Error("No se encontraron artículos");
-        localStorage.setItem("articles", JSON.stringify({ consoles, starWars, various }));
+        if (articles.length === 0) throw new Error("No se encontraron artículos");
+        localStorage.setItem("articles", JSON.stringify(articles));
         window.location.href = "../../html/searchArticle.html";
     } catch (error) {
-        showToast(error.message);
+        utils.showToast(error.message, "error");
     }
 });

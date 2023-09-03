@@ -41,7 +41,6 @@
 .article-container-image {
     position: relative;
     display: flex;
-    z-index: 0;
 }
 
 .article-image {
@@ -117,5 +116,23 @@
     .article-container-image-selected {
         max-width: 100%;
         max-height: 40rem;
+    }
+}
+
+@media screen and (max-width: 496px) {
+
+    .article,
+    .article-container-image,
+    .article-image {
+        width: 100%;
+    }
+
+    .article-container-image {
+        max-height: 20rem;
+    }
+
+    .article-image {
+        height: 100%;
+        max-height: 35rem;
     }
 }

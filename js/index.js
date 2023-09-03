@@ -15,6 +15,7 @@ logoutButton.addEventListener("click", () => {
     localStorage.removeItem("email");
     logoutButton.style.display = "none";
     document.getElementById("login-button").style.display = "block";
+    !window.location.href.includes("index.html") && (window.location.href = "../index.html");
 });
 
 function showModal(id) {

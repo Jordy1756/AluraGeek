@@ -1,6 +1,7 @@
 import { services as consoleServices } from "../../model/consoleModel.js";
 import { services as starWarsServices } from "../../model/starWarsModel.js";
 import { services as variousServices } from "../../model/variousModel.js";
+import { utils } from "../../js/utils.js";
 
 const service = {
     consoles: consoleServices,
@@ -8,17 +9,8 @@ const service = {
     various: variousServices,
 };
 
-const showToast = (message, type) => {
-    const toast = document.querySelector(".toast");
-    toast.classList.add("toast-active", `toast-${type}`);
-    toast.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-        toast.classList.remove("toast-active");
-    }, 3000);
-};
-
-const button = document.getElementById("button-add-new-article");
-button.addEventListener("click", async e => {
+const addButton = document.getElementById("button-add-new-article");
+addButton.addEventListener("click", async e => {
     e.preventDefault();
     try {
         const image = document.getElementById("image").value;
@@ -28,8 +20,8 @@ button.addEventListener("click", async e => {
         const description = document.getElementById("description").value;
         if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
         await service[category].add(image, name, price, description);
-        showToast("El producto se agregó correctamente", "success");
+        utils.showToast("El producto se agregó correctamente", "success");
     } catch (error) {
-        showToast(error.message, "error");
+        utils.showToast(error.message, "error");
     }
 });

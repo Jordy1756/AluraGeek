@@ -1,6 +1,8 @@
 import { services } from "../model/concatModel.js";
 import { utils } from "../js/utils.js";
 
+const { showToast } = utils;
+
 const buttonConcat = document.getElementById("concat-button");
 buttonConcat.addEventListener("click", e => {
     e.preventDefault();
@@ -11,10 +13,9 @@ buttonConcat.addEventListener("click", e => {
 
 const add = async (name, message) => {
     try {
-        // TODO: FALTA HACER QUE NO RECARGUE LA PÁGINA
         await services.add(name, message);
-        utils.showToast("Mensaje enviado", "success");
+        showToast("Mensaje enviado", "success");
     } catch (error) {
-        utils.showToast("Ocurrió un error, intentalo más tarde", "error");
+        showToast("Ocurrió un error, intentalo más tarde", "error");
     }
 };
