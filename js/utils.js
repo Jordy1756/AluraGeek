@@ -35,8 +35,8 @@ const showArticles = (articles, category, url) => {
     return container;
 };
 
-const showAllArticles = (articles, articlesSection, category) => {
-    articles.forEach(({ id, image, name, price, description }) => {
+const showAllArticles = (articles, articlesSection) => {
+    articles.forEach(({ id, image, name, price, description, category }) => {
         const article = document.createElement("article");
         article.className = "article";
         article.innerHTML = `

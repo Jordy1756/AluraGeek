@@ -1,15 +1,7 @@
-import { services as consoleServices } from "../../model/consoleModel.js";
-import { services as starWarsServices } from "../../model/starWarsModel.js";
-import { services as variousServices } from "../../model/variousModel.js";
+import { services } from "../../model/articleModel.js";
 import { utils } from "../../js/utils.js";
 
 const { handleWidth, showHeaders, showArticles, showToast } = utils;
-
-const service = {
-    consoles: consoleServices,
-    starWars: starWarsServices,
-    various: variousServices,
-};
 
 const url = new URL(window.location);
 const id = url.searchParams.get("id");
@@ -22,8 +14,6 @@ function setArticle(name, price, description, image) {
     document.querySelector(".article-description-selected").textContent = description;
 }
 
-const getArticle = async (category, id) => await service[category].get(id);
-
 const showSimilarArticles = articles => {
     const articlesSection = document.querySelector(".articles-section");
     articlesSection.insertAdjacentHTML("beforeend", showHeaders("Artículos similares", category, "."));
@@ -32,10 +22,10 @@ const showSimilarArticles = articles => {
 
 const main = async () => {
     try {
-        const { name, price, description, image } = await getArticle(category, id);
+        const { name, price, description, image } = await services.get(id);
         if (name === "") throw new Error("Debes llenar todos los campos");
         setArticle(name, price, description, image);
-        const articles = await service[category].getSome(handleWidth());
+        const articles = await services.getSome(category, handleWidth());
         if (articles.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
         showSimilarArticles(articles);
     } catch (error) {

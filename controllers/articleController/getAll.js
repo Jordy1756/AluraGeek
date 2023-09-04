@@ -1,15 +1,7 @@
-import { services as consoleServices } from "../../model/consoleModel.js";
-import { services as starWarsServices } from "../../model/starWarsModel.js";
-import { services as variousServices } from "../../model/variousModel.js";
+import { services } from "../../model/articleModel.js";
 import { utils } from "../../js/utils.js";
 
-const service = {
-    consoles: consoleServices,
-    starWars: starWarsServices,
-    various: variousServices,
-};
-
-const names = {
+const categoryNames = {
     consoles: "Consolas",
     starWars: "Star Wars",
     various: "Diversos",
@@ -22,14 +14,14 @@ const category = url.searchParams.get("category");
 
 const deletebutton = document.getElementById("button-delete-article");
 deletebutton.addEventListener("click", () => {
-    service[category].remove(document.getElementById("article-id").value);
+    services.remove(document.getElementById("article-id").value);
 });
 
 const getAll = async () => {
     try {
-        const articles = await service[category].getAll();
+        const articles = await services.getAll(category);
         if (articles.length === 0) throw new Error("Ocurrió un error al cargar los artículos, por favor intentalo de nuevo más tarde");
-        document.querySelector(".article-section-title").textContent = names[category];
+        document.querySelector(".article-section-title").textContent = categoryNames[category];
         const articlesSection = document.querySelector(".articles-container");
         showAllArticles(articles, articlesSection, category);
     } catch (error) {
