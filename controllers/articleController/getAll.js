@@ -17,6 +17,14 @@ deletebutton.addEventListener("click", () => {
     services.remove(document.getElementById("article-id").value);
 });
 
+const goToAddButton = document.getElementById("add-new-article-button");
+goToAddButton.href = `../html/addNewArticle.html?category=${category}`;
+
+if (localStorage.getItem("success-update")) {
+    showToast("El artículo se actualizó correctamente", "success");
+    localStorage.removeItem("success-update");
+}
+
 const getAll = async () => {
     try {
         const articles = await services.getAll(category);

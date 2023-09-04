@@ -5,11 +5,11 @@ const add = (image, category, name, price, description) =>
         body: JSON.stringify({ id: uuid.v4(), name, price, description, image, category }),
     });
 
-const update = (id, image, name, price, description) =>
+const update = (id, image, category, name, price, description) =>
     fetch(`http://localhost:3000/articles/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, price, description, image }),
+        body: JSON.stringify({ name, price, description, image, category }),
     });
 
 const search = search => fetch(`http://localhost:3000/articles?name_like=${search}`).then(response => response.json());

@@ -12,11 +12,6 @@
 
 .add-article-button {
     width: 100%;
-    cursor: pointer;
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    padding: 1rem 2rem;
-    border: none;
 }
 
 @media screen and (max-width: 768px) {

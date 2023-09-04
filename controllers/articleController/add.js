@@ -1,13 +1,17 @@
-import { services as consoleServices } from "../../model/consoleModel.js";
-import { services as starWarsServices } from "../../model/starWarsModel.js";
-import { services as variousServices } from "../../model/variousModel.js";
+import { services } from "../../model/articleModel.js";
 import { utils } from "../../js/utils.js";
 
-const service = {
-    consoles: consoleServices,
-    starWars: starWarsServices,
-    various: variousServices,
-};
+const { showToast } = utils;
+
+const url = new URL(window.location);
+
+const backButton = document.getElementById("back-button");
+backButton.href = `./showAllArticles.html?category=${url.searchParams.get("category")}`;
+
+if (localStorage.getItem("success-add")) {
+    showToast("El producto se agregó correctamente", "success");
+    localStorage.removeItem("success-add");
+}
 
 const addButton = document.getElementById("button-add-new-article");
 addButton.addEventListener("click", async e => {
@@ -19,9 +23,9 @@ addButton.addEventListener("click", async e => {
         const price = document.getElementById("price").value;
         const description = document.getElementById("description").value;
         if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
-        await service[category].add(image, name, price, description);
-        utils.showToast("El producto se agregó correctamente", "success");
+        await services.add(image, category, name, price, description);
+        localStorage.setItem("success-add", true);
     } catch (error) {
-        utils.showToast(error.message, "error");
+        showToast(error.message, "error");
     }
 });

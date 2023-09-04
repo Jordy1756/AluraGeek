@@ -47,6 +47,7 @@
 }
 
 .button {
+    font-size: 1rem;
     text-align: center;
     background-color: var(--blue-color);
     color: var(--white-color);

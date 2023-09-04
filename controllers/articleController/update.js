@@ -1,25 +1,14 @@
-import { services as consoleServices, services } from "../../model/consoleModel.js";
-import { services as starWarsServices } from "../../model/starWarsModel.js";
-import { services as variousServices } from "../../model/variousModel.js";
-
-const service = {
-    consoles: consoleServices,
-    starWars: starWarsServices,
-    various: variousServices,
-};
+import { services } from "../../model/articleModel.js";
+import { utils } from "../../js/utils.js";
 
 const url = new URL(window.location);
 const id = url.searchParams.get("id");
 const categoryUrl = url.searchParams.get("category");
 
-const showToast = (message, type) => {
-    const toast = document.querySelector(".toast");
-    toast.classList.add("toast-active", `toast-${type}`);
-    toast.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-        toast.classList.remove("toast-active");
-    }, 3000);
-};
+const { showToast } = utils;
+
+const backButton = document.getElementById("back-button");
+backButton.href = `./showAllArticles.html?category=${categoryUrl}`;
 
 const setData = () => {
     document.getElementById("image").value = url.searchParams.get("image");
@@ -29,8 +18,8 @@ const setData = () => {
     document.getElementById("description").value = url.searchParams.get("description");
 };
 
-const button = document.getElementById("button-update-article");
-button.addEventListener("click", async e => {
+const updateButton = document.getElementById("button-update-article");
+updateButton.addEventListener("click", async e => {
     e.preventDefault();
     try {
         const image = document.getElementById("image").value;
@@ -39,11 +28,9 @@ button.addEventListener("click", async e => {
         const price = document.getElementById("price").value;
         const description = document.getElementById("description").value;
         if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
-        if (categoryUrl !== category) {
-            await service[categoryUrl].remove(id);
-            await service[category].add(image, name, price, description);
-        } else await service[category].update(id, image, name, price, description);
-        showToast("El producto se actualizó correctamente", "success");
+        await services.update(id, image, category, name, price, description);
+        window.location.href = `./showAllArticles.html?category=${categoryUrl}`;
+        localStorage.setItem("success-update", true);
     } catch (error) {
         showToast(error.message, "error");
     }
