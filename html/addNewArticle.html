@@ -17,13 +17,21 @@
                 <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
             </a>
             <section class="search-and-login">
-                <form class="form-search">
-                    <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                    <button id="search-button" type="button" class="search-button">
-                        <img src="../assets/images/search.svg" alt="Boton buscar" />
-                    </button>
-                </form>
+                <div id="container-search">
+                    <form class="form-search">
+                        <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
+                        <button id="search-button" type="submit" class="search-button">
+                            <img src="../assets/images/search.svg" alt="Boton buscar" />
+                        </button>
+                    </form>
+                </div>
+                <button class="button-active-search">
+                    <img src="../assets/images/search.svg" alt="Boton buscar" />
+                </button>
                 <a id="back-button" class="button header-button" href="./showAllArticles.html">Volver</a>
+                <button class="button-exit-search">
+                    <img src="../assets/images/exit.svg" alt="Boton salir" />
+                </button>
             </section>
         </header>
         <main class="main-article">
@@ -114,7 +122,7 @@
             <span class="toast-message"></span>
         </div>
     </body>
-    <script src="../js/index.js"></script>
+    <script src="../js/activateModalSearch.js"></script>
     <script src="../js/uuid.min.js"></script>
     <script src="../js/validations.js"></script>
     <script type="module" src="../controllers/articleController/add.js"></script>
