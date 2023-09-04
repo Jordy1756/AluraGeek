@@ -1,4 +1,4 @@
-.main-add-article {
+.main-article {
     display: grid;
     place-items: center;
     row-gap: 1rem;
@@ -6,22 +6,22 @@
     background-color: var(--light-grey-color);
 }
 
-.add-article-form {
+.article-form {
     width: 60%;
 }
 
-.add-article-button {
+.article-button {
     width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-    .add-article-form {
+    .article-form {
         width: 90%;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .add-article-form {
+    .article-form {
         width: 90%;
     }
 }

@@ -7,32 +7,28 @@
         <link rel="stylesheet" href="../css/bases/style.css" />
         <link rel="stylesheet" href="../css/bases/components.css" />
         <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/manageArticle.css" />
+        <link rel="stylesheet" href="../css/add-and-update-article.css" />
         <link rel="stylesheet" href="../css/footer.css" />
         <link rel="stylesheet" href="../css/toast.css" />
     </head>
     <body>
         <header class="header">
             <a href="../index.html" class="logo-image-container">
-                <img class="logo-image" src="../assets/images/Logo.png" alt="Logo" />
+                <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
             </a>
             <section class="search-and-login">
                 <form class="form-search">
                     <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
                     <button id="search-button" type="button" class="search-button">
-                        <svg width="24" height="24" fill="#A2A2A2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m21.75 20.692-5.664-5.664a8.264 8.264 0 1 0-1.06 1.061l5.664 5.664 1.06-1.06ZM3 9.753a6.75 6.75 0 1 1 6.75 6.75A6.758 6.758 0 0 1 3 9.753Z"
-                            ></path>
-                        </svg>
+                        <img src="../assets/images/search.svg" alt="Boton buscar">
                     </button>
                 </form>
                 <a id="back-button" class="button header-button" href="./showAllArticles.html">Volver</a>
             </section>
         </header>
-        <main class="main-add-article">
+        <main class="main-article">
             <h1>Actualizar producto</h1>
-            <form class="add-article-form" action="" enctype="multipart/form-data">
+            <form class="article-form" action="" enctype="multipart/form-data">
                 <div class="input-box">
                     <input id="image" class="input" type="text" placeholder="URL de la imagen" required />
                     <label class="label">URL de la imagen</label>
@@ -71,13 +67,13 @@
                     <label class="label">Descripción</label>
                     <span class="input-error"></span>
                 </div>
-                <button id="button-update-article" type="button" class="button add-article-button">Actualizar producto</button>
+                <button id="button-update-article" type="button" class="button article-button">Actualizar producto</button>
             </form>
         </main>
         <footer class="footer">
             <section class="about-section">
                 <picture class="logo-image-container">
-                    <img class="logo-image" src="../assets/images/Logo.png" alt="Logo" />
+                    <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
                 </picture>
                 <ul class="about-menu">
                     <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
@@ -118,6 +114,7 @@
             <span class="toast-message"></span>
         </div>
     </body>
+    <script src="../js/index.js"></script>
     <script src="../js/uuid.min.js"></script>
     <script src="../js/validations.js"></script>
     <script type="module" src="../controllers/articleController/update.js"></script>

@@ -18,6 +18,8 @@ logoutButton.addEventListener("click", () => {
     !window.location.href.includes("index.html") && (window.location.href = "../index.html");
 });
 
+localStorage.removeItem("articles");
+
 function showModal(id) {
     const modal = document.querySelector(".modal");
     modal.classList.add("modal-active");

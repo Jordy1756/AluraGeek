@@ -14,8 +14,13 @@ buttonConcat.addEventListener("click", e => {
 const add = async (name, message) => {
     try {
         await services.add(name, message);
-        showToast("Mensaje enviado", "success");
+        localStorage.setItem("concat-success", true);
     } catch (error) {
         showToast("Ocurrió un error, intentalo más tarde", "error");
     }
 };
+
+if (localStorage.getItem("concat-success")) {
+    showToast("Mensaje enviado", "success");
+    localStorage.removeItem("concat-success");
+}

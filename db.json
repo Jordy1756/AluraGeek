@@ -158,14 +158,6 @@
       "description": "dassd",
       "image": "https://http2.mlstatic.com/D_NQ_NP_674692-MLA46518366889_062021-O.webp",
       "category": "various"
-    },
-    {
-      "name": "Prueba",
-      "price": "60",
-      "description": "dsfdf",
-      "image": "https://github.com/Jordy756.png",
-      "category": "consoles",
-      "id": "8248aac7-9a44-4ae3-8d9d-3c656c2c4c12"
     }
   ],
   "concats": [
@@ -193,6 +185,11 @@
       "id": "422e26d9-a3de-433f-ad23-1bf09f004cb4",
       "name": "t",
       "message": "t"
+    },
+    {
+      "id": "00871858-ad45-44f5-a02f-3afa43791b33",
+      "name": "Hola",
+      "message": "Mundo"
     }
   ]
 }
