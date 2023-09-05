@@ -8,10 +8,13 @@ const url = new URL(window.location);
 const backButton = document.getElementById("back-button");
 backButton.href = `./showAllArticles.html?category=${url.searchParams.get("category")}`;
 
-if (localStorage.getItem("success-add")) {
-    showToast("El producto se agregó correctamente", "success");
-    localStorage.removeItem("success-add");
-}
+const clean = (image, category, name, price, description) => {
+    image.value = "";
+    category.value = "";
+    name.value = "";
+    price.value = "";
+    description.value = "";
+};
 
 const addButton = document.getElementById("button-add-new-article");
 addButton.addEventListener("click", async e => {
@@ -24,7 +27,8 @@ addButton.addEventListener("click", async e => {
         const description = document.getElementById("description").value;
         if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
         await services.add(image, category, name, price, description);
-        localStorage.setItem("success-add", true);
+        showToast("El producto se agregó correctamente", "success");
+        clean(image, category, name, price, description);
     } catch (error) {
         showToast(error.message, "error");
     }
