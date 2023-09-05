@@ -3,7 +3,7 @@ const add = (image, category, name, price, description) =>
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: uuid.v4(), name, price, description, image, category }),
-    });
+    }).then(response => response.json());
 
 const update = (id, image, category, name, price, description) =>
     fetch(`https://alura-geek-fake-api.vercel.app/articles/${id}`, {
