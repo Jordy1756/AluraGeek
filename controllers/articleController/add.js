@@ -26,7 +26,9 @@ addButton.addEventListener("click", async e => {
         const price = document.getElementById("price").value;
         const description = document.getElementById("description").value;
         if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
-        await services.add(image, category, name, price, description);
+        const response = await services.add(image, category, name, price, description);
+
+        console.log(response);
         showToast("El producto se agregó correctamente", "success");
         clean(image, category, name, price, description);
     } catch (error) {

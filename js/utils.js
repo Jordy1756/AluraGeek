@@ -42,10 +42,10 @@ const showAllArticles = (articles, articlesSection) => {
         article.innerHTML = `
             <div class="actions">
                 <a class="article-button" href="../html/updateArticle.html?id=${id}&image=${image}&name=${name}&price=${price}&description=${description}&category=${category}">
-                    <img class="logo-image" src="../assets/images/edit.svg" alt="Editar" />
+                    <img class="button-image" src="../assets/images/edit.svg" alt="Editar" />
                 </a>
                 <button type="button" class="article-button" onclick="showModal('${id}')">
-                    <img class="button-image" src="../assets/images/delete.svg"/>
+                    <img class="button-image" src="../assets/images/delete.svg" alt="eliminar"/>
                 </button>
             </div>
             <picture class="article-container-image">
