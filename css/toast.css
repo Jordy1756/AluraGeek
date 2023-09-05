@@ -1,8 +1,8 @@
 .toast {
     padding: 1.5rem;
     position: fixed;
-    bottom: -20%;
-    right: 2%;
+    bottom: -20rem;
+    right: 1rem;
     border-radius: 0.5rem;
     text-align: center;
     color: var(--white-color);
@@ -11,7 +11,7 @@
 }
 
 .toast-active {
-    bottom: 3%;
+    bottom: 1rem;
 }
 
 .toast-success {
