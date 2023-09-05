@@ -2,6 +2,7 @@
     width: 100%;
     margin-bottom: 1rem;
     position: relative;
+    text-align: start;
 }
 
 .input,
