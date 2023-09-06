@@ -11,6 +11,7 @@
 .about-section {
     width: 40%;
     display: flex;
+    align-items: start;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
@@ -29,7 +30,7 @@
 
 .about-menu-link {
     text-decoration: none;
-    color: black;
+    color: var(--black-color);
 }
 
 .concat {
@@ -44,7 +45,7 @@
     padding: 1rem 0rem;
     text-align: center;
     width: 100%;
-    background-color: white;
+    background-color: var(--white-color);
 }
 
 @media screen and (max-width: 480px) {
