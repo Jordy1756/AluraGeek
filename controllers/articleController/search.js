@@ -1,6 +1,8 @@
 import { services } from "../../model/articleModel.js";
 import { utils } from "../../js/utils.js";
 
+const { showToast } = utils;
+
 const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", async e => {
     e.preventDefault();
@@ -13,6 +15,6 @@ searchButton.addEventListener("click", async e => {
         localStorage.setItem("articles", JSON.stringify(articles));
         window.location.href = "../../html/searchArticle.html";
     } catch (error) {
-        utils.showToast(error.message, "error");
+        showToast(error.message, "error");
     }
 });
