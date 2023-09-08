@@ -16,6 +16,6 @@ const add = async (name, message) => {
         await services.add(name, message);
         showToast("Mensaje enviado", "success");
     } catch (error) {
-        showToast("Ocurrió un error, intentalo más tarde", "error");
+        showToast(error.message, "error");
     }
 };
