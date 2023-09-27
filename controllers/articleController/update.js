@@ -27,7 +27,8 @@ updateButton.addEventListener("click", async e => {
         const name = document.getElementById("product-name").value;
         const price = document.getElementById("price").value;
         const description = document.getElementById("description").value;
-        if (image === "" || name === "" || price === "" || description === "") throw new Error("Debes llenar todos los campos");
+        if (image === "" || category.value === "" || name === "" || price === "" || description === "")
+            throw new Error("Debes llenar todos los campos");
         await services.update(id, image, category, name, price, description);
         window.location.href = `./showAllArticles.html?category=${categoryUrl}`;
         localStorage.setItem("success-update", true);
