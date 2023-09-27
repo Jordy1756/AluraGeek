@@ -9,7 +9,7 @@
 }
 
 .banner {
-    background: url("../assets/images/Hero.png") no-repeat;
+    background: url("../assets/images/Hero.webp") no-repeat;
     background-size: cover;
     background-position: center;
     padding: 1rem 0rem 1rem calc(5%);
@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 768px) {
     .banner {
-        background: url("../assets/images/Hero768.png") no-repeat;
+        background: url("../assets/images/Hero768.webp") no-repeat;
         background-size: cover;
         background-position: center;
     }
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 480px) {
     .banner {
-        background: url("../assets/images/Hero480.png") no-repeat;
+        background: url("../assets/images/Hero480.webp") no-repeat;
         background-size: cover;
         background-position: center;
     }
