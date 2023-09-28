@@ -12,115 +12,118 @@
         <link rel="stylesheet" href="../css/toast.css" />
     </head>
     <body>
-        <header class="header">
-            <a href="../index.html" class="logo-image-container">
-                <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
-            </a>
-            <section class="search-and-login">
-                <div id="container-search">
-                    <form class="form-search">
-                        <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                        <button id="search-button" type="submit" class="search-button">
-                            <img src="../assets/images/search.svg" alt="Boton buscar" />
-                        </button>
-                    </form>
-                </div>
-                <button class="button-active-search">
-                    <img src="../assets/images/search.svg" alt="Boton buscar" />
-                </button>
-                <a id="back-button" class="button header-button" href="./showAllArticles.html">Volver</a>
-                <button class="button-exit-search">
-                    <img src="../assets/images/exit.svg" alt="Boton salir" />
-                </button>
-            </section>
-        </header>
-        <main class="main-article">
-            <h1>Agregar nuevo producto</h1>
-            <form class="article-form">
-                <div class="input-box">
-                    <input id="image" class="input" type="text" placeholder="URL de la imagen" required />
-                    <label class="label">URL de la imagen</label>
-                    <span class="input-error"></span>
-                </div>
-                <div class="input-box">
-                    <select id="category" class="input">
-                        <option value="">Debe seleccionar una categoría</option>
-                        <option value="consoles">Consolas</option>
-                        <option value="starWars">Star Wars</option>
-                        <option value="various">Diversos</option>
-                    </select>
-                    <label class="label">Categoría</label>
-                    <span class="input-error"></span>
-                </div>
-                <div class="input-box">
-                    <input id="product-name" class="input" type="text" placeholder="Nombre del producto" maxlength="20" required />
-                    <label class="label">Nombre del producto</label>
-                    <span class="input-error"></span>
-                </div>
-                <div class="input-box">
-                    <input id="price" class="input" type="number" placeholder="Precio del producto" required />
-                    <label class="label">Precio del producto</label>
-                    <span class="input-error"></span>
-                </div>
-                <div class="input-box">
-                    <textarea
-                        id="description"
-                        class="textarea"
-                        type="text"
-                        placeholder="Descripción"
-                        cols="30"
-                        rows="5"
-                        maxlength="150"
-                        required
-                    ></textarea>
-                    <label class="label">Descripción</label>
-                    <span class="input-error"></span>
-                </div>
-                <button id="button-add-new-article" type="submit" class="button article-button">Agregar producto</button>
-            </form>
-        </main>
-        <footer class="footer">
-            <section class="about-section">
-                <picture class="logo-image-container">
+        <div class="container">
+            <header class="header">
+                <a href="../index.html" class="logo-image-container">
                     <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
-                </picture>
-                <ul class="about-menu">
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
-                </ul>
-            </section>
-            <section class="concat">
-                <h3 class="concat-title">Hable con nosotros</h3>
-                <form class="concat-form">
+                </a>
+                <section class="search-and-login">
+                    <div id="container-search">
+                        <form class="form-search">
+                            <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
+                            <button id="search-button" type="submit" class="search-button">
+                                <img src="../assets/images/search.svg" alt="Boton buscar" />
+                            </button>
+                        </form>
+                    </div>
+                    <button class="button-active-search">
+                        <img src="../assets/images/search.svg" alt="Boton buscar" />
+                    </button>
+                    <a id="back-button" class="button header-button" href="./showAllArticles.html">Volver</a>
+                    <button class="button-exit-search">
+                        <img src="../assets/images/exit.svg" alt="Boton salir" />
+                    </button>
+                </section>
+            </header>
+            <main class="main-article">
+                <h1>Agregar nuevo producto</h1>
+                <form class="article-form">
                     <div class="input-box">
-                        <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
-                        <label class="label">Nombre</label>
+                        <input id="image" class="input" type="text" placeholder="URL de la imagen" required />
+                        <label class="label">URL de la imagen</label>
+                        <span class="input-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <select id="category" class="input">
+                            <option value="">Debe seleccionar una categoría</option>
+                            <option value="consoles">Consolas</option>
+                            <option value="starWars">Star Wars</option>
+                            <option value="various">Diversos</option>
+                        </select>
+                        <label class="label">Categoría</label>
+                        <span class="input-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input id="product-name" class="input" type="text" placeholder="Nombre del producto" maxlength="20" required />
+                        <label class="label">Nombre del producto</label>
+                        <span class="input-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input id="price" class="input" type="number" placeholder="Precio del producto" required />
+                        <label class="label">Precio del producto</label>
                         <span class="input-error"></span>
                     </div>
                     <div class="input-box">
                         <textarea
-                            id="message"
+                            id="description"
                             class="textarea"
+                            type="text"
+                            placeholder="Descripción"
                             cols="30"
                             rows="5"
-                            placeholder="Escribe tu mensaje"
+                            maxlength="150"
                             required
-                            maxlength="120"
                         ></textarea>
-                        <label class="label">Mensaje</label>
+                        <label class="label">Descripción</label>
                         <span class="input-error"></span>
                     </div>
-                    <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
+                    <button id="button-add-new-article" type="submit" class="button article-button">Agregar producto</button>
                 </form>
-            </section>
-            <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
-        </footer>
-        <div class="toast">
-            <span class="toast-message"></span>
+            </main>
+            <footer class="footer">
+                <section class="about-section">
+                    <picture class="logo-image-container">
+                        <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
+                    </picture>
+                    <ul class="about-menu">
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
+                    </ul>
+                </section>
+                <section class="concat">
+                    <h3 class="concat-title">Hable con nosotros</h3>
+                    <form class="concat-form">
+                        <div class="input-box">
+                            <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
+                            <label class="label">Nombre</label>
+                            <span class="input-error"></span>
+                        </div>
+                        <div class="input-box">
+                            <textarea
+                                id="message"
+                                class="textarea"
+                                cols="30"
+                                rows="5"
+                                placeholder="Escribe tu mensaje"
+                                required
+                                maxlength="120"
+                            ></textarea>
+                            <label class="label">Mensaje</label>
+                            <span class="input-error"></span>
+                        </div>
+                        <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
+                    </form>
+                </section>
+                <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
+            </footer>
+            <!-- TOASTS -->
+            <div class="toast">
+                <span class="toast-message"></span>
+            </div>
         </div>
     </body>
     <script src="../js/uuid.min.js"></script>

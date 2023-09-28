@@ -12,87 +12,90 @@
         <link rel="stylesheet" href="../css/toast.css" />
     </head>
     <body>
-        <header class="header">
-            <a href="../index.html" class="logo-image-container">
-                <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
-            </a>
-            <section class="search-and-login">
-                <div id="container-search">
-                    <form class="form-search">
-                        <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                        <button id="search-button" type="submit" class="search-button">
-                            <img src="../assets/images/search.svg" alt="Boton buscar" />
-                        </button>
-                    </form>
-                </div>
-                <button class="button-active-search">
-                    <img src="../assets/images/search.svg" alt="Boton buscar" />
-                </button>
-                <a id="login-button" class="button header-button" href="../html/login.html">Login</a>
-                <a id="logout-button" class="button header-button" href="#">Log out</a>
-                <button class="button-exit-search">
-                    <img src="../assets/images/exit.svg" alt="Boton salir" />
-                </button>
-            </section>
-        </header>
-        <main class="login-main">
-            <h1 class="login-title">Iniciar sesión</h1>
-            <form class="login-form" action="">
-                <div class="input-box">
-                    <input id="email" class="input" type="email" placeholder="Correo" required />
-                    <label class="label">Correo</label>
-                    <span class="input-error"></span>
-                </div>
-                <div class="input-box">
-                    <input id="password" class="input" type="password" placeholder="Contraseña" required />
-                    <label class="label">Contraseña</label>
-                    <span class="input-error"></span>
-                </div>
-                <button id="btn-login" type="submit" class="button">Entrar</button>
-            </form>
-        </main>
-        <footer class="footer">
-            <section class="about-section">
-                <a class="logo-image-container" href="../index.html">
+        <div class="container">
+            <header class="header">
+                <a href="../index.html" class="logo-image-container">
                     <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
                 </a>
-                <ul class="about-menu">
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
-                    <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
-                </ul>
-            </section>
-            <section class="concat">
-                <h3 class="concat-title">Hable con nosotros</h3>
-                <form class="concat-form">
+                <section class="search-and-login">
+                    <div id="container-search">
+                        <form class="form-search">
+                            <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
+                            <button id="search-button" type="submit" class="search-button">
+                                <img src="../assets/images/search.svg" alt="Boton buscar" />
+                            </button>
+                        </form>
+                    </div>
+                    <button class="button-active-search">
+                        <img src="../assets/images/search.svg" alt="Boton buscar" />
+                    </button>
+                    <a id="login-button" class="button header-button" href="../html/login.html">Login</a>
+                    <a id="logout-button" class="button header-button" href="#">Log out</a>
+                    <button class="button-exit-search">
+                        <img src="../assets/images/exit.svg" alt="Boton salir" />
+                    </button>
+                </section>
+            </header>
+            <main class="login-main">
+                <h1 class="login-title">Iniciar sesión</h1>
+                <form class="login-form" action="">
                     <div class="input-box">
-                        <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
-                        <label class="label">Nombre</label>
+                        <input id="email" class="input" type="email" placeholder="Correo" required />
+                        <label class="label">Correo</label>
                         <span class="input-error"></span>
                     </div>
                     <div class="input-box">
-                        <textarea
-                            id="message"
-                            class="textarea"
-                            cols="30"
-                            rows="5"
-                            placeholder="Escribe tu mensaje"
-                            required
-                            maxlength="120"
-                        ></textarea>
-                        <label class="label">Mensaje</label>
+                        <input id="password" class="input" type="password" placeholder="Contraseña" required />
+                        <label class="label">Contraseña</label>
                         <span class="input-error"></span>
                     </div>
-                    <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
+                    <button id="btn-login" type="submit" class="button">Entrar</button>
                 </form>
-            </section>
-            <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
-        </footer>
-        <div class="toast">
-            <span class="toast-message"></span>
+            </main>
+            <footer class="footer">
+                <section class="about-section">
+                    <a class="logo-image-container" href="../index.html">
+                        <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
+                    </a>
+                    <ul class="about-menu">
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
+                        <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
+                    </ul>
+                </section>
+                <section class="concat">
+                    <h3 class="concat-title">Hable con nosotros</h3>
+                    <form class="concat-form">
+                        <div class="input-box">
+                            <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
+                            <label class="label">Nombre</label>
+                            <span class="input-error"></span>
+                        </div>
+                        <div class="input-box">
+                            <textarea
+                                id="message"
+                                class="textarea"
+                                cols="30"
+                                rows="5"
+                                placeholder="Escribe tu mensaje"
+                                required
+                                maxlength="120"
+                            ></textarea>
+                            <label class="label">Mensaje</label>
+                            <span class="input-error"></span>
+                        </div>
+                        <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
+                    </form>
+                </section>
+                <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
+            </footer>
+            <!-- TOASTS -->
+            <div class="toast">
+                <span class="toast-message"></span>
+            </div>
         </div>
     </body>
     <script src="../js/index.js"></script>
