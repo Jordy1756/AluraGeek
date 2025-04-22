@@ -1,9 +1,15 @@
 const typeErrors = ["valueMissing", "typeMismatch"];
 const valueMissingMessage = "Debe llenar este campo";
+
 const errorMessages = {
-    name: { valueMissing: valueMissingMessage },
+    name: {
+        valueMissing: valueMissingMessage,
+    },
     message: { valueMissing: valueMissingMessage },
-    email: { valueMissing: valueMissingMessage, typeMismatch: "Formato de correo no válido" },
+    email: {
+        valueMissing: valueMissingMessage,
+        typeMismatch: "Formato de correo no válido",
+    },
     password: { valueMissing: valueMissingMessage },
     image: { valueMissing: "Debe seleccionar una imagen" },
     "product-name": { valueMissing: valueMissingMessage },
