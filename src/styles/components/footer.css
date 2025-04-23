@@ -6,15 +6,16 @@
 
 .footer > section:first-child {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
     align-self: center;
+    gap: 1rem;
     width: min(calc(var(--max-width) + 2rem), 100%);
     padding: 3rem 1rem;
 }
 
 .footer > section > nav,
 .footer > section > div {
-    flex: 1;
+    flex: 200px 1;
 }
 
 .footer > section > nav {
@@ -60,4 +61,16 @@
     padding: 2rem 1rem;
     text-align: center;
     background-color: var(--neutral-50);
+}
+
+
+@media screen and (width <= 768px) { 
+    .footer > section:first-child {
+        gap: 3rem;
+    }
+
+    .footer > section > nav {
+        align-items: center;
+        flex-direction: column;
+    }
 }

@@ -1,68 +1,67 @@
 .header {
-    margin: 0 auto;
     position: sticky;
     top: 0;
     left: 0;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    justify-content: center;
     padding: 1rem;
-    width: min(calc(var(--max-width) + 2rem), 100%);
+    background-color: var(--neutral-50);
+    box-shadow: var(--box-shadow);
     z-index: 998;
 }
 
-.header > div,
 .header > nav {
+    width: min(var(--max-width), 100%);
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.header > .header__logo > a {
+.header > nav > a {
     display: flex;
 }
 
-.header > .header__logo > a > img {
+.header > nav > a > img {
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
 
-.header > .header__search > form {
-    flex: 1;
+.header > nav > form {
     display: flex;
 }
 
-.header > .header__search > form > :is(input, button) {
+.header > nav > form > :is(input, button) {
     padding-block: 12px;
     border: none;
     background-color: var(--neutral-100);
 }
 
-.header > .header__search > form > input {
+.header > nav > form > input {
     padding-left: 1rem;
     border-radius: 25px 0 0 25px;
     width: 100%;
 }
 
-.header > .header__search > form > button,
-.header > nav > button {
+.header > nav > form > button,
+.header > nav > div > button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header > .header__search > form > button {
+.header > nav > form > button {
     border-radius: 0 25px 25px 0;
     padding-inline: 1rem;
 }
 
-.header > nav {
+.header > nav > div {
     position: relative;
+    display: flex;
     margin-left: auto;
 }
 
-.header > nav > button {
+.header > nav > div > button {
     border: none;
     background-color: transparent;
     padding: 12px;
@@ -70,7 +69,11 @@
 }
 
 @media screen and (width <= 582px) {
-    .header > .header__search {
+    .header > nav > a {
+        max-width: 150px;
+    }
+
+    .header > nav > form {
         position: absolute;
         left: 100%;
         top: 100%;
@@ -80,34 +83,30 @@
         transition: left 0.3s ease-in-out;
     }
 
-    .header > .header__logo > a {
-        max-width: 150px;
-    }
-
-    .header.open > .header__search {
+    .header.open > nav > form {
         left: 0;
     }
 
-    .header > nav > button {
+    .header > nav > div > button {
         display: flex;
     }
 
-    .header > nav > .search__toggle {
+    .header > nav > div > .open__search-btn {
         transition: transform 0.3s ease-in-out;
     }
 
-    .header.open > nav > .search__toggle {
+    .header.open > nav > div > .open__search-btn {
         transform: translateY(-200%) rotate(360deg);
     }
 
-    .header > nav > .button__exit-search {
+    .header > nav > div > .exit__search-btn {
         position: absolute;
         right: 0;
         top: -200%;
         transition: top 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
-    .header.open > nav > .button__exit-search {
+    .header.open > nav > div > .exit__search-btn {
         top: 0;
         transform: rotate(360deg);
     }
