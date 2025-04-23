@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../styles/components/inputs.css" />
         <link rel="stylesheet" href="../styles/components/header.css" />
         <link rel="stylesheet" href="../styles/components/footer.css" />
-        <link rel="stylesheet" href="../styles/sections/login.css" />
+        <link rel="stylesheet" href="../styles/sections/add-and-update-article.css" />
     </head>
     <body>
         <div class="container">
@@ -39,23 +39,49 @@
             </header>
             <main class="main">
                 <section>
-                    <h1>Iniciar sesión</h1>
+                    <h1>Agregar nuevo producto</h1>
                     <form>
                         <div class="input__box">
                             <fieldset>
-                                <input name="email" type="email" placeholder="" required />
-                                <legend>Correo</legend>
+                                <input name="image" type="text" placeholder="" required />
+                                <legend>URL de la imagen</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="password" type="password" placeholder="" required />
-                                <legend>Contraseña</legend>
+                                <select name="category">
+                                    <option value="" disabled selected>Debe seleccionar una categoría</option>
+                                    <option value="consoles">Consolas</option>
+                                    <option value="starWars">Star Wars</option>
+                                    <option value="various">Diversos</option>
+                                </select>
+                                <legend>Categoría</legend>
                             </fieldset>
                             <p></p>
                         </div>
-                        <button type="submit" class="button primary">Entrar</button>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="name" type="text" placeholder="" required />
+                                <legend>Nombre</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="price" type="number" placeholder="" required />
+                                <legend>Precio</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <textarea name="description" placeholder="" maxlength="150" required></textarea>
+                                <legend>Descripción</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <button type="submit" class="button primary">Actualizar producto</button>
                     </form>
                 </section>
             </main>

@@ -1,0 +1,21 @@
+.main {
+    align-items: center;
+    justify-content: center;
+    padding-block: 5rem;
+}
+
+.main > section > form,
+.main > section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main > section {
+    padding: 1rem;
+    width: min(500px, 100%);
+}
+
+.main > section > h1 {
+    text-align: center;
+}

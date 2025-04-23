@@ -10,7 +10,7 @@
     position: relative;
 }
 
-.input__box > fieldset > :is(input, textarea) {
+.input__box > fieldset > :is(input, textarea, select) {
     padding: 25px 10px 5px;
     width: 100%;
     border: none;
@@ -39,8 +39,8 @@
     transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
-.input__box > fieldset > :is(input, textarea):focus + legend,
-.input__box > fieldset > :is(input, textarea):not(:placeholder-shown) + legend {
+.input__box > fieldset > :is(input, textarea, select):focus + legend,
+.input__box > fieldset > :is(input, textarea, select):not(:placeholder-shown) + legend {
     top: 0;
     font-size: 0.8rem;
 }
