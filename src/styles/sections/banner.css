@@ -27,7 +27,13 @@
 }
 
 .banner > div > h2 {
-    font-size: 3rem;
+    font-size: var(--text-size-huge);
+    font-weight: 700;
+}
+
+.banner > div > p {
+    font-size: var(--text-size-small);
+    font-weight: 500;
 }
 
 .banner > div > a {

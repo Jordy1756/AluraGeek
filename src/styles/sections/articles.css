@@ -21,19 +21,26 @@
 }
 
 .articles__section > div > header > h2 {
-    font-size: 1.25rem;
+    font-size: var(--text-size-medium);
+    font-weight: 600;
+    color: var(--neutral-700);
+}
+
+.articles__section > div > header > a,
+.articles__section > div > section > article > div > a {
+    color: var(--primary-500);
+    font-weight: 600;
 }
 
 .articles__section > div > header > a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-500);
 }
 
 .articles__section > div > section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
 }
 
@@ -66,7 +73,8 @@
 }
 
 .articles__section > div > section > article > div > h3 {
-    font-weight: 300;
+    font-weight: 400;
+    color: var(--neutral-700);
 }
 
 .articles__section > div > section > article > div > p::before {
@@ -75,8 +83,5 @@
 
 .articles__section > div > section > article > div > p {
     font-weight: 700;
-}
-
-.articles__section > div > section > article > div > a {
-    color: var(--primary-500);
+    color: var(--neutral-800);
 }

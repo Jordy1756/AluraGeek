@@ -47,6 +47,10 @@
     gap: 1rem;
 }
 
+.footer > section > div > h2 {
+    font-weight: 600;
+}
+
 .footer > section > div > form {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,56 @@
+.main {
+    padding: 5rem 1rem;
+}
+
+.main > article {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: min(var(--max-width), 100%);
+}
+
+.main > article > figure {
+    flex: 250px 1;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    border-radius: var(--border-radius-out);
+}
+
+.main > article > figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main > article > figure > figcaption {
+    visibility: hidden;
+}
+
+.main > article > div {
+    flex: 250px 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.main > article > div > h1 {
+    font-weight: 500;
+    font-size: var(--text-size-huge);
+    color: var(--neutral-700);
+}
+
+.main > article > div > span::before {
+    content: "$ ";
+}
+
+.main > article > div > span {
+    font-size:  var(--text-size-small);
+    font-weight: 700;
+    color: var(--neutral-800);
+}
+
+.main > article > div > p {
+    font-weight: normal;
+}
