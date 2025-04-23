@@ -1,0 +1,70 @@
+:root {
+    --neutral-50: #fbfbfc;
+    --neutral-100: #f3f3f5;
+    --neutral-200: #e8e8ea;
+    --neutral-300: #dcdce0;
+    --neutral-400: #d1d1d6;
+    --neutral-500: #b2b2ba;
+    --neutral-600: #a0a0b0;
+    --neutral-700: #565660;
+    --neutral-800: #2b2b30;
+    --neutral-900: #161618;
+    --primary-500: #2a7ae4;
+    --secondary-500: #eaf3fc;
+    --error-500: #ff3426;
+    --success-500: #8fce10;
+    --box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0px 6px 12px 0px rgba(0, 0, 0, 0.25);
+    --border-radius-out: 5px;
+    --border-radius-in: 2.5008px;
+    --max-width: 1300px;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets/fonts/Inter.ttf") format("truetype");
+}
+
+::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--neutral-50);
+    color: var(--neutral-900);
+}
+
+body > .container {
+    position: relative;
+    overflow: hidden;
+}
+
+body > .container > main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

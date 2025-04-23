@@ -1,0 +1,27 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    border-radius: var(--border-radius-out);
+}
+
+.button:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+.button.primary {
+    padding: 16px 32px;
+    background-color: var(--primary-500);
+    color: var(--neutral-50);
+    border: none;
+}
+
+.button.secondary {
+    padding: 15px 31px;
+    background-color: transparent;
+    color: var(--primary-500);
+    border: 1px solid var(--primary-500);
+}

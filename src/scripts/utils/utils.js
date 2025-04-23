@@ -1,21 +1,34 @@
 const handleWidth = () => (window.innerWidth >= 1250 ? 6 : window.innerWidth >= 1010 ? 5 : 4);
 
-const showToast = (message, type) => {
-    const toast = document.querySelector(".toast");
-    toast.classList.add("toast-active", `toast-${type}`);
-    toast.querySelector(".toast-message").textContent = message;
-    setTimeout(() => {
-        toast.classList.remove("toast-active");
-    }, 3000);
-};
-
-const showHeaders = (name, category, url) => `
-    <div class="articles-container-title-and-link">
-        <h2 class="article-section-title">${name}</h2>
-        <a class="article-link" href="${url}./html/showAllArticles.html?category=${category}">
-            Ver todo <img src="${url}./assets/images/arrow-right.svg" alt="Flecha" />
+const renderArticleSectionHeader = (name, category, url) => `
+    <header>
+        <h2>${name}</h2>
+        <a href="../views/showAllArticles.html?category=${category}">
+            Ver todo <img src="./src/assets/icons/arrow-right.svg" alt="Flecha" />
         </a>
-    </div>`;
+    </header>
+`;
+
+const renderArticle = ({ id, image, name, price }, category) => {
+    return `
+        <article>
+            <figure>
+                <img
+                    src="${image}"
+                    alt="Producto ${name}"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <figcaption class="visually-hidden">${name}</figcaption>
+            </figure>
+            <div>
+                <h3>${name}</h3>
+                <p>${price}</p>
+                <a href="./html/showArticle.html?category=${category}&id=${id}">Ver producto</a>
+            </div>
+        </article>
+    `;
+};
 
 const showArticles = (articles, category, url) => {
     const container = document.createElement("section");
@@ -64,8 +77,7 @@ const showAllArticles = (articles, articlesSection) => {
 
 export const utils = {
     handleWidth,
-    showToast,
-    showHeaders,
+    showHeaders: renderArticleSectionHeader,
     showArticles,
     showAllArticles,
 };

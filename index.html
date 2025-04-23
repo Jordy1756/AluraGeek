@@ -4,97 +4,548 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
-        <link rel="stylesheet" href="./css/bases/style.css" />
-        <link rel="stylesheet" href="./css/bases/components.css" />
-        <link rel="stylesheet" href="./css/header.css" />
-        <link rel="stylesheet" href="./css/banner.css" />
-        <link rel="stylesheet" href="./css/articles.css" />
-        <link rel="stylesheet" href="./css/footer.css" />
-        <link rel="stylesheet" href="./css/toast.css" />
+        <link rel="stylesheet" href="./src/styles/bases/reset.css" />
+        <link rel="stylesheet" href="./src/styles/bases/style.css" />
+        <link rel="stylesheet" href="./src/styles/components/buttons.css" />
+        <link rel="stylesheet" href="./src/styles/components/inputs.css" />
+        <link rel="stylesheet" href="./src/styles/components/header.css" />
+        <link rel="stylesheet" href="./src/styles/components/footer.css" />
+        <link rel="stylesheet" href="./src/styles/sections/banner.css" />
+        <link rel="stylesheet" href="./src/styles/sections/articles.css" />
     </head>
     <body>
         <div class="container">
             <header class="header">
-                <a href="#" class="logo-image-container">
-                    <img class="logo-image" src="./assets/images/Logo.svg" alt="Logo" loading="lazy" />
-                </a>
-                <section class="search-and-login">
-                    <div id="container-search">
-                        <form class="form-search">
-                            <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                            <button id="search-button" type="submit" class="search-button">
-                                <img src="./assets/images/search.svg" alt="Boton buscar" />
-                            </button>
-                        </form>
-                    </div>
-                    <button class="button-active-search">
-                        <img src="./assets/images/search.svg" alt="Boton buscar" />
+                <div class="header__logo">
+                    <a href="#">
+                        <img
+                            src="./src/assets/images/logo.svg"
+                            alt="Logo de AluraGeek"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </a>
+                </div>
+                <div class="header__search">
+                    <form>
+                        <input name="search" type="search" placeholder="¿Qué deseas buscar?" required />
+                        <button id="search-button" type="submit">
+                            <img src="./src/assets/icons/search.svg" alt="Buscar" />
+                        </button>
+                    </form>
+                </div>
+                <nav>
+                    <a id="login-button" class="button secondary" href="./html/login.html">Login</a>
+                    <!-- <a id="logout-button" class="button secondary" href="#">Log out</a> -->
+                    <button id="search-toggle" class="search__toggle">
+                        <img src="./src/assets/icons/search.svg" alt="Abrir búsqueda" />
                     </button>
-                    <a id="login-button" class="button header-button" href="./html/login.html">Login</a>
-                    <a id="logout-button" class="button header-button" href="#">Log out</a>
-                    <button class="button-exit-search">
-                        <img src="./assets/images/exit.svg" alt="Boton salir" />
+                    <button id="button-exit-search" class="button__exit-search">
+                        <img src="./src/assets/icons/exit.svg" alt="Cerrar búsqueda" />
                     </button>
-                </section>
+                </nav>
             </header>
+            <script>
+                const header = document.querySelector(".header");
+                const buttonOpen = header.querySelector("#search-toggle");
+                const buttonExit = header.querySelector("#button-exit-search");
+                buttonOpen.addEventListener("click", () => {
+                    header.classList.add("open");
+                });
+                buttonExit.addEventListener("click", () => {
+                    header.classList.remove("open");
+                });
+            </script>
             <main>
                 <section class="banner">
-                    <h1 class="banner-title">Febrero Promocional</h1>
-                    <span class="banner-description">Productos seleccionados con 33% de descuento</span>
-                    <a class="button" href="./html/showAllArticles.html?category=consoles">Ver consolas</a>
+                    <div>
+                        <h2>Febrero Promocional</h2>
+                        <p>Productos seleccionados con 33% de descuento</p>
+                        <a class="button primary" href="./html/showAllArticles.html?category=consoles">Ver consolas</a>
+                    </div>
                 </section>
-                <section class="articles-section"></section>
+                <section id="articles-section" class="articles__section">
+                    <div>
+                        <header>
+                            <h2>Nombre de la seccion</h2>
+                            <a href="../views/showAllArticles.html?category=${category}">
+                                Ver todo <img src="./src/assets/icons/arrow-right.svg" alt="Flecha" />
+                            </a>
+                        </header>
+                        <section class="articles-container">
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/71FxDhGutsL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81xCK66iBnL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81qkzvK HTL._AC_SY300_SX300_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/51w4NHPt1VL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/61nhiRsdrAL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                    <div>
+                        <header>
+                            <h2>Nombre de la seccion</h2>
+                            <a href="../views/showAllArticles.html?category=${category}">
+                                Ver todo <img src="./src/assets/icons/arrow-right.svg" alt="Flecha" />
+                            </a>
+                        </header>
+                        <section class="articles-container">
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/71FxDhGutsL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81xCK66iBnL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81qkzvK HTL._AC_SY300_SX300_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/51w4NHPt1VL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/61nhiRsdrAL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                    <div>
+                        <header>
+                            <h2>Nombre de la seccion</h2>
+                            <a href="../views/showAllArticles.html?category=${category}">
+                                Ver todo <img src="./src/assets/icons/arrow-right.svg" alt="Flecha" />
+                            </a>
+                        </header>
+                        <section class="articles-container">
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/71FxDhGutsL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81xCK66iBnL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81qkzvK HTL._AC_SY300_SX300_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/51w4NHPt1VL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/61nhiRsdrAL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                    <div>
+                        <header>
+                            <h2>Nombre de la seccion</h2>
+                            <a href="../views/showAllArticles.html?category=${category}">
+                                Ver todo <img src="./src/assets/icons/arrow-right.svg" alt="Flecha" />
+                            </a>
+                        </header>
+                        <section class="articles-container">
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/71FxDhGutsL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81xCK66iBnL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/81qkzvK HTL._AC_SY300_SX300_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/51w4NHPt1VL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                            <article>
+                                <figure>
+                                    <img
+                                        src="https://m.media-amazon.com/images/I/61nhiRsdrAL._AC_SX679_.jpg"
+                                        alt="Imagen del producto"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
+                                </figure>
+                                <div>
+                                    <h3>Producto XYZ</h3>
+                                    <p>60</p>
+                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                </section>
             </main>
-            <footer class="footer">
-                <section class="about-section">
-                    <a href="#" class="logo-image-container">
-                        <img class="logo-image" src="./assets/images/Logo.svg" alt="Logo" loading="lazy" />
-                    </a>
-                    <ul class="about-menu">
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
-                    </ul>
+            <!-- <footer class="footer">
+                <section>
+                    <nav>
+                        <a href="#">
+                            <img
+                                src="./src/assets/images/logo.svg"
+                                alt="Logo de AluraGeek"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </a>
+                        <ul>
+                            <li><a href="#">Quienes somos</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Programa de fidelidad</a></li>
+                            <li><a href="#">Nuestras Tiendas</a></li>
+                            <li><a href="#">Quiero ser franquiciado</a></li>
+                            <li><a href="#">Anúncie aquí</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <h2>Hable con nosotros</h2>
+                        <form id="contact-form">
+                            <div class="input__box">
+                                <fieldset>
+                                    <input name="name" class="input" type="text" placeholder="" required />
+                                    <legend class="label">Nombre</legend>
+                                </fieldset>
+                                <p class="input-error">asdas</p>
+                            </div>
+                            <div class="input__box">
+                                <fieldset>
+                                    <textarea name="message" class="textarea" placeholder="" required></textarea>
+                                    <legend class="label">Mensaje</legend>
+                                </fieldset>
+                                <p class="input-error">asdasd</p>
+                            </div>
+                            <button type="submit" class="button primary">Enviar mensaje</button>
+                        </form>
+                    </div>
                 </section>
-                <section class="concat">
-                    <h3 class="concat-title">Hable con nosotros</h3>
-                    <form id="concat-form" class="concat-form">
-                        <div class="input-box">
-                            <input id="name" class="input" type="text" placeholder="Nombre" maxlength="40" required />
-                            <label class="label">Nombre</label>
-                            <span class="input-error"></span>
-                        </div>
-                        <div class="input-box">
-                            <textarea
-                                id="message"
-                                class="textarea"
-                                cols="30"
-                                rows="5"
-                                placeholder="Escribe tu mensaje"
-                                maxlength="120"
-                                required
-                            ></textarea>
-                            <label class="label">Mensaje</label>
-                            <span class="input-error"></span>
-                        </div>
-                        <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
-                    </form>
+                <section>
+                    <span>&copy; Yordi Castro Rojas</span>
+                    <span>2023</span>
                 </section>
-                <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
-            </footer>
-            <div class="toast">
+            </footer> -->
+            <!-- <div class="toast">
                 <span class="toast-message"></span>
-            </div>
+            </div> -->
         </div>
     </body>
-    <script src="./js/index.js"></script>
-    <script src="./js/activateModalSearch.js"></script>
-    <script src="./js/uuid.min.js"></script>
-    <script src="./js/validations.js"></script>
+    <!-- <script src="./src/scripts/index.js"></script> -->
+    <!-- <script src="./src/scripts/activateModalSearch.js"></script>
+    <script src="./src/scripts/validations.js"></script>
     <script type="module" src="./controllers/articleController/getSome.js"></script>
     <script type="module" src="./controllers/articleController/search.js"></script>
-    <script type="module" src="./controllers/concatController.js"></script>
+    <script type="module" src="./controllers/concatController.js"></script> -->
 </html>

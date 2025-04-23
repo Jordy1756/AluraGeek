@@ -1,0 +1,53 @@
+.input__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input__box > fieldset {
+    width: 100%;
+    position: relative;
+}
+
+.input__box > fieldset > :is(input, textarea) {
+    padding: 25px 10px 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--neutral-500);
+    background-color: var(--neutral-50);
+    border-radius: var(--border-radius-out);
+}
+
+.input__box > fieldset > textarea {
+    resize: none;
+    min-height: 150px;
+    max-height: 250px;
+    field-sizing: content;
+}
+
+.input__box > fieldset > legend {
+    padding: 7.5px 10px;
+    position: absolute;
+    top: 7.5px;
+    left: 0;
+    width: 100%;
+    background-color: var(--neutral-50);
+    pointer-events: none;
+    border-top-left-radius: var(--border-radius-out);
+    border-top-right-radius: var(--border-radius-out);
+    transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.input__box > fieldset > :is(input, textarea):focus + legend,
+.input__box > fieldset > :is(input, textarea):not(:placeholder-shown) + legend {
+    top: 0;
+    font-size: 0.8rem;
+}
+
+.input__box > p {
+    color: var(--error-500);
+    font-size: 0.8rem;
+    padding-inline: 5px;
+    display: none;
+}

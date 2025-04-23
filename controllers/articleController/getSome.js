@@ -1,5 +1,5 @@
 import { services } from "../../model/articleModel.js";
-import { utils } from "../../js/utils.js";
+import { utils } from "../../src/scripts/utils.js"
 
 const { handleWidth, showHeaders, showArticles, showToast } = utils;
 
@@ -22,13 +22,17 @@ const getSome = async () => {
             await services.getSome("consoles", handleWidth()),
             await services.getSome("various", handleWidth()),
         ]);
-
-        if (articles.length === 0) throw new Error("Ocurrió un error al cargar los articulos, por favor intentalo de nuevo más tarde");
+        
+        if (articles.length === 0)
+            throw new Error("Ocurrió un error al cargar los articulos, por favor intentalo de nuevo más tarde");
 
         articles.forEach((articles, index) => {
             if (articles.length !== 0) {
-                const articlesSection = document.querySelector(".articles-section");
-                articlesSection.insertAdjacentHTML("beforeend", showHeaders(categoryNames[index], categories[index], ""));
+                const articlesSection = document.querySelector("#articles-section");
+                articlesSection.insertAdjacentHTML(
+                    "beforeend",
+                    showHeaders(categoryNames[index], categories[index], "")
+                );
                 articlesSection.appendChild(showArticles(articles, categories[index], ""));
             }
         });
