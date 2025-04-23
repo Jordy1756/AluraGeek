@@ -58,14 +58,20 @@ body {
     color: var(--neutral-900);
 }
 
+body > .container,
+body > .container > main {
+    display: flex;
+    flex-direction: column;
+}
+
 body > .container {
     position: relative;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: clip;
 }
 
 body > .container > main {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
     gap: 1rem;
+    background-color: var(--neutral-100);
 }

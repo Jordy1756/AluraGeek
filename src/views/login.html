@@ -1,96 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
-        <link rel="stylesheet" href="../css/bases/style.css" />
-        <link rel="stylesheet" href="../css/bases/components.css" />
-        <link rel="stylesheet" href="../css/header.css" />
-        <link rel="stylesheet" href="../css/login.css" />
-        <link rel="stylesheet" href="../css/footer.css" />
-        <link rel="stylesheet" href="../css/toast.css" />
+        <link rel="stylesheet" href="../styles/bases/reset.css" />
+        <link rel="stylesheet" href="../styles/bases/style.css" />
+        <link rel="stylesheet" href="../styles/components/buttons.css" />
+        <link rel="stylesheet" href="../styles/components/inputs.css" />
+        <link rel="stylesheet" href="../styles/components/header.css" />
+        <link rel="stylesheet" href="../styles/components/footer.css" />
+        <link rel="stylesheet" href="../styles/sections/login.css" />
     </head>
     <body>
         <div class="container">
             <header class="header">
-                <a href="../index.html" class="logo-image-container">
-                    <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
-                </a>
-                <section class="search-and-login">
-                    <div id="container-search">
-                        <form class="form-search">
-                            <input id="search" class="search-input" type="text" placeholder="¿Qué deseas buscar?" required />
-                            <button id="search-button" type="submit" class="search-button">
-                                <img src="../assets/images/search.svg" alt="Boton buscar" />
-                            </button>
-                        </form>
-                    </div>
-                    <button class="button-active-search">
-                        <img src="../assets/images/search.svg" alt="Boton buscar" />
-                    </button>
-                    <a id="login-button" class="button header-button" href="../html/login.html">Login</a>
-                    <a id="logout-button" class="button header-button" href="#">Log out</a>
-                    <button class="button-exit-search">
-                        <img src="../assets/images/exit.svg" alt="Boton salir" />
-                    </button>
-                </section>
-            </header>
-            <main class="login-main">
-                <h1 class="login-title">Iniciar sesión</h1>
-                <form class="login-form" action="">
-                    <div class="input-box">
-                        <input id="email" class="input" type="email" placeholder="Correo" required />
-                        <label class="label">Correo</label>
-                        <span class="input-error"></span>
-                    </div>
-                    <div class="input-box">
-                        <input id="password" class="input" type="password" placeholder="Contraseña" required />
-                        <label class="label">Contraseña</label>
-                        <span class="input-error"></span>
-                    </div>
-                    <button id="btn-login" type="submit" class="button">Entrar</button>
-                </form>
-            </main>
-            <footer class="footer">
-                <section class="about-section">
-                    <a class="logo-image-container" href="../index.html">
-                        <img class="logo-image" src="../assets/images/Logo.svg" alt="Logo" />
+                <nav>
+                    <a href="../../index.html">
+                        <img src="../assets/images/logo.svg" alt="Logo de AluraGeek" loading="lazy" decoding="async" />
                     </a>
-                    <ul class="about-menu">
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quienes somos</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Política de privacidad</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Programa de fidelidad</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Nuestras Tiendas</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Quiero ser franquiciado</a></li>
-                        <li class="about-menu-item"><a class="about-menu-link" href="#">Anúncie aquí</a></li>
-                    </ul>
-                </section>
-                <section class="concat">
-                    <h3 class="concat-title">Hable con nosotros</h3>
-                    <form class="concat-form">
-                        <div class="input-box">
-                            <input id="name" class="input" type="text" placeholder="Nombre" required maxlength="40" />
-                            <label class="label">Nombre</label>
-                            <span class="input-error"></span>
+                    <form>
+                        <input name="search" type="search" placeholder="¿Qué deseas buscar?" required />
+                        <button id="search-button" type="submit">
+                            <img src="../assets/icons/search.svg" alt="Buscar" />
+                        </button>
+                    </form>
+                    <div>
+                        <a id="login-button" class="button secondary" href="../views/login.html">Login</a>
+                        <!-- <a id="logout-button" class="button secondary" href="#">Log out</a> -->
+                        <button id="open-search-btn" class="open__search-btn">
+                            <img src="../assets/icons/search.svg" alt="Abrir búsqueda" />
+                        </button>
+                        <button id="exit-search-btn" class="exit__search-btn">
+                            <img src="../assets/icons/exit.svg" alt="Cerrar búsqueda" />
+                        </button>
+                    </div>
+                </nav>
+            </header>
+            <main class="main">
+                <section>
+                    <h1>Iniciar sesión</h1>
+                    <form>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="email" type="email" placeholder="" required />
+                                <legend class="label">Correo</legend>
+                            </fieldset>
+                            <p></p>
                         </div>
-                        <div class="input-box">
-                            <textarea
-                                id="message"
-                                class="textarea"
-                                cols="30"
-                                rows="5"
-                                placeholder="Escribe tu mensaje"
-                                required
-                                maxlength="120"
-                            ></textarea>
-                            <label class="label">Mensaje</label>
-                            <span class="input-error"></span>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="password" type="password" placeholder="" required />
+                                <legend class="label">Contraseña</legend>
+                            </fieldset>
+                            <p></p>
                         </div>
-                        <button id="concat-button" type="submit" class="button">Enviar mensaje</button>
+                        <button type="submit" class="button primary">Entrar</button>
                     </form>
                 </section>
-                <span class="copyright">&copy; Yordi Castro Rojas 2023</span>
+            </main>
+            <footer class="footer">
+                <section>
+                    <nav>
+                        <a href="#">
+                            <img
+                                src="../assets/images/logo.svg"
+                                alt="Logo de AluraGeek"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </a>
+                        <ul>
+                            <li><a href="#">Quienes somos</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Programa de fidelidad</a></li>
+                            <li><a href="#">Nuestras Tiendas</a></li>
+                            <li><a href="#">Quiero ser franquiciado</a></li>
+                            <li><a href="#">Anúncie aquí</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <h2>Hable con nosotros</h2>
+                        <form>
+                            <div class="input__box">
+                                <fieldset>
+                                    <input name="name" type="text" placeholder="" required />
+                                    <legend class="label">Nombre</legend>
+                                </fieldset>
+                                <p></p>
+                            </div>
+                            <div class="input__box">
+                                <fieldset>
+                                    <textarea name="message" placeholder="" required></textarea>
+                                    <legend class="label">Mensaje</legend>
+                                </fieldset>
+                                <p></p>
+                            </div>
+                            <button type="submit" class="button primary">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </section>
+                <section>
+                    <span>&copy; Yordi Castro Rojas</span>
+                    <span>2023</span>
+                </section>
             </footer>
             <!-- TOASTS -->
             <div class="toast">
@@ -98,11 +111,4 @@
             </div>
         </div>
     </body>
-    <script src="../js/index.js"></script>
-    <script src="../js/uuid.min.js"></script>
-    <script src="../js/activateModalSearch.js"></script>
-    <script src="../js/validations.js"></script>
-    <script type="module" src="../controllers/userController.js"></script>
-    <script type="module" src="../controllers/articleController/search.js"></script>
-    <script type="module" src="../controllers/concatController.js"></script>
 </html>
