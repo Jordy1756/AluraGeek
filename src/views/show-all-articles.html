@@ -4,61 +4,57 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
-        <link rel="stylesheet" href="./src/styles/bases/reset.css" />
-        <link rel="stylesheet" href="./src/styles/bases/style.css" />
-        <link rel="stylesheet" href="./src/styles/components/buttons.css" />
-        <link rel="stylesheet" href="./src/styles/components/inputs.css" />
-        <link rel="stylesheet" href="./src/styles/components/header.css" />
-        <link rel="stylesheet" href="./src/styles/components/footer.css" />
-        <link rel="stylesheet" href="./src/styles/sections/banner.css" />
-        <link rel="stylesheet" href="./src/styles/sections/articles.css" />
+        <link rel="stylesheet" href="../styles/bases/reset.css" />
+        <link rel="stylesheet" href="../styles/bases/style.css" />
+        <link rel="stylesheet" href="../styles/components/buttons.css" />
+        <link rel="stylesheet" href="../styles/components/inputs.css" />
+        <link rel="stylesheet" href="../styles/components/header.css" />
+        <link rel="stylesheet" href="../styles/components/footer.css" />
+        <link rel="stylesheet" href="../styles/sections/articles.css" />
+        <link rel="stylesheet" href="../styles/sections/show-all-articles.css" />
     </head>
     <body>
         <div class="container">
             <header class="header">
                 <nav>
-                    <a href="#">
-                        <img
-                            src="./src/assets/images/logo.svg"
-                            alt="Logo de AluraGeek"
-                            loading="lazy"
-                            decoding="async"
-                        />
+                    <a href="../../index.html">
+                        <img src="../assets/images/logo.svg" alt="Logo de AluraGeek" loading="lazy" decoding="async" />
                     </a>
                     <form>
                         <input name="search" type="search" placeholder="¿Qué deseas buscar?" required />
                         <button type="submit">
-                            <img src="./src/assets/icons/search.svg" alt="Buscar" />
+                            <img src="../assets/icons/search.svg" alt="Buscar" />
                         </button>
                     </form>
                     <div>
-                        <a id="login-button" class="button secondary" href="./src/views/login.html">Login</a>
+                        <a id="login-button" class="button secondary" href="../views/login.html">Login</a>
                         <!-- <a id="logout-button" class="button secondary" href="#">Log out</a> -->
                         <button id="open-search-btn" class="open__search-btn">
-                            <img src="./src/assets/icons/search.svg" alt="Abrir búsqueda" />
+                            <img src="../assets/icons/search.svg" alt="Abrir búsqueda" />
                         </button>
                         <button id="exit-search-btn" class="exit__search-btn">
-                            <img src="./src/assets/icons/exit.svg" alt="Cerrar búsqueda" />
+                            <img src="../assets/icons/exit.svg" alt="Cerrar búsqueda" />
                         </button>
                     </div>
                 </nav>
             </header>
-            <main>
-                <section class="banner">
+            <main class="main">
+                <section class="articles__section">
                     <div>
-                        <h2>Febrero Promocional</h2>
-                        <p>Productos seleccionados con 33% de descuento</p>
-                        <a class="button primary" href="./html/showAllArticles.html?category=consoles">Ver consolas</a>
+                        <header>
+                            <h2>Seccion</h2>
+                            <a href="../html/addNewArticle.html" class="button primary">Agregar</a>
+                        </header>
+                        <section id="articles-container"></section>
                     </div>
                 </section>
-                <section id="articles-section" class="articles__section"></section>
             </main>
             <footer class="footer">
                 <section>
                     <nav>
                         <a href="#">
                             <img
-                                src="./src/assets/images/logo.svg"
+                                src="../assets/images/logo.svg"
                                 alt="Logo de AluraGeek"
                                 loading="lazy"
                                 decoding="async"
@@ -75,7 +71,7 @@
                     </nav>
                     <div>
                         <h2>Hable con nosotros</h2>
-                        <form id="contact-form">
+                        <form>
                             <div class="input__box">
                                 <fieldset>
                                     <input name="name" type="text" placeholder="" required />
@@ -99,11 +95,19 @@
                     <span>2023</span>
                 </section>
             </footer>
-            <!-- <div class="toast">
-                <p></p>
+            <!-- MODALS -->
+            <!-- <div class="modal">
+                <div class="modal-content">
+                    <span class="modal-span">¿Estas seguro que deseas eliminar este articulo?</span>
+                    <input type="hidden" id="article-id" value="" />
+                    <div>
+                        <button class="button-modal" onclick="hideModal()">Cancelar</button>
+                        <button id="button-delete-article" class="button-modal">Eliminar</button>
+                    </div>
+                </div>
             </div> -->
         </div>
     </body>
-    <script type="module" src="./src/scripts/components/navbar.js"></script>
-    <script type="module" src="./src/scripts/sections/index.js"></script>
+    <script type="module" src="../scripts/components/navbar.js"></script>
+    <script type="module" src="../scripts/sections/getAllArticles.js"></script>
 </html>

@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="../styles/components/inputs.css" />
         <link rel="stylesheet" href="../styles/components/header.css" />
         <link rel="stylesheet" href="../styles/components/footer.css" />
-        <link rel="stylesheet" href="../styles/sections/show-article.css" />
         <link rel="stylesheet" href="../styles/sections/articles.css" />
+        <link rel="stylesheet" href="../styles/sections/show-article.css" />
     </head>
     <body>
         <div class="container">
@@ -22,7 +22,7 @@
                     </a>
                     <form>
                         <input name="search" type="search" placeholder="¿Qué deseas buscar?" required />
-                        <button id="search-button" type="submit">
+                        <button type="submit">
                             <img src="../assets/icons/search.svg" alt="Buscar" />
                         </button>
                     </form>
@@ -39,7 +39,7 @@
                 </nav>
             </header>
             <main class="main">
-                <article>
+                <article id="article-details">
                     <figure>
                         <img
                             src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
@@ -61,114 +61,7 @@
                         </p>
                     </div>
                 </article>
-                <section id="articles-section" class="articles__section">
-                    <div>
-                        <header>
-                            <h2>Productos relacionados</h2>
-                            <a href="../views/showAllArticles.html?category=${category}">
-                                Ver todo <img src="../assets/icons/arrow-right.svg" alt="Flecha" />
-                            </a>
-                        </header>
-                        <section class="articles-container">
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/710earas0RL._AC_SX679_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/71FxDhGutsL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/81xCK66iBnL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/81qkzvK HTL._AC_SY300_SX300_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/51w4NHPt1VL.__AC_SX300_SY300_QL70_FMwebp_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                            <article>
-                                <figure>
-                                    <img
-                                        src="https://m.media-amazon.com/images/I/61nhiRsdrAL._AC_SX679_.jpg"
-                                        alt="Imagen del producto"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption class="visually-hidden">Producto XYZ</figcaption>
-                                </figure>
-                                <div>
-                                    <h3>Producto XYZ</h3>
-                                    <p>60.00</p>
-                                    <a href="./html/showArticle.html?category=starWars&amp;id=0">Ver producto</a>
-                                </div>
-                            </article>
-                        </section>
-                    </div>
-                </section>
+                <section id="articles-section" class="articles__section"></section>
             </main>
             <footer class="footer">
                 <section>
@@ -216,17 +109,8 @@
                     <span>2023</span>
                 </section>
             </footer>
-            <!-- TOASTS -->
-            <div class="toast">
-                <span class="toast-message"></span>
-            </div>
         </div>
     </body>
-    <script src="../js/index.js"></script>
-    <script src="../js/uuid.min.js"></script>
-    <script src="../js/activateModalSearch.js"></script>
-    <script src="../js/validations.js"></script>
-    <script type="module" src="../controllers/articleController/get.js"></script>
-    <script type="module" src="../controllers/articleController/search.js"></script>
-    <script type="module" src="../controllers/concatController.js"></script>
+    <script type="module" src="../scripts/components/navbar.js"></script>
+    <script type="module" src="../scripts/sections/showArticle.js"></script>
 </html>
