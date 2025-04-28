@@ -60,7 +60,12 @@
     margin-left: auto;
 }
 
-.header > nav > div > button {
+.header > nav > div > .logout__btn {
+    display: none;
+}
+
+.header > nav > div > .open__search-btn,
+.header > nav > div > .exit__search-btn {
     border: none;
     background-color: transparent;
     padding: 12px;
@@ -86,7 +91,8 @@
         left: 0;
     }
 
-    .header > nav > div > button {
+    .header > nav > div > .open__search-btn,
+    .header > nav > div > .exit__search-btn {
         display: flex;
     }
 

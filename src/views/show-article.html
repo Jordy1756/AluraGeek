@@ -2,8 +2,9 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>AluraGeek</title>
+        <link rel="icon" type="image/svg+xml" href="/src/assets/images/logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../styles/bases/reset.css" />
         <link rel="stylesheet" href="../styles/bases/style.css" />
         <link rel="stylesheet" href="../styles/components/buttons.css" />
@@ -27,8 +28,8 @@
                         </button>
                     </form>
                     <div>
-                        <a id="login-button" class="button secondary" href="../views/login.html">Login</a>
-                        <!-- <a id="logout-button" class="button secondary" href="#">Log out</a> -->
+                        <a id="login-button" class="button secondary login__btn" href="./src/views/login.html">Login</a>
+                        <button id="logout-button" class="button secondary logout__btn">Logout</button>
                         <button id="open-search-btn" class="open__search-btn">
                             <img src="../assets/icons/search.svg" alt="Abrir búsqueda" />
                         </button>
@@ -50,15 +51,21 @@
                         <figcaption class="visually-hidden">Producto XYZ</figcaption>
                     </figure>
                     <div>
-                        <h1>Producto XYZ</h1>
-                        <span>60.99</span>
-                        <p>
-                            Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus,
-                            facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua
-                            malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia
-                            ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta
-                            anim magnam
-                        </p>
+                        <section>
+                            <h1>Producto XYZ</h1>
+                            <span>60.99</span>
+                            <p>
+                                Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus,
+                                facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua
+                                malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo,
+                                quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do.
+                                Animi porta anim magnam
+                            </p>
+                        </section>
+                        <div id="article-actions">
+                            <button class="button primary">Actualizar</button>
+                            <button class="button tertiary">Eliminar</button>
+                        </div>
                     </div>
                 </article>
                 <section id="articles-section" class="articles__section"></section>
@@ -111,6 +118,6 @@
             </footer>
         </div>
     </body>
-    <script src="../scripts/components/navbar.js"></script>
+    <script type="module" src="../scripts/components/navbar.js"></script>
     <script type="module" src="../scripts/sections/showArticle.js"></script>
 </html>

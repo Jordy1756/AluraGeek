@@ -11,9 +11,10 @@
 }
 
 .main > article > figure {
-    flex: 250px 1;
+    flex: 300px 1;
     overflow: hidden;
     border-radius: var(--border-radius-out);
+    max-height: 600px;
 }
 
 .main > article > figure > img {
@@ -26,30 +27,50 @@
     visibility: hidden;
 }
 
-.main > article > div {
-    flex: 250px 1;
+.main > article > div,
+.main > article > div > section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+}
+
+.main > article > div {
+    flex: 300px 1;
+    gap: 1.5rem;
+}
+
+.main > article > div > section {
     gap: 1rem;
 }
 
-.main > article > div > h1 {
+.main > article > div > section > h1 {
     font-weight: 500;
     font-size: var(--text-size-xlarge);
     color: var(--neutral-700);
 }
 
-.main > article > div > span::before {
+.main > article > div > section > span::before {
     content: "$ ";
 }
 
-.main > article > div > span {
-    font-size:  var(--text-size-small);
+.main > article > div > section > span {
+    font-size: var(--text-size-small);
     font-weight: 700;
     color: var(--neutral-800);
 }
 
-.main > article > div > p {
+.main > article > div > section > p {
     font-weight: normal;
+}
+
+.main > article > div > div {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media screen and (width <= 350px) {
+    .main > article > div > div > button {
+        flex: 1;
+    }
 }

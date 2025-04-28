@@ -5,11 +5,12 @@
     gap: 0.5rem;
     text-align: center;
     border-radius: var(--border-radius-out);
+    font-weight: 600;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .button:hover {
     opacity: 0.9;
-    transform: scale(1.01);
 }
 
 .button.primary {
@@ -24,4 +25,10 @@
     background-color: transparent;
     color: var(--primary-500);
     border: 1px solid var(--primary-500);
+}
+
+.button.tertiary {
+    padding: 16px 32px;
+    background-color: transparent;
+    border: none;
 }
