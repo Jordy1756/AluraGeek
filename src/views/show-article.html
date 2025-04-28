@@ -11,8 +11,11 @@
         <link rel="stylesheet" href="../styles/components/inputs.css" />
         <link rel="stylesheet" href="../styles/components/header.css" />
         <link rel="stylesheet" href="../styles/components/footer.css" />
+        <link rel="stylesheet" href="../styles/components/modal.css" />
         <link rel="stylesheet" href="../styles/sections/articles.css" />
         <link rel="stylesheet" href="../styles/sections/show-article.css" />
+        <link rel="stylesheet" href="../styles/sections/add-and-update-article.css" />
+        <link rel="stylesheet" href="../styles/sections/delete-article.css" />
     </head>
     <body>
         <div class="container">
@@ -24,17 +27,46 @@
                     <form>
                         <input name="search" type="search" placeholder="¿Qué deseas buscar?" required />
                         <button type="submit">
-                            <img src="../assets/icons/search.svg" alt="Buscar" />
+                            <svg width="24" height="24" viewBox="0 0 48 48">
+                                <g fill="none" stroke="var(--neutral-600)" stroke-linejoin="round" stroke-width="4">
+                                    <path
+                                        d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"
+                                    />
+                                    <path
+                                        stroke-linecap="round"
+                                        d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"
+                                    />
+                                </g>
+                            </svg>
                         </button>
                     </form>
                     <div>
                         <a id="login-button" class="button secondary login__btn" href="./src/views/login.html">Login</a>
                         <button id="logout-button" class="button secondary logout__btn">Logout</button>
                         <button id="open-search-btn" class="open__search-btn">
-                            <img src="../assets/icons/search.svg" alt="Abrir búsqueda" />
+                            <svg width="24" height="24" viewBox="0 0 48 48">
+                                <g fill="none" stroke="var(--neutral-600)" stroke-linejoin="round" stroke-width="4">
+                                    <path
+                                        d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"
+                                    />
+                                    <path
+                                        stroke-linecap="round"
+                                        d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"
+                                    />
+                                </g>
+                            </svg>
                         </button>
                         <button id="exit-search-btn" class="exit__search-btn">
-                            <img src="../assets/icons/exit.svg" alt="Cerrar búsqueda" />
+                            <svg width="28" height="28" viewBox="0 0 24 24">
+                                <path
+                                    fill="none"
+                                    stroke="var(--neutral-600)"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M18 6L6 18M6 6l12 12"
+                                />
+                            </svg>
                         </button>
                     </div>
                 </nav>
@@ -63,8 +95,8 @@
                             </p>
                         </section>
                         <div id="article-actions">
-                            <button class="button primary">Actualizar</button>
-                            <button class="button tertiary">Eliminar</button>
+                            <button id="update-article-btn" class="button primary">Actualizar</button>
+                            <button id="delete-article-btn" class="button tertiary">Eliminar</button>
                         </div>
                     </div>
                 </article>
@@ -116,8 +148,100 @@
                     <span>2023</span>
                 </section>
             </footer>
+            <!-- MODALS -->
+            <dialog id="update-article-modal" class="modal" closedby="any">
+                <header>
+                    <h2>Actualizar artículo</h2>
+                    <button type="button">
+                        <svg width="28" height="28" viewBox="0 0 24 24">
+                            <path
+                                fill="none"
+                                stroke="var(--neutral-50)"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M18 6L6 18M6 6l12 12"
+                            />
+                        </svg>
+                    </button>
+                </header>
+                <section>
+                    <form>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="image" type="text" placeholder="" required />
+                                <legend>URL de la imagen</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <select name="category">
+                                    <option value="" disabled selected>Debe seleccionar una categoría</option>
+                                    <option value="consoles">Consolas</option>
+                                    <option value="starWars">Star Wars</option>
+                                    <option value="various">Diversos</option>
+                                </select>
+                                <legend>Categoría</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="name" type="text" placeholder="" required />
+                                <legend>Nombre</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="price" type="number" placeholder="" required />
+                                <legend>Precio</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <textarea name="description" placeholder="" maxlength="150" required></textarea>
+                                <legend>Descripción</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="form__actions">
+                            <button type="submit" class="button primary">Actualizar</button>
+                            <button type="button" class="button tertiary">Cancelar</button>
+                        </div>
+                    </form>
+                </section>
+            </dialog>
+            <dialog id="delete-article-modal" class="modal" closedby="any">
+                <header>
+                    <h2>Eliminar artículo</h2>
+                    <button type="button">
+                        <svg width="28" height="28" viewBox="0 0 24 24">
+                            <path
+                                fill="none"
+                                stroke="var(--neutral-50)"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M18 6L6 18M6 6l12 12"
+                            />
+                        </svg>
+                    </button>
+                </header>
+                <section>
+                    <p>¿Estas seguro que deseas eliminar este articulo?</p>
+                    <div>
+                        <button type="button" class="button primary">Eliminar</button>
+                        <button type="button" class="button tertiary">Cancelar</button>
+                    </div>
+                </section>
+            </dialog>
         </div>
     </body>
     <script type="module" src="../scripts/components/navbar.js"></script>
     <script type="module" src="../scripts/sections/showArticle.js"></script>
+    <script type="module" src="../scripts/sections/updateArticle.js"></script>
+    <script type="module" src="../scripts/sections/deleteArticle.js"></script>
 </html>
