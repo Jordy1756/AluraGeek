@@ -13,7 +13,6 @@
 .main > article > figure {
     flex: 250px 1;
     overflow: hidden;
-    aspect-ratio: 4/5;
     border-radius: var(--border-radius-out);
 }
 
@@ -37,7 +36,7 @@
 
 .main > article > div > h1 {
     font-weight: 500;
-    font-size: var(--text-size-huge);
+    font-size: var(--text-size-xlarge);
     color: var(--neutral-700);
 }
 

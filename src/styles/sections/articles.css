@@ -52,7 +52,7 @@
 
 .articles__section > div > section > article > figure {
     overflow: hidden;
-    aspect-ratio: 1;
+    aspect-ratio: 4/5;
     border-radius: var(--border-radius-out);
 }
 
