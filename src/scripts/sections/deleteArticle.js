@@ -1,5 +1,17 @@
-const deleteArticleButton = document.getElementById("delete-article-btn");
-const deleteArticleModal = document.getElementById("delete-article-modal");
+import { deleteArticleService } from "../services/articleService.js";
+import { initializeModal } from "../utils/handleModal.js";
 
-deleteArticleButton.addEventListener("click", () => deleteArticleModal.showModal());
-deleteArticleModal.querySelector("header > button").addEventListener("click", () => deleteArticleModal.close());
+const { articleId } = Object.fromEntries(new URL(window.location).searchParams.entries());
+
+const { modal } = initializeModal("delete-article-modal", "open-delete-article-modal-btn");
+
+const deleteArticle = async () => {
+    try {
+        await deleteArticleService(articleId);
+        window.location.href = localStorage.getItem("previousUrl");
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+modal.querySelector("section > div > button.primary").addEventListener("click", async () => deleteArticle());

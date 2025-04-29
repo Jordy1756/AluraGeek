@@ -1,18 +1,24 @@
-.modal > section {
+.modal.delete__modal {
+    width: min(350px, 100%);
+}
+
+.modal.delete__modal > section {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 
-.modal > section > div {
+.modal.delete__modal > section > div {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 @media screen and (width <= 365px) {
-    .modal > section > div > button {
+    .modal.delete__modal > section > div > button {
         flex: 1;
     }
 }

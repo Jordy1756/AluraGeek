@@ -1,5 +1,6 @@
 import { renderArticles } from "../components/articlesGallery.js";
 import { getAllArticlesService } from "../services/articleService.js";
+import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
 const url = new URL(window.location);
 const { categoryId, categoryName } = Object.fromEntries(url.searchParams.entries());
@@ -23,3 +24,4 @@ const getAllArticles = async () => {
 
 setSectionHeader();
 getAllArticles();
+trackPreviousUrl();

@@ -1,5 +1,6 @@
 import { getSomeArticlesService } from "../services/articleService.js";
 import { renderArticleSection } from "../components/articlesGallery.js";
+import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
 const getSomeArticles = async () => {
     const { data } = await getSomeArticlesService();
@@ -10,3 +11,4 @@ const getSomeArticles = async () => {
 };
 
 getSomeArticles();
+trackPreviousUrl();

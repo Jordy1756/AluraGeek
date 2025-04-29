@@ -95,8 +95,8 @@
                             </p>
                         </section>
                         <div id="article-actions">
-                            <button id="update-article-btn" class="button primary">Actualizar</button>
-                            <button id="delete-article-btn" class="button tertiary">Eliminar</button>
+                            <button id="open-update-article-modal-btn" class="button primary">Actualizar</button>
+                            <button id="open-delete-article-modal-btn" class="button tertiary">Eliminar</button>
                         </div>
                     </div>
                 </article>
@@ -149,7 +149,7 @@
                 </section>
             </footer>
             <!-- MODALS -->
-            <dialog id="update-article-modal" class="modal" closedby="any">
+            <dialog id="update-article-modal" class="modal update__modal" closedby="any">
                 <header>
                     <h2>Actualizar artículo</h2>
                     <button type="button">
@@ -209,12 +209,12 @@
                         </div>
                         <div class="form__actions">
                             <button type="submit" class="button primary">Actualizar</button>
-                            <button type="button" class="button tertiary">Cancelar</button>
+                            <button type="button" class="button tertiary cancel__button">Cancelar</button>
                         </div>
                     </form>
                 </section>
             </dialog>
-            <dialog id="delete-article-modal" class="modal" closedby="any">
+            <dialog id="delete-article-modal" class="modal delete__modal" closedby="any">
                 <header>
                     <h2>Eliminar artículo</h2>
                     <button type="button">
@@ -234,7 +234,7 @@
                     <p>¿Estas seguro que deseas eliminar este articulo?</p>
                     <div>
                         <button type="button" class="button primary">Eliminar</button>
-                        <button type="button" class="button tertiary">Cancelar</button>
+                        <button type="button" class="button tertiary cancel__button">Cancelar</button>
                     </div>
                 </section>
             </dialog>

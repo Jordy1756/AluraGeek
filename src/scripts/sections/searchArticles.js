@@ -1,5 +1,6 @@
 import { renderArticles } from "../components/articlesGallery.js";
 import { searchArticlesService } from "../services/articleService.js";
+import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
 const url = new URL(window.location);
 const { query } = Object.fromEntries(url.searchParams.entries());
@@ -26,3 +27,4 @@ const searchArticles = async () => {
 
 setSectionHeader();
 searchArticles();
+trackPreviousUrl();

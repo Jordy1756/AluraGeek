@@ -1,28 +1,32 @@
-.modal > section > form,
-.modal > section {
+.modal.update__modal {
+    width: min(500px, 100%);
+}
+
+.modal.update__modal > section > form,
+.modal.update__modal > section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.modal > section {
+.modal.update__modal > section {
     padding: 1rem;
 }
 
-.modal > section > h1 {
+.modal.update__modal > section > h1 {
     text-align: center;
     font-weight: 600;
     font-size: var(--text-size-small);
 }
 
-.modal > section > form > .form__actions {
+.modal.update__modal > section > form > .form__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 @media screen and (width <= 365px) {
-    .modal > section > form > .form__actions > button {
+    .modal.update__modal > section > form > .form__actions > button {
         flex: 1;
     }
 }

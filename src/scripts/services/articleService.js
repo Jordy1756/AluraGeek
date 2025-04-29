@@ -1,5 +1,20 @@
 import { ARTICLE_URL, ARTICLES_LIMIT, CATEGORY_LIMIT } from "../../constants/apiConstants.js";
 
+export const deleteArticleService = async (articleId) => {
+    const response = await fetch(`${ARTICLE_URL}/delete-article/${articleId}`, {
+        method: "DELETE",
+        credentials: "include",
+    });
+
+    if (!response.ok) throw new Error();
+
+    const data = await response.json();
+
+    if (!data) throw new Error();
+
+    return data;
+};
+
 export const getSomeArticlesService = async () => {
     const response = await fetch(`${ARTICLE_URL}/get-some-articles/${CATEGORY_LIMIT}/${ARTICLES_LIMIT}`, {
         credentials: "include",

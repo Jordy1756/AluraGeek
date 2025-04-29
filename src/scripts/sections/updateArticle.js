@@ -1,5 +1,14 @@
-const updateArticleButton = document.getElementById("update-article-btn");
-const updateArticleModal = document.getElementById("update-article-modal");
+import { getAllCategoriesService } from "../services/categoryService.js";
+import { initializeModal } from "../utils/handleModal.js";
 
-updateArticleButton.addEventListener("click", () => updateArticleModal.showModal());
-updateArticleModal.querySelector("header > button").addEventListener("click", () => updateArticleModal.close());
+const { modal } = initializeModal("update-article-modal", "open-update-article-modal-btn");
+
+const getAllCategories = async () => {
+    const categories = await getAllCategoriesService();
+};
+
+const initializeApp = async () => {
+    await getAllCategories();
+};
+
+initializeApp();

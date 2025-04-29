@@ -4,6 +4,7 @@ import { getRecommendedArticlesService } from "../services/articleService.js";
 const { articleId, image, articleName, price, description } = Object.fromEntries(
     new URL(window.location).searchParams.entries()
 );
+
 const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
 const setArticleDetails = () => {
