@@ -1,20 +1,3 @@
 .main {
     padding-block: 3rem;
 }
-
-.main > .articles__section > div > header {
-    display: none;
-}
-
-.main > .not__found-section {
-    padding: 1rem;
-    align-self: center;
-    width: min(var(--max-width), 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main > .not__found-section > p {
-    font-size: var(--text-size-xlarge);
-}

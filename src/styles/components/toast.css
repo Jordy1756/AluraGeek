@@ -1,0 +1,29 @@
+.toast {
+    padding: 1rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 300px;
+    background-color: var(--neutral-50);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-out);
+    z-index: 999;
+}
+
+.toast > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.toast > div > h4 {
+    font-weight: 700;
+}
+
+@media screen and (width <= 480px) {
+    .toast {
+        width: calc(100% - 2rem);
+    }
+}

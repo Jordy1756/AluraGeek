@@ -1,5 +1,5 @@
+import { initializeModal } from "../components/modal.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
-import { initializeModal } from "../utils/handleModal.js";
 
 const { modal } = initializeModal("update-article-modal", "open-update-article-modal-btn");
 

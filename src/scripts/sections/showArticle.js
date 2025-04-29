@@ -1,11 +1,10 @@
 import { renderArticleSection } from "../components/articlesGallery.js";
 import { getRecommendedArticlesService } from "../services/articleService.js";
+import { isAuthenticated } from "../utils/handleAuth.js";
 
 const { articleId, image, articleName, price, description } = Object.fromEntries(
     new URL(window.location).searchParams.entries()
 );
-
-const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
 const setArticleDetails = () => {
     const container = document.querySelector("#article-details");

@@ -1,5 +1,5 @@
+import { initializeModal } from "../components/modal.js";
 import { deleteArticleService } from "../services/articleService.js";
-import { initializeModal } from "../utils/handleModal.js";
 
 const { articleId } = Object.fromEntries(new URL(window.location).searchParams.entries());
 
