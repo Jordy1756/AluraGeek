@@ -175,14 +175,21 @@
                             <p></p>
                         </div>
                         <div class="input__box">
-                            <fieldset>
-                                <select name="category">
-                                    <option value="" disabled selected>Debe seleccionar una categoría</option>
-                                    <option value="consoles">Consolas</option>
-                                    <option value="starWars">Star Wars</option>
-                                    <option value="various">Diversos</option>
-                                </select>
-                                <legend>Categoría</legend>
+                            <fieldset id="categories-select" class="select__multiple">
+                                <div>
+                                    <button type="button">
+                                        <span>Seleccionar países</span>
+                                        <span>▼</span>
+                                    </button>
+                                    <ul>
+                                        <li role="option" aria-selected="false">Argentina</li>
+                                        <li role="option" aria-selected="false">Costa Rica</li>
+                                        <li role="option" aria-selected="false">Brazil</li>
+                                        <li role="option" aria-selected="false">Alemania</li>
+                                        <li role="option" aria-selected="false">Francia</li>
+                                    </ul>
+                                </div>
+                                <legend>Categorias</legend>
                             </fieldset>
                             <p></p>
                         </div>
@@ -240,6 +247,7 @@
             </dialog>
         </div>
     </body>
+    <script type="module" src="https://unpkg.com/@padawanstrainer/select-multiple"></script>
     <script type="module" src="../scripts/components/navbar.js"></script>
     <script type="module" src="../scripts/sections/showArticle.js"></script>
     <script type="module" src="../scripts/sections/updateArticle.js"></script>

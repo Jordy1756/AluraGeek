@@ -27,7 +27,7 @@
 }
 
 .input__box > fieldset > legend {
-    padding: 7.5px 10px;
+    padding: 5px 10px;
     position: absolute;
     top: 7.5px;
     left: 0;
@@ -40,9 +40,9 @@
     transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
-.input__box > fieldset > :is(input, textarea, select):focus + legend,
-.input__box > fieldset > :is(input, textarea, select):not(:placeholder-shown) + legend {
-    top: 0;
+.input__box > fieldset > :is(input, textarea, select, select-multiple):focus + legend,
+.input__box > fieldset > :is(input, textarea, select, select-multiple):not(:placeholder-shown) + legend {
+    top: -1px;
     font-size: 0.8rem;
 }
 

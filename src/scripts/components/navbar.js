@@ -12,6 +12,7 @@ const initializeAuthUI = async () => {
 
     try {
         const { isAuthenticated } = await getAuthStatusService();
+        console.log(isAuthenticated)
         localStorage.setItem("isAuthenticated", isAuthenticated);
 
         loginButton.style.display = isAuthenticated ? "none" : "flex";
