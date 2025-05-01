@@ -131,7 +131,7 @@
             <!-- MODALS -->
             <dialog id="insert-article-modal" class="modal insert__modal" closedby="any">
                 <header>
-                    <h2>Actualizar artículo</h2>
+                    <h2>Agregar artículo</h2>
                     <button type="button">
                         <svg width="28" height="28" viewBox="0 0 24 24">
                             <path
@@ -179,27 +179,39 @@
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="name" type="text" placeholder="" required />
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder=""
+                                    pattern="^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$"
+                                    required
+                                />
                                 <legend>Nombre</legend>
                             </fieldset>
-                            <p></p>
+                            <p>wetwertwer</p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="price" type="number" placeholder="" required />
+                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
                                 <legend>Precio</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <textarea name="description" placeholder="" maxlength="150" required></textarea>
+                                <textarea
+                                    name="description"
+                                    placeholder=""
+                                    minlength="20"
+                                    maxlength="150"
+                                    required
+                                ></textarea>
                                 <legend>Descripción</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="form__actions">
-                            <button type="submit" class="button primary">Actualizar</button>
+                            <button type="submit" class="button primary">Agregar</button>
                             <button type="button" class="button tertiary cancel__button">Cancelar</button>
                         </div>
                     </form>

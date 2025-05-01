@@ -1,5 +1,7 @@
 import { initHeader } from "../components/header.js";
 import { loginUserService } from "../services/userService.js";
+import { LOGIN_ERROR_MESSAGES } from "../utils/errorTypes.js";
+import { initValidations } from "../utils/handleValidations.js";
 
 const initApp = async () => {
     const { isAuthenticated } = await initHeader();
@@ -21,6 +23,7 @@ const initApp = async () => {
     };
 
     loginForm.addEventListener("submit", loginUser);
+    initValidations(loginForm, LOGIN_ERROR_MESSAGES);
 };
 
 initApp();

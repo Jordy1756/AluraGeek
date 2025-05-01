@@ -1,5 +1,22 @@
 import { ARTICLE_URL, ARTICLES_LIMIT, CATEGORY_LIMIT } from "../../constants/apiConstants.js";
 
+export const insertArticleService = async (article) => {
+    const response = await fetch(`${ARTICLE_URL}/insert-article`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(article),
+    });
+
+    if (!response.ok) throw new Error();
+
+    const data = await response.json();
+
+    if (!data) throw new Error();
+
+    return data;
+};
+
 export const updateArticleService = async (article) => {
     const response = await fetch(`${ARTICLE_URL}/update-article/${article.id}`, {
         method: "PUT",

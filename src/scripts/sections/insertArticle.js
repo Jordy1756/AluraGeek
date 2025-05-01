@@ -1,11 +1,11 @@
 import { initModal } from "../components/modal.js";
 import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
-import { updateArticleService } from "../services/articleService.js";
+import { insertArticleService } from "../services/articleService.js";
+import { initValidations } from "../utils/handleValidations.js";
+import { ARTICLE_ERROR_MESSAGES } from "../utils/errorTypes.js";
 
 const initApp = async () => {
-    const {} = Object.fromEntries(new URL(window.location).searchParams.entries());
-
     const insertArticleForm = document.getElementById("insert-article-form");
 
     const getAllCategories = async () => {
@@ -25,10 +25,10 @@ const initApp = async () => {
         const { name, image, price, description } = Object.fromEntries(new FormData(e.target).entries());
         const selectedOptions = getSelectedOptionIds();
 
-        try {
-            if (selectedOptions.length === 0) throw new Error("ERROR: CATEGORIA");
+        if (selectedOptions.length === 0) return;
 
-            const data = await updateArticleService({
+        try {
+            const data = await insertArticleService({
                 name,
                 price,
                 description,
@@ -36,7 +36,7 @@ const initApp = async () => {
                 categories: selectedOptions,
             });
 
-            window.location.href = `/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
+            location.reload();
         } catch (error) {
             console.error(error);
         }
@@ -51,14 +51,18 @@ const initApp = async () => {
             selected: false,
         }));
 
-    const { getSelectedOptionIds } = initDropdown(
+    const { handleDropdownError, getSelectedOptionIds } = initDropdown(
         "categories-dropdown",
         "Seleccionar categorías",
         getMappedCategories()
     );
 
     initModal("insert-article-modal", "open-insert-article-modal-btn");
+    initValidations(insertArticleForm, ARTICLE_ERROR_MESSAGES);
     insertArticleForm.addEventListener("submit", insertArticle);
+    insertArticleForm
+        .querySelector(".primary")
+        .addEventListener("click", () => handleDropdownError("Debes seleccionar una categoría"));
 };
 
 initApp();

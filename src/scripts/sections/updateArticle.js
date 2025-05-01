@@ -2,6 +2,8 @@ import { initModal } from "../components/modal.js";
 import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
+import { ARTICLE_ERROR_MESSAGES } from "../utils/errorTypes.js";
+import { initValidations } from "../utils/handleValidations.js";
 
 const initApp = async () => {
     const { articleId, image, name, price, description, articleCategories } = Object.fromEntries(
@@ -69,7 +71,11 @@ const initApp = async () => {
 
     setUpdateFormInputs();
     initModal("update-article-modal", "open-update-article-modal-btn");
+    initValidations(updateArticleForm, ARTICLE_ERROR_MESSAGES);
     updateArticleForm.addEventListener("submit", updateArticle);
+    updateArticleForm
+        .querySelector(".primary")
+        .addEventListener("click", () => handleDropdownError("Debes seleccionar una categoría"));
 };
 
 initApp();

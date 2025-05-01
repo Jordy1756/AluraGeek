@@ -73,14 +73,28 @@
                     <form id="login-form">
                         <div class="input__box">
                             <fieldset>
-                                <input name="email" type="email" placeholder="" required />
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder=""
+                                    required
+                                    pattern="[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                                />
                                 <legend>Correo</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="password" type="password" placeholder="" required />
+                                <input
+                                    name="password"
+                                    type="password"
+                                    placeholder=""
+                                    required
+                                    minlength="8"
+                                    maxlength="12"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"
+                                />
                                 <legend>Contraseña</legend>
                             </fieldset>
                             <p></p>
