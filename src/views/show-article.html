@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="../styles/components/articles-gallery.css" />
         <link rel="stylesheet" href="../styles/components/footer.css" />
         <link rel="stylesheet" href="../styles/components/modal.css" />
+        <link rel="stylesheet" href="../styles/components/dropdown.css" />
         <link rel="stylesheet" href="../styles/sections/show-article.css" />
-        <link rel="stylesheet" href="../styles/sections/add-and-update-article.css" />
+        <link rel="stylesheet" href="../styles/sections/update-article.css" />
         <link rel="stylesheet" href="../styles/sections/delete-article.css" />
     </head>
     <body>
@@ -41,7 +42,7 @@
                         </button>
                     </form>
                     <div>
-                        <a id="login-button" class="button secondary login__btn" href="./src/views/login.html">Login</a>
+                        <a id="login-button" class="button secondary login__btn" href="../views/login.html">Login</a>
                         <button id="logout-button" class="button secondary logout__btn">Logout</button>
                         <button id="open-search-btn" class="open__search-btn">
                             <svg width="24" height="24" viewBox="0 0 48 48">
@@ -166,28 +167,32 @@
                     </button>
                 </header>
                 <section>
-                    <form>
+                    <form id="update-article-form">
                         <div class="input__box">
                             <fieldset>
-                                <input name="image" type="text" placeholder="" required />
+                                <input name="image" type="url" placeholder="" required />
                                 <legend>URL de la imagen</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
-                            <fieldset id="categories-select" class="select__multiple">
+                            <fieldset id="categories-dropdown" class="dropdown">
                                 <div>
                                     <button type="button">
                                         <span>Seleccionar países</span>
-                                        <span>▼</span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <path
+                                                fill="none"
+                                                stroke="var(--neutral-900)"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="1.5"
+                                                d="M18 15s-4.419-6-6-6s-6 6-6 6"
+                                                color="var(--neutral-900)"
+                                            />
+                                        </svg>
                                     </button>
-                                    <ul>
-                                        <li role="option" aria-selected="false">Argentina</li>
-                                        <li role="option" aria-selected="false">Costa Rica</li>
-                                        <li role="option" aria-selected="false">Brazil</li>
-                                        <li role="option" aria-selected="false">Alemania</li>
-                                        <li role="option" aria-selected="false">Francia</li>
-                                    </ul>
+                                    <ul></ul>
                                 </div>
                                 <legend>Categorias</legend>
                             </fieldset>
@@ -247,8 +252,6 @@
             </dialog>
         </div>
     </body>
-    <script type="module" src="https://unpkg.com/@padawanstrainer/select-multiple"></script>
-    <script type="module" src="../scripts/components/navbar.js"></script>
     <script type="module" src="../scripts/sections/showArticle.js"></script>
     <script type="module" src="../scripts/sections/updateArticle.js"></script>
     <script type="module" src="../scripts/sections/deleteArticle.js"></script>

@@ -1,26 +1,37 @@
-import { renderArticles } from "../components/articlesGallery.js";
+import { initArticlesGallery } from "../components/articlesGallery.js";
+import { initHeader } from "../components/header.js";
 import { getAllArticlesService } from "../services/articleService.js";
-import { isAuthenticated } from "../utils/handleAuth.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
-const url = new URL(window.location);
-const { categoryId, categoryName } = Object.fromEntries(url.searchParams.entries());
+const initApp = async () => {
+    const url = new URL(window.location);
+    const { categoryId, categoryName } = Object.fromEntries(url.searchParams.entries());
 
-const setSectionHeader = () => {
-    const sectionHeader = document.querySelector(".articles__section > div > header");
+    const { isAuthenticated } = await initHeader();
+    const { renderArticles } = initArticlesGallery();
 
-    sectionHeader.querySelector("h2").textContent = categoryName;
-    sectionHeader.querySelector("a").style.display = isAuthenticated ? "flex" : "none";
+    const setSectionHeader = () => {
+        const sectionHeader = document.querySelector(".articles__section > div > header");
+
+        sectionHeader.querySelector("h2").textContent = categoryName;
+        sectionHeader.querySelector(".primary").style.display = isAuthenticated ? "flex" : "none";
+    };
+
+    const getAllArticles = async () => {
+        try {
+            const articles = await getAllArticlesService(categoryId);
+
+            const section = document.querySelector("#articles-container");
+
+            section.insertAdjacentHTML("beforeend", renderArticles(articles));
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    setSectionHeader();
+    await getAllArticles();
+    trackPreviousUrl();
 };
 
-const getAllArticles = async () => {
-    const articles = await getAllArticlesService(categoryId);
-
-    const section = document.querySelector("#articles-container");
-
-    section.insertAdjacentHTML("beforeend", renderArticles(articles));
-};
-
-setSectionHeader();
-getAllArticles();
-trackPreviousUrl();
+initApp();

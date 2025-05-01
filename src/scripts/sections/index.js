@@ -1,14 +1,26 @@
+import { initArticlesGallery } from "../components/articlesGallery.js";
+import { initHeader } from "../components/header.js";
 import { getSomeArticlesService } from "../services/articleService.js";
-import { renderArticleSection } from "../components/articlesGallery.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
-const getSomeArticles = async () => {
-    const { data } = await getSomeArticlesService();
+const initApp = async () => {
+    await initHeader();
+    const { renderArticleSection } = initArticlesGallery();
 
-    const section = document.querySelector("#articles-section");
+    const getSomeArticles = async () => {
+        try {
+            const { data } = await getSomeArticlesService();
 
-    data.forEach(({ category, articles }) => renderArticleSection(section, category, articles));
+            const section = document.querySelector("#articles-section");
+
+            data.forEach(({ category, articles }) => renderArticleSection(section, category, articles));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    await getSomeArticles();
+    trackPreviousUrl();
 };
 
-getSomeArticles();
-trackPreviousUrl();
+initApp();

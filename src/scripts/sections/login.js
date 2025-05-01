@@ -1,21 +1,26 @@
+import { initHeader } from "../components/header.js";
 import { loginUserService } from "../services/userService.js";
 
-const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-isAuthenticated && (window.location.href = "/index.html");
+const initApp = async () => {
+    const { isAuthenticated } = await initHeader();
+    isAuthenticated && (window.location.href = "/index.html");
 
-const loginForm = document.getElementById("login-form");
+    const loginForm = document.getElementById("login-form");
 
-const loginUser = async (e) => {
-    e.preventDefault();
+    const loginUser = async (e) => {
+        e.preventDefault();
 
-    const { email, password } = Object.fromEntries(new FormData(e.target).entries());
+        const { email, password } = Object.fromEntries(new FormData(e.target).entries());
 
-    try {
-        await loginUserService({ email, password });
-        window.location.href = "/index.html";
-    } catch (error) {
-        console.error(error);
-    }
+        try {
+            await loginUserService({ email, password });
+            window.location.href = "/index.html";
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    loginForm.addEventListener("submit", loginUser);
 };
 
-loginForm.addEventListener("submit", loginUser);
+initApp();

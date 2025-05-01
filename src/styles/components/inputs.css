@@ -29,7 +29,7 @@
 .input__box > fieldset > legend {
     padding: 5px 10px;
     position: absolute;
-    top: 7.5px;
+    top: 12.5px;
     left: 0;
     width: 100%;
     color: var(--neutral-600);

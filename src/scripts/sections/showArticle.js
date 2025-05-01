@@ -1,38 +1,41 @@
-import { renderArticleSection } from "../components/articlesGallery.js";
+import { initArticlesGallery } from "../components/articlesGallery.js";
+import { initHeader } from "../components/header.js";
 import { getRecommendedArticlesService } from "../services/articleService.js";
-import { isAuthenticated } from "../utils/handleAuth.js";
 
-const { articleId, image, articleName, price, description } = Object.fromEntries(
-    new URL(window.location).searchParams.entries()
-);
+const initApp = async () => {
+    const { articleId, image, name, price, description } = Object.fromEntries(
+        new URL(window.location).searchParams.entries()
+    );
 
-const setArticleDetails = () => {
-    const container = document.querySelector("#article-details");
-    const img = container.querySelector("figure > img");
-    const infoSection = container.querySelector("div > section");
+    const { isAuthenticated } = await initHeader();
+    const { renderArticleSection } = initArticlesGallery();
 
-    img.src = image;
-    img.alt = `Producto ${articleName}`;
-    container.querySelector("figure > figcaption").textContent = articleName;
-    infoSection.querySelector("h1").textContent = articleName;
-    infoSection.querySelector("span").textContent = price;
-    infoSection.querySelector("p").textContent = description;
-    document.querySelector("#article-actions").style.display = isAuthenticated ? "flex" : "none";
-};
+    const articlesDetailsContainer = document.querySelector("#article-details");
+    const articleImage = articlesDetailsContainer.querySelector("figure > img");
+    const articleInfoSection = articlesDetailsContainer.querySelector("div > section");
 
-const getRecommendedArticles = async () => {
-    try {
-        const { data } = await getRecommendedArticlesService(articleId);
-        const section = document.querySelector("#articles-section");
-        data.forEach(({ category, articles }) => renderArticleSection(section, category, articles));
-    } catch (error) {
-        console.log(error);
-    }
-};
+    const setArticleDetails = () => {
+        articleImage.src = image;
+        articleImage.alt = `Producto ${name}`;
+        articlesDetailsContainer.querySelector("figure > figcaption").textContent = name;
+        articleInfoSection.querySelector("h1").textContent = name;
+        articleInfoSection.querySelector("span").textContent = price;
+        articleInfoSection.querySelector("p").textContent = description;
+        document.querySelector("#article-actions").style.display = isAuthenticated ? "flex" : "none";
+    };
 
-const initializeApp = async () => {
+    const getRecommendedArticles = async () => {
+        try {
+            const { data } = await getRecommendedArticlesService(articleId);
+            const artcilesSection = document.querySelector("#articles-section");
+            data.forEach(({ category, articles }) => renderArticleSection(artcilesSection, category, articles));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     setArticleDetails();
     await getRecommendedArticles();
 };
 
-initializeApp();
+initApp();

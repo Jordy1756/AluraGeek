@@ -4,18 +4,9 @@ import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
 
 const initApp = async () => {
-    const { articleId, image, name, price, description, articleCategories } = Object.fromEntries(
-        new URL(window.location).searchParams.entries()
-    );
+    const {} = Object.fromEntries(new URL(window.location).searchParams.entries());
 
-    const updateArticleForm = document.getElementById("update-article-form");
-
-    const setUpdateFormInputs = () => {
-        updateArticleForm.querySelector('[name="name"]').value = name;
-        updateArticleForm.querySelector('[name="image"]').value = image;
-        updateArticleForm.querySelector('[name="price"]').value = price;
-        updateArticleForm.querySelector('[name="description"]').value = description;
-    };
+    const insertArticleForm = document.getElementById("insert-article-form");
 
     const getAllCategories = async () => {
         try {
@@ -29,7 +20,7 @@ const initApp = async () => {
         }
     };
 
-    const updateArticle = async (e) => {
+    const insertArticle = async (e) => {
         e.preventDefault();
         const { name, image, price, description } = Object.fromEntries(new FormData(e.target).entries());
         const selectedOptions = getSelectedOptionIds();
@@ -38,7 +29,6 @@ const initApp = async () => {
             if (selectedOptions.length === 0) throw new Error("ERROR: CATEGORIA");
 
             const data = await updateArticleService({
-                id: articleId,
                 name,
                 price,
                 description,
@@ -58,7 +48,7 @@ const initApp = async () => {
         categories.map(({ _id: id, name }) => ({
             id,
             name,
-            selected: articleCategories.includes(id),
+            selected: false,
         }));
 
     const { getSelectedOptionIds } = initDropdown(
@@ -67,9 +57,8 @@ const initApp = async () => {
         getMappedCategories()
     );
 
-    setUpdateFormInputs();
-    initModal("update-article-modal", "open-update-article-modal-btn");
-    updateArticleForm.addEventListener("submit", updateArticle);
+    initModal("insert-article-modal", "open-insert-article-modal-btn");
+    insertArticleForm.addEventListener("submit", insertArticle);
 };
 
 initApp();

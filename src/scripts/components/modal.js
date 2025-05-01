@@ -1,4 +1,4 @@
-export const initializeModal = (modalId, buttonId) => {
+export const initModal = (modalId, buttonId) => {
     const openModalButton = document.getElementById(buttonId);
     const modal = document.getElementById(modalId);
 

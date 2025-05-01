@@ -1,0 +1,85 @@
+.dropdown > div {
+    position: relative;
+}
+
+.dropdown > div > button {
+    padding: 25px 10px 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--neutral-400);
+    background-color: var(--neutral-50);
+    border-radius: var(--border-radius-out);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.dropdown > div > button > svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dropdown > div > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--neutral-400);
+    border-top: none;
+    background-color: var(--neutral-50);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-out);
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    pointer-events: none;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.dropdown > div > ul > li {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown > div > ul > li:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-300);
+}
+
+.dropdown > div > ul > li:hover {
+    background-color: var(--neutral-100);
+}
+
+.dropdown > div > ul > li::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--neutral-600);
+    border-radius: var(--border-radius-in);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.dropdown > div > ul > li[aria-selected="true"]::before {
+    background-color: var(--primary-500);
+    border-color: var(--primary-500);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+}
+
+/* DROPDOWN OPEN */
+.dropdown.open > div > button > svg {
+    transform: rotate(0deg);
+}
+
+.dropdown.open > div > ul {
+    opacity: 1;
+    max-height: 189.5px;
+    pointer-events: visible;
+}
