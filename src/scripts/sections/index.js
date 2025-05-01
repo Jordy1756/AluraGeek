@@ -1,4 +1,5 @@
 import { initArticlesGallery } from "../components/articlesGallery.js";
+import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { getSomeArticlesService } from "../services/articleService.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
@@ -21,6 +22,7 @@ const initApp = async () => {
 
     await getSomeArticles();
     trackPreviousUrl();
+    initFooter();
 };
 
 initApp();

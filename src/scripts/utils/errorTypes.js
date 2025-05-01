@@ -30,12 +30,27 @@ export const LOGIN_ERROR_MESSAGES = {
         valueMissing: "El correo electrónico no debe estar vacío",
         typeMismatch: "Por favor, introduce un correo electrónico válido",
         patternMismatch: "El formato del correo electrónico no es válido. Debe ser ejemplo@dominio.com",
-            },
+    },
     password: {
         valueMissing: "La contraseña no debe estar vacía",
         tooShort: "La contraseña debe tener al menos 8 caracteres",
         tooLong: "La contraseña no puede superar los 12 caracteres",
         patternMismatch:
             "La contraseña debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial",
+    },
+};
+
+export const CONTACT_ERROR_MESSAGES = {
+    name: {
+        valueMissing: "El nombre no debe estar vacío",
+        tooShort: "El nombre debe tener al menos 5 caracteres",
+        tooLong: "El nombre no puede superar los 50 caracteres",
+        patternMismatch:
+            "El nombre debe contener nombre y apellido, ambos iniciando con mayúscula y solo puede contener letras, tildes y espacios",
+    },
+    message: {
+        valueMissing: "El mensaje no debe estar vacío",
+        tooShort: "El mensaje debe tener al menos 20 caracteres",
+        tooLong: "El mensaje no puede superar los 150 caracteres",
     },
 };

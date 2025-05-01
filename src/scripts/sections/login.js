@@ -1,3 +1,4 @@
+import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { loginUserService } from "../services/userService.js";
 import { LOGIN_ERROR_MESSAGES } from "../utils/errorTypes.js";
@@ -24,6 +25,8 @@ const initApp = async () => {
 
     loginForm.addEventListener("submit", loginUser);
     initValidations(loginForm, LOGIN_ERROR_MESSAGES);
+
+    initFooter();
 };
 
 initApp();
