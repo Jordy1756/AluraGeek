@@ -34,7 +34,7 @@ const initSearchArticles = async () => {
     };
 
     setSectionHeader();
-    initFooter();
+    initFooter(showToast);
     isAuthenticated && initInsertArticle("", showToast, setToastToShowOnReload);
     trackPreviousUrl();
     await searchArticles();

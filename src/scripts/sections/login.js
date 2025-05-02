@@ -29,7 +29,7 @@ const initLogin = async () => {
 
     loginForm.addEventListener("submit", loginUser);
     initValidations(loginForm, LOGIN_ERROR_MESSAGES);
-    initFooter();
+    initFooter(showToast);
 };
 
 initLogin();

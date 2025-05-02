@@ -33,7 +33,7 @@ const initShowAllArticles = async () => {
     };
 
     setSectionHeader();
-    initFooter();
+    initFooter(showToast);
     isAuthenticated && initInsertArticle(categoryId, showToast, setToastToShowOnReload);
     trackPreviousUrl();
     await getAllArticles();

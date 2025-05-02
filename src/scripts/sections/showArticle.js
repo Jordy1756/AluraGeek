@@ -40,9 +40,9 @@ const initShowArticle = async () => {
     };
 
     setArticleDetails();
-    initFooter();
+    initFooter(showToast);
     await getRecommendedArticles();
-    
+
     if (isAuthenticated) {
         initUpdateArticle(
             { articleId, image, name, price, description, articleCategories },

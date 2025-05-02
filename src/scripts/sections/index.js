@@ -8,6 +8,7 @@ import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 const initApp = async () => {
     await initHeader();
     const { renderArticleSection } = initArticlesGallery();
+    const { showToast } = initToast();
 
     const getSomeArticles = async () => {
         try {
@@ -21,9 +22,8 @@ const initApp = async () => {
     };
 
     trackPreviousUrl();
-    initFooter();
+    initFooter(showToast);
     await getSomeArticles();
-    initToast();
 };
 
 initApp();
