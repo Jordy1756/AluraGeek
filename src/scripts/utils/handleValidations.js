@@ -1,3 +1,5 @@
+import { debounce } from "./debounce.js";
+
 export const initValidations = (form, errorMessages) => {
     const getMessage = (name, validity) => {
         for (const key in validity) {
@@ -15,7 +17,7 @@ export const initValidations = (form, errorMessages) => {
     const validateInput = (input) => {
         const paragraph = input.parentElement.parentElement.querySelector("p");
         const message = getMessage(input.name, input.validity);
-        
+
         input.setCustomValidity(message !== "" ? " " : "");
 
         paragraph.style.display = message !== "" ? "block" : "none";
@@ -24,7 +26,7 @@ export const initValidations = (form, errorMessages) => {
 
     const inputs = form.querySelectorAll("input, textarea");
     inputs.forEach((input) => {
-        input.addEventListener("input", () => validateInput(input));
+        input.addEventListener("input", debounce(() => validateInput(input)));
         input.addEventListener("invalid", () => validateInput(input));
     });
 };

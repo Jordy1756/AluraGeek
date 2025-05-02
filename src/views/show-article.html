@@ -129,14 +129,22 @@
                         <form>
                             <div class="input__box">
                                 <fieldset>
-                                    <input name="name" type="text" placeholder="" required />
+                                    <input
+                                        name="name"
+                                        type="text"
+                                        placeholder=""
+                                        required
+                                        pattern="^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+ [A-ZÁÉÍÓÚÑ][a-záéíóúñ]+$"
+                                        minlength="5"
+                                        maxlength="50"
+                                    />
                                     <legend>Nombre</legend>
                                 </fieldset>
                                 <p></p>
                             </div>
                             <div class="input__box">
                                 <fieldset>
-                                    <textarea name="message" placeholder="" required></textarea>
+                                    <textarea name="message" placeholder="" required minlength="20"></textarea>
                                     <legend>Mensaje</legend>
                                 </fieldset>
                                 <p></p>

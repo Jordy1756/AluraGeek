@@ -50,7 +50,6 @@ export const CONTACT_ERROR_MESSAGES = {
     },
     message: {
         valueMissing: "El mensaje no debe estar vacío",
-        tooShort: "El mensaje debe tener al menos 20 caracteres",
-        tooLong: "El mensaje no puede superar los 150 caracteres",
+        tooShort: "El mensaje debe tener al menos 20 caracteres"
     },
 };
