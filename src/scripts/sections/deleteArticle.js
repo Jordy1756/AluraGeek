@@ -2,7 +2,7 @@ import { initModal } from "../components/modal.js";
 import { deleteArticleService } from "../services/articleService.js";
 
 export const initDeleteArticle = (articleId, showToast, setToastToShowOnReload) => {
-    const { modal } = initModal("delete-article-modal", "open-delete-article-modal-btn");
+    const { modal } = initModal("delete-article-modal", "#open-delete-article-modal-btn");
 
     const deleteArticle = async () => {
         try {

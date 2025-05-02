@@ -3,7 +3,7 @@
     right: 1rem;
     bottom: -100%;
     display: flex;
-    width: 300px;
+    width: 350px;
     background-color: var(--neutral-50);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius-in);

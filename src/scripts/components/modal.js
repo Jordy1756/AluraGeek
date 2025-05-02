@@ -1,11 +1,11 @@
-export const initModal = (modalId, buttonId) => {
-    const openModalButton = document.getElementById(buttonId);
+export const initModal = (modalId, buttonSelector) => {
+    const openModalButton = document.querySelectorAll(buttonSelector);
     const modal = document.getElementById(modalId);
 
     const openModal = () => modal.showModal();
     const closeModal = () => modal.close();
 
-    openModalButton.addEventListener("click", openModal);
+    openModalButton.forEach((button) => button.addEventListener("click", openModal));
     modal.querySelector("header > button").addEventListener("click", closeModal);
     modal.querySelector(".cancel__button").addEventListener("click", closeModal);
 

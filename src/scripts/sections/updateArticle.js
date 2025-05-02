@@ -2,8 +2,9 @@ import { initModal } from "../components/modal.js";
 import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
-import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
+import { CustomError } from "../utils/errorTypes.js";
 import { initValidations } from "../utils/handleValidations.js";
+import { ARTICLE_ERROR_MESSAGES } from "../../constants/errorConstants.js";
 
 export const initUpdateArticle = async (
     { articleId, image, name, price, description, articleCategories },
@@ -78,7 +79,7 @@ export const initUpdateArticle = async (
     );
 
     setUpdateFormInputs();
-    initModal("update-article-modal", "open-update-article-modal-btn");
+    initModal("update-article-modal", "#open-update-article-modal-btn");
     initValidations(updateArticleForm, ARTICLE_ERROR_MESSAGES);
     updateArticleForm.addEventListener("submit", updateArticle);
     updateArticleForm

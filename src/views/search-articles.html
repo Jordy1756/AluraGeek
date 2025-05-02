@@ -77,13 +77,14 @@
                     <div>
                         <header>
                             <h2>Todos los productos</h2>
-                            <button id="open-insert-article-modal-btn" class="button primary">Agregar</button>
+                            <button class="button primary open__insert-article-modal-btn">Agregar</button>
                         </header>
                         <section id="articles-container"></section>
                     </div>
                 </section>
                 <section id="not-found-section" class="not__found-section">
                     <p>No se encontraron articulos</p>
+                    <button class="button primary open__insert-article-modal-btn">Agregar</button>
                 </section>
             </main>
             <footer class="footer">
@@ -153,8 +154,21 @@
                     <form id="insert-article-form">
                         <div class="input__box">
                             <fieldset>
-                                <input name="image" type="url" placeholder="" required />
-                                <legend>URL de la imagen</legend>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder=""
+                                    pattern="^[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ\s]+$"
+                                    required
+                                />
+                                <legend>Nombre</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
+                                <legend>Precio</legend>
                             </fieldset>
                             <p></p>
                         </div>
@@ -183,33 +197,14 @@
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input
-                                    name="name"
-                                    type="text"
-                                    placeholder=""
-                                    pattern="^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$"
-                                    required
-                                />
-                                <legend>Nombre</legend>
-                            </fieldset>
-                            <p>wetwertwer</p>
-                        </div>
-                        <div class="input__box">
-                            <fieldset>
-                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
-                                <legend>Precio</legend>
+                                <input name="image" type="url" placeholder="" required />
+                                <legend>URL de la imagen</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <textarea
-                                    name="description"
-                                    placeholder=""
-                                    minlength="20"
-                                    maxlength="150"
-                                    required
-                                ></textarea>
+                                <textarea name="description" placeholder="" minlength="20" required></textarea>
                                 <legend>Descripción</legend>
                             </fieldset>
                             <p></p>

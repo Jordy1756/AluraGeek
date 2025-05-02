@@ -3,9 +3,10 @@ import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
 import { insertArticleService } from "../services/articleService.js";
 import { initValidations } from "../utils/handleValidations.js";
-import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
+import { CustomError } from "../utils/errorTypes.js";
+import { ARTICLE_ERROR_MESSAGES } from "../../constants/errorConstants.js";
 
-export const initInsertArticle = async (showToast, setToastToShowOnReload) => {
+export const initInsertArticle = async (categoryId, showToast, setToastToShowOnReload) => {
     const insertArticleForm = document.getElementById("insert-article-form");
 
     const getAllCategories = async () => {
@@ -56,7 +57,7 @@ export const initInsertArticle = async (showToast, setToastToShowOnReload) => {
         categories.map(({ _id: id, name }) => ({
             id,
             name,
-            selected: false,
+            selected: id === categoryId,
         }));
 
     const { handleDropdownError, getSelectedOptionIds } = initDropdown(
@@ -65,7 +66,7 @@ export const initInsertArticle = async (showToast, setToastToShowOnReload) => {
         getMappedCategories()
     );
 
-    initModal("insert-article-modal", "open-insert-article-modal-btn");
+    initModal("insert-article-modal", ".open__insert-article-modal-btn");
     initValidations(insertArticleForm, ARTICLE_ERROR_MESSAGES);
     insertArticleForm.addEventListener("submit", insertArticle);
     insertArticleForm

@@ -15,7 +15,7 @@ export const initValidations = (form, errorMessages) => {
     const validateInput = (input) => {
         const paragraph = input.parentElement.parentElement.querySelector("p");
         const message = getMessage(input.name, input.validity);
-
+        
         input.setCustomValidity(message !== "" ? " " : "");
 
         paragraph.style.display = message !== "" ? "block" : "none";
@@ -24,7 +24,6 @@ export const initValidations = (form, errorMessages) => {
 
     const inputs = form.querySelectorAll("input, textarea");
     inputs.forEach((input) => {
-        input.setCustomValidity(" ")
         input.addEventListener("input", () => validateInput(input));
         input.addEventListener("invalid", () => validateInput(input));
     });

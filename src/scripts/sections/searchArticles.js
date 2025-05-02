@@ -4,6 +4,7 @@ import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
 import { searchArticlesService } from "../services/articleService.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
+import { initInsertArticle } from "./insertArticle.js";
 
 const initSearchArticles = async () => {
     const url = new URL(window.location);
@@ -34,7 +35,7 @@ const initSearchArticles = async () => {
 
     setSectionHeader();
     initFooter();
-    isAuthenticated && initInsertArticle(showToast, setToastToShowOnReload);
+    isAuthenticated && initInsertArticle("", showToast, setToastToShowOnReload);
     trackPreviousUrl();
     await searchArticles();
 };

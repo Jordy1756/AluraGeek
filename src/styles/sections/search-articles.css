@@ -6,6 +6,10 @@
     display: none;
 }
 
+.main > .articles__section > div > header > button {
+    margin-left: auto;
+}
+
 .main > .not__found-section {
     padding: 1rem;
     align-self: center;

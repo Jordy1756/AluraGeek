@@ -171,8 +171,21 @@
                     <form id="update-article-form">
                         <div class="input__box">
                             <fieldset>
-                                <input name="image" type="url" placeholder="" required />
-                                <legend>URL de la imagen</legend>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder=""
+                                    pattern="^[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ\s]+$"
+                                    required
+                                />
+                                <legend>Nombre</legend>
+                            </fieldset>
+                            <p></p>
+                        </div>
+                        <div class="input__box">
+                            <fieldset>
+                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
+                                <legend>Precio</legend>
                             </fieldset>
                             <p></p>
                         </div>
@@ -201,39 +214,20 @@
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input
-                                    name="name"
-                                    type="text"
-                                    placeholder=""
-                                    pattern="^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$"
-                                    required
-                                />
-                                <legend>Nombre</legend>
-                            </fieldset>
-                            <p>wetwertwer</p>
-                        </div>
-                        <div class="input__box">
-                            <fieldset>
-                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
-                                <legend>Precio</legend>
+                                <input name="image" type="url" placeholder="" required />
+                                <legend>URL de la imagen</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <textarea
-                                    name="description"
-                                    placeholder=""
-                                    minlength="20"
-                                    maxlength="150"
-                                    required
-                                ></textarea>
+                                <textarea name="description" placeholder="" minlength="20" required></textarea>
                                 <legend>Descripción</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="form__actions">
-                            <button type="submit" class="button primary">Actualizar</button>
+                            <button type="submit" class="button primary">Agregar</button>
                             <button type="button" class="button tertiary cancel__button">Cancelar</button>
                         </div>
                     </form>

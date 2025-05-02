@@ -1,4 +1,4 @@
-import { CONTACT_ERROR_MESSAGES } from "../utils/errorTypes.js";
+import { CONTACT_ERROR_MESSAGES } from "../../constants/errorConstants.js";
 import { initValidations } from "../utils/handleValidations.js";
 
 export const initFooter = () => {

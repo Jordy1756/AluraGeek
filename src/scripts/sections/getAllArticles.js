@@ -34,7 +34,7 @@ const initShowAllArticles = async () => {
 
     setSectionHeader();
     initFooter();
-    isAuthenticated && initInsertArticle(showToast, setToastToShowOnReload);
+    isAuthenticated && initInsertArticle(categoryId, showToast, setToastToShowOnReload);
     trackPreviousUrl();
     await getAllArticles();
 };
