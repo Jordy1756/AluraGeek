@@ -10,9 +10,9 @@ const initSearchArticles = async () => {
     const url = new URL(window.location);
     const { query } = Object.fromEntries(url.searchParams.entries());
 
-    const { isAuthenticated } = await initHeader();
-    const { renderArticles } = initArticlesGallery();
     const { showToast, setToastToShowOnReload } = initToast();
+    const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
+    const { renderArticles } = initArticlesGallery();
 
     const sectionHeader = document.querySelector(".articles__section > div > header");
 

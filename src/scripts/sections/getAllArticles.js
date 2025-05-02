@@ -10,9 +10,9 @@ const initShowAllArticles = async () => {
     const url = new URL(window.location);
     const { categoryId, categoryName } = Object.fromEntries(url.searchParams.entries());
 
-    const { isAuthenticated } = await initHeader();
-    const { renderArticles } = initArticlesGallery();
     const { showToast, setToastToShowOnReload } = initToast();
+    const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
+    const { renderArticles } = initArticlesGallery();
 
     const setSectionHeader = () => {
         const sectionHeader = document.querySelector(".articles__section > div > header");
@@ -28,7 +28,8 @@ const initShowAllArticles = async () => {
 
             section.insertAdjacentHTML("beforeend", renderArticles(articles));
         } catch (error) {
-            console.log(error);
+            console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 

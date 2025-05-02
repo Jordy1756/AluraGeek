@@ -1,6 +1,6 @@
 import { getAuthStatusService, logoutUserService } from "../services/userService.js";
 
-export const initHeader = async () => {
+export const initHeader = async (showToast, setToastToShowOnReload) => {
     const header = document.querySelector(".header");
     const searchForm = header.querySelector("nav > form");
     const loginButton = header.querySelector("#login-button");
@@ -20,9 +20,11 @@ export const initHeader = async () => {
         try {
             await logoutUserService();
             isAuthenticated = false;
+            setToastToShowOnReload("success", "Sesión cerrada", "Has cerrado sesión correctamente");
             window.location.href = "/index.html";
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 

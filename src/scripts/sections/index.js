@@ -6,9 +6,10 @@ import { getSomeArticlesService } from "../services/articleService.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
 const initApp = async () => {
-    await initHeader();
+    const { showToast, setToastToShowOnReload } = initToast();
+
+    await initHeader(showToast, setToastToShowOnReload);
     const { renderArticleSection } = initArticlesGallery();
-    const { showToast } = initToast();
 
     const getSomeArticles = async () => {
         try {
@@ -18,6 +19,7 @@ const initApp = async () => {
             data.forEach(({ category, articles }) => renderArticleSection(section, category, articles));
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 

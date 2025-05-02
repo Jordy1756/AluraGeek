@@ -11,9 +11,9 @@ const initShowArticle = async () => {
         new URL(window.location).searchParams.entries()
     );
 
-    const { isAuthenticated } = await initHeader();
-    const { renderArticleSection } = initArticlesGallery();
     const { showToast, setToastToShowOnReload } = initToast();
+    const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
+    const { renderArticleSection } = initArticlesGallery();
 
     const setArticleDetails = () => {
         const articlesDetailsContainer = document.querySelector("#article-details");
@@ -36,6 +36,7 @@ const initShowArticle = async () => {
             data.forEach(({ category, articles }) => renderArticleSection(artcilesSection, category, articles));
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 

@@ -45,9 +45,12 @@ export const deleteArticleService = async (articleId) => {
 };
 
 export const getSomeArticlesService = async () => {
-    const response = await fetch(`${ARTICLE_URL}/get-some-articles/${CATEGORY_LIMIT}/${ARTICLES_LIMIT}`, {
-        credentials: "include",
-    });
+    const response = await fetch(
+        `${ARTICLE_URL}/get-some-articles?categoryLimit=${CATEGORY_LIMIT}&articlesLimit=${ARTICLES_LIMIT}`,
+        {
+            credentials: "include",
+        }
+    );
 
     const data = await response.json();
 
@@ -58,7 +61,7 @@ export const getSomeArticlesService = async () => {
 
 export const getRecommendedArticlesService = async (articleId) => {
     const response = await fetch(
-        `${ARTICLE_URL}/get-recommended-articles/${articleId}/${CATEGORY_LIMIT}/${ARTICLES_LIMIT}`,
+        `${ARTICLE_URL}/get-recommended-articles/${articleId}?categoryLimit=${CATEGORY_LIMIT}&articlesLimit=${ARTICLES_LIMIT}`,
         {
             credentials: "include",
         }
@@ -72,7 +75,7 @@ export const getRecommendedArticlesService = async (articleId) => {
 };
 
 export const getAllArticlesService = async (categoryId) => {
-    const response = await fetch(`${ARTICLE_URL}/get-all-articles/${categoryId}/${20}`, {
+    const response = await fetch(`${ARTICLE_URL}/get-all-articles/${categoryId}?articlesLimit=${20}`, {
         credentials: "include",
     });
 
@@ -84,7 +87,7 @@ export const getAllArticlesService = async (categoryId) => {
 };
 
 export const searchArticlesService = async (query) => {
-    const response = await fetch(`${ARTICLE_URL}/search-articles/${query}/${20}`, {
+    const response = await fetch(`${ARTICLE_URL}/search-articles?query=${query}&articlesLimit=${20}`, {
         credentials: "include",
     });
 

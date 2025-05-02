@@ -6,10 +6,10 @@ import { loginUserService } from "../services/userService.js";
 import { initValidations } from "../utils/handleValidations.js";
 
 const initLogin = async () => {
-    const { isAuthenticated } = await initHeader();
+    const { showToast, setToastToShowOnReload } = initToast();
+    const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
     isAuthenticated && (window.location.href = "/index.html");
 
-    const { showToast, setToastToShowOnReload } = initToast();
     const loginForm = document.getElementById("login-form");
 
     const loginUser = async (e) => {
