@@ -2,8 +2,9 @@ import { initModal } from "../components/modal.js";
 import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
-import { ARTICLE_ERROR_MESSAGES } from "../utils/errorTypes.js";
+import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
 import { initValidations } from "../utils/handleValidations.js";
+import { initToast } from "../components/toast.js";
 
 const initApp = async () => {
     const { articleId, image, name, price, description, articleCategories } = Object.fromEntries(
@@ -23,11 +24,13 @@ const initApp = async () => {
         try {
             const categories = await getAllCategoriesService();
 
-            if (categories.length === 0) throw new Error();
+            if (categories.length === 0)
+                throw new CustomError("Error de categorías", "No hay categorías disponibles en este momento");
 
             return categories;
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 
@@ -39,7 +42,7 @@ const initApp = async () => {
         try {
             if (selectedOptions.length === 0) throw new Error("ERROR: CATEGORIA");
 
-            const data = await updateArticleService({
+            await updateArticleService({
                 id: articleId,
                 name,
                 price,
@@ -48,9 +51,15 @@ const initApp = async () => {
                 categories: selectedOptions,
             });
 
+            setToastToShowOnReload(
+                "success",
+                "Producto actualizado",
+                `El producto ${name} se ha actualizado correctamente`
+            );
             window.location.href = `/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 
@@ -68,6 +77,7 @@ const initApp = async () => {
         "Seleccionar categorías",
         getMappedCategories()
     );
+    const { showToast, setToastToShowOnReload } = initToast();
 
     setUpdateFormInputs();
     initModal("update-article-modal", "open-update-article-modal-btn");

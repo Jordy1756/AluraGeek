@@ -1,6 +1,7 @@
 import { initArticlesGallery } from "../components/articlesGallery.js";
 import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
+import { initToast } from "../components/toast.js";
 import { getRecommendedArticlesService } from "../services/articleService.js";
 
 const initApp = async () => {
@@ -38,6 +39,7 @@ const initApp = async () => {
     setArticleDetails();
     await getRecommendedArticles();
     initFooter();
+    initToast();
 };
 
 initApp();

@@ -1,15 +1,14 @@
 import { CATEGORY_URL } from "../../constants/apiConstants.js";
+import { CustomError } from "../utils/errorTypes.js";
 
 export const getAllCategoriesService = async () => {
     const response = await fetch(`${CATEGORY_URL}/get-all-categories`, {
         credentials: "include",
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };

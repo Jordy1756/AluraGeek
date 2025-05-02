@@ -200,21 +200,33 @@
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="name" type="text" placeholder="" required />
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder=""
+                                    pattern="^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$"
+                                    required
+                                />
                                 <legend>Nombre</legend>
                             </fieldset>
-                            <p></p>
+                            <p>wetwertwer</p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <input name="price" type="number" placeholder="" required />
+                                <input name="price" type="number" placeholder="" step="0.01" min="0.01" required />
                                 <legend>Precio</legend>
                             </fieldset>
                             <p></p>
                         </div>
                         <div class="input__box">
                             <fieldset>
-                                <textarea name="description" placeholder="" maxlength="150" required></textarea>
+                                <textarea
+                                    name="description"
+                                    placeholder=""
+                                    minlength="20"
+                                    maxlength="150"
+                                    required
+                                ></textarea>
                                 <legend>Descripción</legend>
                             </fieldset>
                             <p></p>
@@ -250,6 +262,29 @@
                     </div>
                 </section>
             </dialog>
+        </div>
+        <!-- TOASTS -->
+        <div class="toast">
+            <aside></aside>
+            <section>
+                <figure></figure>
+                <div>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            fill="none"
+                            stroke="var(--neutral-600)"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M18 6L6 18M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </section>
         </div>
     </body>
     <script type="module" src="../scripts/sections/showArticle.js"></script>

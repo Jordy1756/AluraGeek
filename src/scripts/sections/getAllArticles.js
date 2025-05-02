@@ -1,6 +1,7 @@
 import { initArticlesGallery } from "../components/articlesGallery.js";
 import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
+import { initToast } from "../components/toast.js";
 import { getAllArticlesService } from "../services/articleService.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
@@ -34,6 +35,7 @@ const initApp = async () => {
     await getAllArticles();
     trackPreviousUrl();
     initFooter();
+    initToast();
 };
 
 initApp();

@@ -24,6 +24,7 @@ export const initValidations = (form, errorMessages) => {
 
     const inputs = form.querySelectorAll("input, textarea");
     inputs.forEach((input) => {
+        input.setCustomValidity(" ")
         input.addEventListener("input", () => validateInput(input));
         input.addEventListener("invalid", () => validateInput(input));
     });

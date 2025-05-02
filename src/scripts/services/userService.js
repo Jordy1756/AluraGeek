@@ -1,4 +1,5 @@
 import { USER_URL } from "../../constants/apiConstants.js";
+import { CustomError } from "../utils/errorTypes.js";
 
 export const loginUserService = async (user) => {
     const response = await fetch(`${USER_URL}/login-user`, {
@@ -8,11 +9,9 @@ export const loginUserService = async (user) => {
         body: JSON.stringify(user),
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -25,11 +24,9 @@ export const logoutUserService = async () => {
         body: JSON.stringify(),
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -42,11 +39,9 @@ export const getAuthStatusService = async () => {
         body: JSON.stringify(),
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };

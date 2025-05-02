@@ -3,7 +3,8 @@ import { initDropdown } from "../components/dropdown.js";
 import { getAllCategoriesService } from "../services/categoryService.js";
 import { insertArticleService } from "../services/articleService.js";
 import { initValidations } from "../utils/handleValidations.js";
-import { ARTICLE_ERROR_MESSAGES } from "../utils/errorTypes.js";
+import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
+import { initToast } from "../components/toast.js";
 
 const initApp = async () => {
     const insertArticleForm = document.getElementById("insert-article-form");
@@ -12,11 +13,13 @@ const initApp = async () => {
         try {
             const categories = await getAllCategoriesService();
 
-            if (categories.length === 0) throw new Error();
+            if (categories.length === 0)
+                throw new CustomError("Error de categorías", "No hay categorías disponibles en este momento");
 
             return categories;
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 
@@ -28,7 +31,7 @@ const initApp = async () => {
         if (selectedOptions.length === 0) return;
 
         try {
-            const data = await insertArticleService({
+            await insertArticleService({
                 name,
                 price,
                 description,
@@ -37,8 +40,14 @@ const initApp = async () => {
             });
 
             location.reload();
+            setToastToShowOnReload(
+                "success",
+                "Producto agregado",
+                `El producto ${name} se ha agregado correctamente al catálogo`
+            );
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 
@@ -56,6 +65,7 @@ const initApp = async () => {
         "Seleccionar categorías",
         getMappedCategories()
     );
+    const { showToast, setToastToShowOnReload } = initToast();
 
     initModal("insert-article-modal", "open-insert-article-modal-btn");
     initValidations(insertArticleForm, ARTICLE_ERROR_MESSAGES);

@@ -1,4 +1,5 @@
 import { ARTICLE_URL, ARTICLES_LIMIT, CATEGORY_LIMIT } from "../../constants/apiConstants.js";
+import { CustomError } from "../utils/errorTypes.js";
 
 export const insertArticleService = async (article) => {
     const response = await fetch(`${ARTICLE_URL}/insert-article`, {
@@ -8,11 +9,9 @@ export const insertArticleService = async (article) => {
         body: JSON.stringify(article),
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -25,11 +24,9 @@ export const updateArticleService = async (article) => {
         body: JSON.stringify(article),
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -40,11 +37,9 @@ export const deleteArticleService = async (articleId) => {
         credentials: "include",
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -54,11 +49,9 @@ export const getSomeArticlesService = async () => {
         credentials: "include",
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -71,11 +64,9 @@ export const getRecommendedArticlesService = async (articleId) => {
         }
     );
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -85,11 +76,9 @@ export const getAllArticlesService = async (categoryId) => {
         credentials: "include",
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };
@@ -99,11 +88,9 @@ export const searchArticlesService = async (query) => {
         credentials: "include",
     });
 
-    if (!response.ok) throw new Error();
-
     const data = await response.json();
 
-    if (!data) throw new Error();
+    if (!response.ok) throw new CustomError(data.name, data.message);
 
     return data;
 };

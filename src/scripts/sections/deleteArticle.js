@@ -1,4 +1,5 @@
 import { initModal } from "../components/modal.js";
+import { initToast } from "../components/toast.js";
 import { deleteArticleService } from "../services/articleService.js";
 
 const initApp = () => {
@@ -8,14 +9,22 @@ const initApp = () => {
 
     const deleteArticle = async () => {
         try {
-            await deleteArticleService(articleId);
+            const articleDeleted = await deleteArticleService(articleId);
+            setToastToShowOnReload(
+                "success",
+                "Producto eliminado",
+                `El producto ${articleDeleted.name} se ha eliminado correctamente del catálogo`
+            );
             window.location.href = localStorage.getItem("previousUrl");
         } catch (error) {
             console.error(error);
+            showToast("error", error.name, error.message);
         }
     };
 
     modal.querySelector("section > div > button.primary").addEventListener("click", async () => deleteArticle());
+
+    const { showToast, setToastToShowOnReload } = initToast();
 };
 
 initApp();

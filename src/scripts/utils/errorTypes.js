@@ -1,3 +1,10 @@
+export class CustomError extends Error {
+    constructor(name, message) {
+        super(message);
+        this.name = name;
+    }
+}
+
 export const ARTICLE_ERROR_MESSAGES = {
     name: {
         valueMissing: "El nombre no debe estar vacío",
