@@ -4,13 +4,12 @@ import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
 import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
 import { initValidations } from "../utils/handleValidations.js";
-import { initToast } from "../components/toast.js";
 
-const initApp = async () => {
-    const { articleId, image, name, price, description, articleCategories } = Object.fromEntries(
-        new URL(window.location).searchParams.entries()
-    );
-
+export const initUpdateArticle = async (
+    { articleId, image, name, price, description, articleCategories },
+    showToast,
+    setToastToShowOnReload
+) => {
     const updateArticleForm = document.getElementById("update-article-form");
 
     const setUpdateFormInputs = () => {
@@ -39,9 +38,9 @@ const initApp = async () => {
         const { name, image, price, description } = Object.fromEntries(new FormData(e.target).entries());
         const selectedOptions = getSelectedOptionIds();
 
-        try {
-            if (selectedOptions.length === 0) throw new Error("ERROR: CATEGORIA");
+        if (selectedOptions.length === 0) return handleDropdownError("Debes seleccionar una categoría");
 
+        try {
             await updateArticleService({
                 id: articleId,
                 name,
@@ -72,12 +71,11 @@ const initApp = async () => {
             selected: articleCategories.includes(id),
         }));
 
-    const { getSelectedOptionIds } = initDropdown(
+    const { getSelectedOptionIds, handleDropdownError } = initDropdown(
         "categories-dropdown",
         "Seleccionar categorías",
         getMappedCategories()
     );
-    const { showToast, setToastToShowOnReload } = initToast();
 
     setUpdateFormInputs();
     initModal("update-article-modal", "open-update-article-modal-btn");
@@ -87,5 +85,3 @@ const initApp = async () => {
         .querySelector(".primary")
         .addEventListener("click", () => handleDropdownError("Debes seleccionar una categoría"));
 };
-
-initApp();

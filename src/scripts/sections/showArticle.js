@@ -3,27 +3,30 @@ import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
 import { getRecommendedArticlesService } from "../services/articleService.js";
+import { initDeleteArticle } from "./deleteArticle.js";
+import { initUpdateArticle } from "./updateArticle.js";
 
-const initApp = async () => {
-    const { articleId, image, name, price, description } = Object.fromEntries(
+const initShowArticle = async () => {
+    const { articleId, image, name, price, description, articleCategories } = Object.fromEntries(
         new URL(window.location).searchParams.entries()
     );
 
     const { isAuthenticated } = await initHeader();
     const { renderArticleSection } = initArticlesGallery();
-
-    const articlesDetailsContainer = document.querySelector("#article-details");
-    const articleImage = articlesDetailsContainer.querySelector("figure > img");
-    const articleInfoSection = articlesDetailsContainer.querySelector("div > section");
+    const { showToast, setToastToShowOnReload } = initToast();
 
     const setArticleDetails = () => {
+        const articlesDetailsContainer = document.querySelector("#article-details");
+        const articleImage = articlesDetailsContainer.querySelector("figure > img");
+        const articleInfoSection = articlesDetailsContainer.querySelector("div > section");
+
         articleImage.src = image;
         articleImage.alt = `Producto ${name}`;
         articlesDetailsContainer.querySelector("figure > figcaption").textContent = name;
         articleInfoSection.querySelector("h1").textContent = name;
         articleInfoSection.querySelector("span").textContent = price;
         articleInfoSection.querySelector("p").textContent = description;
-        document.querySelector("#article-actions").style.display = isAuthenticated ? "flex" : "none";
+        articlesDetailsContainer.querySelector("#article-actions").style.display = isAuthenticated ? "flex" : "none";
     };
 
     const getRecommendedArticles = async () => {
@@ -37,9 +40,17 @@ const initApp = async () => {
     };
 
     setArticleDetails();
-    await getRecommendedArticles();
     initFooter();
-    initToast();
+    await getRecommendedArticles();
+    
+    if (isAuthenticated) {
+        initUpdateArticle(
+            { articleId, image, name, price, description, articleCategories },
+            showToast,
+            setToastToShowOnReload
+        );
+        initDeleteArticle(articleId, showToast, setToastToShowOnReload);
+    }
 };
 
-initApp();
+initShowArticle();

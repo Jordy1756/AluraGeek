@@ -4,9 +4,8 @@ import { getAllCategoriesService } from "../services/categoryService.js";
 import { insertArticleService } from "../services/articleService.js";
 import { initValidations } from "../utils/handleValidations.js";
 import { ARTICLE_ERROR_MESSAGES, CustomError } from "../utils/errorTypes.js";
-import { initToast } from "../components/toast.js";
 
-const initApp = async () => {
+export const initInsertArticle = async (showToast, setToastToShowOnReload) => {
     const insertArticleForm = document.getElementById("insert-article-form");
 
     const getAllCategories = async () => {
@@ -28,7 +27,7 @@ const initApp = async () => {
         const { name, image, price, description } = Object.fromEntries(new FormData(e.target).entries());
         const selectedOptions = getSelectedOptionIds();
 
-        if (selectedOptions.length === 0) return;
+        if (selectedOptions.length === 0) return handleDropdownError("Debes seleccionar una categoría");
 
         try {
             await insertArticleService({
@@ -65,7 +64,6 @@ const initApp = async () => {
         "Seleccionar categorías",
         getMappedCategories()
     );
-    const { showToast, setToastToShowOnReload } = initToast();
 
     initModal("insert-article-modal", "open-insert-article-modal-btn");
     initValidations(insertArticleForm, ARTICLE_ERROR_MESSAGES);
@@ -74,5 +72,3 @@ const initApp = async () => {
         .querySelector(".primary")
         .addEventListener("click", () => handleDropdownError("Debes seleccionar una categoría"));
 };
-
-initApp();

@@ -12,7 +12,6 @@ const initApp = async () => {
     const getSomeArticles = async () => {
         try {
             const { data } = await getSomeArticlesService();
-
             const section = document.querySelector("#articles-section");
 
             data.forEach(({ category, articles }) => renderArticleSection(section, category, articles));
@@ -21,9 +20,9 @@ const initApp = async () => {
         }
     };
 
-    await getSomeArticles();
     trackPreviousUrl();
     initFooter();
+    await getSomeArticles();
     initToast();
 };
 

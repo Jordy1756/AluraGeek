@@ -1,10 +1,7 @@
 import { initModal } from "../components/modal.js";
-import { initToast } from "../components/toast.js";
 import { deleteArticleService } from "../services/articleService.js";
 
-const initApp = () => {
-    const { articleId } = Object.fromEntries(new URL(window.location).searchParams.entries());
-
+export const initDeleteArticle = (articleId, showToast, setToastToShowOnReload) => {
     const { modal } = initModal("delete-article-modal", "open-delete-article-modal-btn");
 
     const deleteArticle = async () => {
@@ -23,8 +20,4 @@ const initApp = () => {
     };
 
     modal.querySelector("section > div > button.primary").addEventListener("click", async () => deleteArticle());
-
-    const { showToast, setToastToShowOnReload } = initToast();
 };
-
-initApp();

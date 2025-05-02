@@ -5,12 +5,13 @@ import { initToast } from "../components/toast.js";
 import { searchArticlesService } from "../services/articleService.js";
 import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
 
-const initApp = async () => {
+const initSearchArticles = async () => {
     const url = new URL(window.location);
     const { query } = Object.fromEntries(url.searchParams.entries());
 
     const { isAuthenticated } = await initHeader();
     const { renderArticles } = initArticlesGallery();
+    const { showToast, setToastToShowOnReload } = initToast();
 
     const sectionHeader = document.querySelector(".articles__section > div > header");
 
@@ -32,9 +33,10 @@ const initApp = async () => {
     };
 
     setSectionHeader();
-    searchArticles();
-    trackPreviousUrl();
     initFooter();
+    isAuthenticated && initInsertArticle(showToast, setToastToShowOnReload);
+    trackPreviousUrl();
+    await searchArticles();
 };
 
-initApp();
+initSearchArticles();
