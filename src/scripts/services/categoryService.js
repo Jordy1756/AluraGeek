@@ -1,4 +1,4 @@
-import { CATEGORY_URL } from "../../constants/apiConstants.js";
+import { CATEGORY_URL } from "../constants/apiConstants.js";
 import { CustomError } from "../utils/errorTypes.js";
 
 export const getAllCategoriesService = async () => {

@@ -1,4 +1,4 @@
-import { CONTACT_ERROR_MESSAGES } from "../../constants/errorConstants.js";
+import { CONTACT_ERROR_MESSAGES } from "../constants/errorConstants.js";
 import { insertCommentService } from "../services/commentService.js";
 import { initValidations } from "../utils/handleValidations.js";
 

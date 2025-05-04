@@ -4,7 +4,7 @@ import { getAllCategoriesService } from "../services/categoryService.js";
 import { insertArticleService } from "../services/articleService.js";
 import { initValidations } from "../utils/handleValidations.js";
 import { CustomError } from "../utils/errorTypes.js";
-import { ARTICLE_ERROR_MESSAGES } from "../../constants/errorConstants.js";
+import { ARTICLE_ERROR_MESSAGES } from "../constants/errorConstants.js";
 
 export const initInsertArticle = async (categoryId, showToast, setToastToShowOnReload) => {
     const insertArticleForm = document.getElementById("insert-article-form");

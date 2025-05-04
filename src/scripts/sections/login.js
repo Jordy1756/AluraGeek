@@ -1,7 +1,7 @@
-import { LOGIN_ERROR_MESSAGES } from "../../constants/errorConstants.js";
 import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
+import { LOGIN_ERROR_MESSAGES } from "../constants/errorConstants.js";
 import { loginUserService } from "../services/userService.js";
 import { BASE_PATH } from "../utils/handleUrl.js";
 import { initValidations } from "../utils/handleValidations.js";

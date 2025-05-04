@@ -4,8 +4,8 @@ import { getAllCategoriesService } from "../services/categoryService.js";
 import { updateArticleService } from "../services/articleService.js";
 import { CustomError } from "../utils/errorTypes.js";
 import { initValidations } from "../utils/handleValidations.js";
-import { ARTICLE_ERROR_MESSAGES } from "../../constants/errorConstants.js";
 import { BASE_PATH } from "../utils/handleUrl.js";
+import { ARTICLE_ERROR_MESSAGES } from "../constants/errorConstants.js";
 
 export const initUpdateArticle = async (
     { articleId, image, name, price, description, articleCategories },

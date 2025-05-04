@@ -1,4 +1,5 @@
 const BASE_URL = "https://alura-geek-api-one.vercel.app/api";
+// const BASE_URL = "http://localhost:3000/api";
 
 export const USER_URL = `${BASE_URL}/user`;
 export const ARTICLE_URL = `${BASE_URL}/article`;

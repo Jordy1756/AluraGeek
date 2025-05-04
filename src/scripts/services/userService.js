@@ -1,4 +1,4 @@
-import { USER_URL } from "../../constants/apiConstants.js";
+import { USER_URL } from "../constants/apiConstants.js";
 import { CustomError } from "../utils/errorTypes.js";
 
 export const loginUserService = async (user) => {

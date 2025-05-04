@@ -1,4 +1,4 @@
-import { ARTICLE_URL, ARTICLES_LIMIT, CATEGORY_LIMIT } from "../../constants/apiConstants.js";
+import { ARTICLE_URL, ARTICLES_LIMIT, CATEGORY_LIMIT } from "../constants/apiConstants.js";
 import { CustomError } from "../utils/errorTypes.js";
 
 export const insertArticleService = async (article) => {

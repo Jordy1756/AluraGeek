@@ -1,4 +1,4 @@
-import { COMMENT_URL } from "../../constants/apiConstants.js";
+import { COMMENT_URL } from "../constants/apiConstants.js";
 import { CustomError } from "../utils/errorTypes.js";
 
 export const insertCommentService = async (comment) => {
