@@ -22,7 +22,7 @@ export const initHeader = async (showToast, setToastToShowOnReload) => {
             await logoutUserService();
             isAuthenticated = false;
             setToastToShowOnReload("success", "Sesión cerrada", "Has cerrado sesión correctamente");
-            window.location.href = BASE_PATH;
+            window.location.href = `${BASE_PATH}/index.html`;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
