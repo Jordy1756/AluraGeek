@@ -3,7 +3,7 @@ import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
 import { searchArticlesService } from "../services/articleService.js";
-import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
+import { trackPreviousUrl } from "../utils/handleUrl.js";
 import { initInsertArticle } from "./insertArticle.js";
 
 const initSearchArticles = async () => {

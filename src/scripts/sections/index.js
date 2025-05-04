@@ -3,7 +3,7 @@ import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
 import { getSomeArticlesService } from "../services/articleService.js";
-import { trackPreviousUrl } from "../utils/handlePreviousUrl.js";
+import { trackPreviousUrl } from "../utils/handleUrl.js";
 
 const initApp = async () => {
     const { showToast, setToastToShowOnReload } = initToast();

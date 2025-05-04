@@ -5,6 +5,7 @@ import { updateArticleService } from "../services/articleService.js";
 import { CustomError } from "../utils/errorTypes.js";
 import { initValidations } from "../utils/handleValidations.js";
 import { ARTICLE_ERROR_MESSAGES } from "../../constants/errorConstants.js";
+import { BASE_PATH } from "../utils/handleUrl.js";
 
 export const initUpdateArticle = async (
     { articleId, image, name, price, description, articleCategories },
@@ -56,7 +57,7 @@ export const initUpdateArticle = async (
                 "Producto actualizado",
                 `El producto ${name} se ha actualizado correctamente`
             );
-            window.location.href = `/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
+            window.location.href = `${BASE_PATH}/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);

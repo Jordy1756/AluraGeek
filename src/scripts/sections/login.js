@@ -3,6 +3,7 @@ import { initFooter } from "../components/footer.js";
 import { initHeader } from "../components/header.js";
 import { initToast } from "../components/toast.js";
 import { loginUserService } from "../services/userService.js";
+import { BASE_PATH } from "../utils/handleUrl.js";
 import { initValidations } from "../utils/handleValidations.js";
 
 const initLogin = async () => {
@@ -20,7 +21,7 @@ const initLogin = async () => {
         try {
             await loginUserService({ email, password });
             setToastToShowOnReload("success", "¡Bienvenido!", "Has iniciado sesión correctamente");
-            window.location.href = "/index.html";
+            window.location.href = `${BASE_PATH}/index.html`;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
