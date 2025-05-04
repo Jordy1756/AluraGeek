@@ -1,4 +1,5 @@
 import { getAuthStatusService, logoutUserService } from "../services/userService.js";
+import { BASE_PATH } from "../utils/handleUrl.js";
 
 export const initHeader = async (showToast, setToastToShowOnReload) => {
     const header = document.querySelector(".header");
@@ -21,7 +22,7 @@ export const initHeader = async (showToast, setToastToShowOnReload) => {
             await logoutUserService();
             isAuthenticated = false;
             setToastToShowOnReload("success", "Sesión cerrada", "Has cerrado sesión correctamente");
-            window.location.href = "/index.html";
+            window.location.href = BASE_PATH;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
@@ -33,7 +34,7 @@ export const initHeader = async (showToast, setToastToShowOnReload) => {
     const handleSearch = (e) => {
         e.preventDefault();
         const { search } = Object.fromEntries(new FormData(e.target).entries());
-        window.location.href = `/src/views/search-articles.html?query=${search}`;
+        window.location.href = `${BASE_PATH}/src/views/search-articles.html?query=${search}`;
     };
 
     loginButton.style.display = isAuthenticated ? "none" : "flex";

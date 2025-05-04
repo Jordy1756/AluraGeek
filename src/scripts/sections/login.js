@@ -21,7 +21,7 @@ const initLogin = async () => {
         try {
             await loginUserService({ email, password });
             setToastToShowOnReload("success", "¡Bienvenido!", "Has iniciado sesión correctamente");
-            window.location.href = `${BASE_PATH}/index.html`;
+            window.location.href = BASE_PATH;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
