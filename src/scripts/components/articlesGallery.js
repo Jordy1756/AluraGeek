@@ -1,8 +1,10 @@
 export const initArticlesGallery = () => {
+    const basePath = window.location.hostname.includes("github.io") ? "/alura-geek" : "";
+
     const renderArticleSectionHeader = ({ id: categoryId, name: categoryName }) => `
         <header>
             <h2>${categoryName}</h2>
-            <a href="/src/views/show-all-articles.html?categoryId=${categoryId}&categoryName=${categoryName}">
+            <a href="${basePath}/src/views/show-all-articles.html?categoryId=${categoryId}&categoryName=${categoryName}">
                 Ver todo
                 <svg width="24" height="24" viewBox="0 0 24 24">
                     <path fill="var(--primary-500)" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z" />
@@ -26,7 +28,7 @@ export const initArticlesGallery = () => {
                 <div>
                     <h3>${articleName}</h3>
                     <p>${price}</p>
-                    <a href="/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${articleName}&price=${price}&description=${description}&articleCategories=${categories}">Ver producto</a>
+                    <a href="${basePath}/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${articleName}&price=${price}&description=${description}&articleCategories=${categories}">Ver producto</a>
                 </div>
             </article>
         `;
