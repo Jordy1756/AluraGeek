@@ -38,13 +38,13 @@ export const initInsertArticle = async (categoryId, showToast, setToastToShowOnR
                 image,
                 categories: selectedOptions,
             });
-
-            location.reload();
+            
             setToastToShowOnReload(
                 "success",
                 "Producto agregado",
                 `El producto ${name} se ha agregado correctamente al catálogo`
             );
+            location.reload();
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);

@@ -8,7 +8,7 @@ import { initValidations } from "../utils/handleValidations.js";
 const initLogin = async () => {
     const { showToast, setToastToShowOnReload } = initToast();
     const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
-    isAuthenticated && (window.location.href = "/index.html");
+    isAuthenticated && (window.location.href = "./index.html");
 
     const loginForm = document.getElementById("login-form");
 
@@ -20,7 +20,7 @@ const initLogin = async () => {
         try {
             await loginUserService({ email, password });
             setToastToShowOnReload("success", "¡Bienvenido!", "Has iniciado sesión correctamente");
-            window.location.href = "/index.html";
+            window.location.href = "./index.html";
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
