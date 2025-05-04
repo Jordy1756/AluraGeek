@@ -56,7 +56,7 @@ export const initUpdateArticle = async (
                 "Producto actualizado",
                 `El producto ${name} se ha actualizado correctamente`
             );
-            window.location.href = `./src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
+            window.location.href = `/src/views/show-article.html?articleId=${articleId}&image=${image}&name=${name}&price=${price}&description=${description}&articleCategories=${selectedOptions}`;
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);

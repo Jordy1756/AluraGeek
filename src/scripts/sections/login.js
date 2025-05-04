@@ -20,7 +20,7 @@ const initLogin = async () => {
         try {
             await loginUserService({ email, password });
             setToastToShowOnReload("success", "¡Bienvenido!", "Has iniciado sesión correctamente");
-            window.location.href = "./index.html";
+            window.location.href = "/index.html";
         } catch (error) {
             console.error(error);
             showToast("error", error.name, error.message);
