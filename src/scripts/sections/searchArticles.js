@@ -14,28 +14,25 @@ const initSearchArticles = async () => {
     const { isAuthenticated } = await initHeader(showToast, setToastToShowOnReload);
     const { renderArticles } = initArticlesGallery();
 
-    const sectionHeader = document.querySelector(".articles__section > div > header");
+    const articlesSection = document.querySelector("#articles-section");
+    const notFoundSection = document.querySelector("#not-found-section");
 
-    const setSectionHeader = () => {
-        sectionHeader.querySelector("button").style.display = isAuthenticated ? "flex" : "none";
-    };
+    if (isAuthenticated) {
+        articlesSection.querySelector(".open__insert-article-modal-btn").style.display = "flex";
+        notFoundSection.querySelector(".open__insert-article-modal-btn").style.display = "flex";
+        initInsertArticle("", showToast, setToastToShowOnReload);
+    }
 
     const searchArticles = async () => {
-        const articlesSection = document.querySelector("#articles-container");
-        const notFoundSection = document.querySelector("#not-found-section");
-
         const articles = await searchArticlesService(query);
 
-        if (articles.length <= 0) return;
+        if (articles.length <= 0) return (notFoundSection.style.display = "flex");
 
-        sectionHeader.style.display = "flex";
-        notFoundSection.style.display = "none";
-        articlesSection.insertAdjacentHTML("beforeend", renderArticles(articles));
+        articlesSection.style.display = "flex";
+        articlesSection.querySelector("#articles-container").insertAdjacentHTML("beforeend", renderArticles(articles));
     };
 
-    setSectionHeader();
     initFooter(showToast);
-    isAuthenticated && initInsertArticle("", showToast, setToastToShowOnReload);
     trackPreviousUrl();
     await searchArticles();
 };
